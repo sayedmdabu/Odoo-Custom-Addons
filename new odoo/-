@@ -1,0 +1,387 @@
+2025-08-18 06:14:45,329 12170 INFO ? odoo: Odoo version 18.0 
+2025-08-18 06:14:45,330 12170 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 06:14:45,330 12170 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 06:14:45,330 12170 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 06:14:45,432 12170 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 06:14:45,457 12170 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 06:14:45,666 12170 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 06:14:47,049 12170 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-08-18 06:14:47,057 12170 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-08-18 06:14:47,067 12170 INFO ? odoo.modules.loading: loading 12 modules... 
+2025-08-18 06:14:47,312 12170 INFO ? odoo.modules.loading: 12 modules loaded in 0.25s, 0 queries (+0 extra) 
+2025-08-18 06:14:47,346 12170 INFO ? odoo.modules.loading: Modules loaded. 
+2025-08-18 06:14:47,349 12170 INFO ? odoo.modules.registry: Registry loaded in 0.331s 
+2025-08-18 06:14:47,351 12170 INFO odoo_18 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-08-18 06:14:47,371 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:47] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 20 0.018 0.336
+2025-08-18 06:14:47,389 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:47] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.002 0.005
+2025-08-18 06:14:47,695 12170 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-08-18 06:14:53,728 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:53] "GET /odoo/settings HTTP/1.1" 200 - 75 0.069 0.215
+2025-08-18 06:14:54,066 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.003 0.006
+2025-08-18 06:14:54,142 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 17 0.015 0.018
+2025-08-18 06:14:54,148 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.001 0.012
+2025-08-18 06:14:54,156 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.009 0.026
+2025-08-18 06:14:54,435 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "POST /web/action/load HTTP/1.1" 200 - 11 0.008 0.311
+2025-08-18 06:14:54,484 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 12 0.012 0.025
+2025-08-18 06:14:54,574 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 29 0.024 0.034
+2025-08-18 06:14:54,652 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.003 0.005
+2025-08-18 06:14:54,666 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:54] "POST /base_setup/data HTTP/1.1" 200 - 6 0.003 0.003
+2025-08-18 06:14:56,283 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:14:56] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.005
+2025-08-18 06:15:11,914 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:11] "POST /web/dataset/call_kw/res.config.settings/web_save HTTP/1.1" 200 - 27 0.028 0.031
+2025-08-18 06:15:11,974 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:11] "POST /web/dataset/call_button/res.config.settings/execute HTTP/1.1" 200 - 6 0.009 0.024
+2025-08-18 06:15:12,036 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "GET /odoo/settings HTTP/1.1" 200 - 7 0.006 0.017
+2025-08-18 06:15:12,239 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 3 0.002 0.006
+2025-08-18 06:15:12,319 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "POST /web/action/load HTTP/1.1" 200 - 10 0.008 0.047
+2025-08-18 06:15:12,320 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.010 0.045
+2025-08-18 06:15:12,330 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.003 0.041
+2025-08-18 06:15:12,337 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 5 0.011 0.054
+2025-08-18 06:15:12,346 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 1 0.001 0.013
+2025-08-18 06:15:12,392 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 9 0.008 0.019
+2025-08-18 06:15:12,453 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.005
+2025-08-18 06:15:12,464 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:12] "POST /base_setup/data HTTP/1.1" 200 - 5 0.003 0.005
+2025-08-18 06:15:14,157 12170 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:15:14] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.002 0.005
+2025-08-18 06:15:23,822 12170 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 06:15:23,823 12170 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 06:15:24,297 12170 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 6 connections  
+2025-08-18 06:16:19,829 12256 INFO ? odoo: Odoo version 18.0 
+2025-08-18 06:16:19,829 12256 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 06:16:19,829 12256 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 06:16:19,829 12256 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 06:16:19,924 12256 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 06:16:19,946 12256 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 06:16:20,152 12256 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 06:16:24,250 12256 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-08-18 06:16:24,263 12256 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-08-18 06:16:24,278 12256 INFO ? odoo.modules.loading: loading 12 modules... 
+2025-08-18 06:16:24,530 12256 INFO ? odoo.modules.loading: 12 modules loaded in 0.25s, 0 queries (+0 extra) 
+2025-08-18 06:16:24,566 12256 INFO ? odoo.modules.loading: Modules loaded. 
+2025-08-18 06:16:24,569 12256 INFO ? odoo.modules.registry: Registry loaded in 0.362s 
+2025-08-18 06:16:24,570 12256 INFO odoo_18 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-08-18 06:16:24,844 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:24] "GET /odoo/settings HTTP/1.1" 200 - 100 0.093 0.546
+2025-08-18 06:16:25,023 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.004 0.008
+2025-08-18 06:16:25,117 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 17 0.016 0.049
+2025-08-18 06:16:25,128 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.004 0.049
+2025-08-18 06:16:25,133 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.012 0.059
+2025-08-18 06:16:25,346 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "POST /web/action/load HTTP/1.1" 200 - 11 0.009 0.286
+2025-08-18 06:16:25,394 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 13 0.012 0.027
+2025-08-18 06:16:25,447 12256 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-08-18 06:16:25,472 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 29 0.024 0.035
+2025-08-18 06:16:25,535 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.004
+2025-08-18 06:16:25,546 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:25] "POST /base_setup/data HTTP/1.1" 200 - 6 0.003 0.003
+2025-08-18 06:16:27,179 12256 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:27] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.002 0.007
+2025-08-18 06:16:35,947 12256 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 06:16:35,948 12256 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 06:16:36,283 12256 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 5 connections  
+2025-08-18 06:16:43,792 12299 INFO ? odoo: Odoo version 18.0 
+2025-08-18 06:16:43,792 12299 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 06:16:43,793 12299 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 06:16:43,793 12299 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 06:16:43,890 12299 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 06:16:43,916 12299 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 06:16:44,126 12299 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 06:16:44,257 12299 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-08-18 06:16:44,266 12299 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-08-18 06:16:44,276 12299 INFO ? odoo.modules.loading: loading 12 modules... 
+2025-08-18 06:16:44,575 12299 INFO ? odoo.modules.loading: 12 modules loaded in 0.30s, 0 queries (+0 extra) 
+2025-08-18 06:16:44,609 12299 INFO ? odoo.modules.loading: Modules loaded. 
+2025-08-18 06:16:44,612 12299 INFO ? odoo.modules.registry: Registry loaded in 0.388s 
+2025-08-18 06:16:44,614 12299 INFO odoo_18 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-08-18 06:16:44,634 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:44] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 20 0.020 0.391
+2025-08-18 06:16:44,647 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:44] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.002 0.004
+2025-08-18 06:16:44,957 12299 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-08-18 06:16:47,418 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:47] "GET /odoo/settings HTTP/1.1" 200 - 75 0.064 0.198
+2025-08-18 06:16:48,826 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:48] "GET /web/webclient/translations/d2c56b07ed5ced215bfc7ac9b473a7e7916c5840?lang=en_US HTTP/1.1" 200 - 1 0.002 1.376
+2025-08-18 06:16:48,834 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:48] "GET /web/assets/15ed881/web.assets_web.min.js HTTP/1.1" 200 - 3 0.009 1.395
+2025-08-18 06:16:48,836 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:48] "GET /web/assets/f52ea10/web.assets_web.min.css HTTP/1.1" 200 - 3 0.008 1.399
+2025-08-18 06:16:48,840 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:48] "GET /web/webclient/load_menus/386c0517246da19c35ab26781dd057c1386a12fc91006a46d6ea145a8f2bd50f HTTP/1.1" 200 - 8 0.013 1.382
+2025-08-18 06:16:48,860 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:48] "GET /web/assets/60319ee/web.assets_web_print.min.css HTTP/1.1" 200 - 3 0.003 0.007
+2025-08-18 06:16:49,022 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /web/webclient/translations/d2c56b07ed5ced215bfc7ac9b473a7e7916c5840?lang=en_US HTTP/1.1" 200 - 1 0.001 0.004
+2025-08-18 06:16:49,044 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.004 0.007
+2025-08-18 06:16:49,066 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - 0 0.000 0.003
+2025-08-18 06:16:49,072 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 200 - 0 0.000 0.003
+2025-08-18 06:16:49,101 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.016 0.015
+2025-08-18 06:16:49,104 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "POST /web/action/load HTTP/1.1" 200 - 10 0.019 0.017
+2025-08-18 06:16:49,105 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.001 0.017
+2025-08-18 06:16:49,130 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 17 0.036 0.029
+2025-08-18 06:16:49,160 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 12 0.013 0.028
+2025-08-18 06:16:49,221 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 29 0.023 0.021
+2025-08-18 06:16:49,291 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.003 0.005
+2025-08-18 06:16:49,303 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "POST /base_setup/data HTTP/1.1" 200 - 6 0.003 0.003
+2025-08-18 06:16:49,339 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:16:49] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - 0 0.000 0.002
+2025-08-18 06:17:25,746 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:25] "GET /odoo/settings HTTP/1.1" 200 - 7 0.005 0.016
+2025-08-18 06:17:25,784 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:25] "GET /web/assets/f52ea10/web.assets_web.min.css HTTP/1.1" 200 - 3 0.007 0.015
+2025-08-18 06:17:25,800 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:25] "GET /web/assets/15ed881/web.assets_web.min.js HTTP/1.1" 200 - 3 0.013 0.024
+2025-08-18 06:17:25,812 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:25] "GET /web/webclient/translations/d2c56b07ed5ced215bfc7ac9b473a7e7916c5840?lang=en_US HTTP/1.1" 200 - 1 0.003 0.025
+2025-08-18 06:17:25,843 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:25] "GET /web/webclient/load_menus/386c0517246da19c35ab26781dd057c1386a12fc91006a46d6ea145a8f2bd50f HTTP/1.1" 200 - 7 0.012 0.049
+2025-08-18 06:17:25,852 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:25] "GET /web/assets/60319ee/web.assets_web_print.min.css HTTP/1.1" 200 - 3 0.003 0.021
+2025-08-18 06:17:26,045 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /web/webclient/translations/d2c56b07ed5ced215bfc7ac9b473a7e7916c5840?lang=en_US HTTP/1.1" 200 - 1 0.002 0.006
+2025-08-18 06:17:26,099 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 3 0.004 0.010
+2025-08-18 06:17:26,131 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - 0 0.000 0.004
+2025-08-18 06:17:26,138 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 200 - 0 0.000 0.004
+2025-08-18 06:17:26,169 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "POST /web/action/load HTTP/1.1" 200 - 10 0.019 0.019
+2025-08-18 06:17:26,170 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 5 0.016 0.014
+2025-08-18 06:17:26,171 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.018 0.024
+2025-08-18 06:17:26,177 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.004 0.019
+2025-08-18 06:17:26,191 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 1 0.001 0.010
+2025-08-18 06:17:26,239 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 9 0.009 0.019
+2025-08-18 06:17:26,320 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.005
+2025-08-18 06:17:26,334 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "POST /base_setup/data HTTP/1.1" 200 - 5 0.003 0.004
+2025-08-18 06:17:26,372 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:26] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - 0 0.000 0.002
+2025-08-18 06:17:32,898 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:32] "POST /web/dataset/call_kw/res.config.settings/web_save HTTP/1.1" 200 - 27 0.025 0.030
+2025-08-18 06:17:32,941 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:32] "POST /web/action/load HTTP/1.1" 200 - 9 0.009 0.013
+2025-08-18 06:17:32,996 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:32] "POST /web/dataset/call_kw/base.language.install/get_views HTTP/1.1" 200 - 11 0.012 0.017
+2025-08-18 06:17:33,021 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:33] "POST /web/dataset/call_kw/base.language.install/onchange HTTP/1.1" 200 - 2 0.003 0.008
+2025-08-18 06:17:34,337 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:34] "POST /web/dataset/call_kw/res.lang/name_search HTTP/1.1" 200 - 2 0.002 0.007
+2025-08-18 06:17:36,148 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:36] "POST /web/dataset/call_kw/res.lang/web_read HTTP/1.1" 200 - 2 0.003 0.007
+2025-08-18 06:17:37,192 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:37] "POST /web/dataset/call_kw/base.language.install/web_save HTTP/1.1" 200 - 7 0.008 0.014
+2025-08-18 06:17:37,222 12299 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:37] "GET /web/static/img/spin.svg HTTP/1.1" 200 - 0 0.000 0.006
+2025-08-18 06:17:37,247 12299 INFO odoo_18 odoo.modules.registry: Caches invalidated, signaling through the database: ['default'] 
+2025-08-18 06:17:37,249 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:37] "POST /web/dataset/call_button/base.language.install/lang_install HTTP/1.1" 200 - 20 0.020 0.023
+2025-08-18 06:17:37,304 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:37] "POST /web/dataset/call_kw/base.language.install/get_views HTTP/1.1" 200 - 17 0.019 0.022
+2025-08-18 06:17:37,327 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:37] "POST /web/dataset/call_kw/base.language.install/web_read HTTP/1.1" 200 - 4 0.004 0.009
+2025-08-18 06:17:39,502 12299 INFO odoo_18 odoo.modules.registry: Caches invalidated, signaling through the database: ['default'] 
+2025-08-18 06:17:39,505 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:39] "POST /web/dataset/call_button/base.language.install/switch_lang HTTP/1.1" 200 - 10 0.010 0.022
+2025-08-18 06:17:39,599 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:39] "POST /web/session/get_session_info HTTP/1.1" 200 - 44 0.038 0.048
+2025-08-18 06:17:39,688 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:39] "GET /odoo/settings HTTP/1.1" 200 - 17 0.019 0.048
+2025-08-18 06:17:39,955 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:39] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 3 0.003 0.005
+2025-08-18 06:17:40,034 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.015 0.041
+2025-08-18 06:17:40,035 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "GET /web/image/res.partner/3/avatar_128?unique=1755476259000 HTTP/1.1" 200 - 8 0.014 0.044
+2025-08-18 06:17:40,036 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "POST /web/action/load HTTP/1.1" 200 - 10 0.027 0.029
+2025-08-18 06:17:40,037 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.025 0.028
+2025-08-18 06:17:40,044 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.005 0.035
+2025-08-18 06:17:40,068 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 5 0.005 0.013
+2025-08-18 06:17:40,131 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 29 0.021 0.022
+2025-08-18 06:17:40,205 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.003 0.005
+2025-08-18 06:17:40,218 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:40] "POST /base_setup/data HTTP/1.1" 200 - 6 0.004 0.004
+2025-08-18 06:17:41,879 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:41] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.002 0.006
+2025-08-18 06:17:53,398 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "GET /odoo/settings?debug=1 HTTP/1.1" 200 - 20 0.019 0.038
+2025-08-18 06:17:53,518 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "GET /web/webclient/load_menus/291c97e6e4dd6fb964b660e1ee72c69dcf3e71f84a5db8498fecefd9ea0714d6 HTTP/1.1" 200 - 49 0.039 0.045
+2025-08-18 06:17:53,583 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 3 0.004 0.010
+2025-08-18 06:17:53,681 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.014 0.022
+2025-08-18 06:17:53,687 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "POST /web/action/load HTTP/1.1" 200 - 10 0.016 0.016
+2025-08-18 06:17:53,802 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 5 0.004 0.010
+2025-08-18 06:17:53,807 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 1 0.001 0.013
+2025-08-18 06:17:53,818 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.001 0.006
+2025-08-18 06:17:53,853 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 11 0.006 0.017
+2025-08-18 06:17:53,931 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.005
+2025-08-18 06:17:53,950 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:53] "POST /base_setup/data HTTP/1.1" 200 - 5 0.003 0.004
+2025-08-18 06:17:55,645 12299 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:17:55] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.005
+2025-08-18 06:19:55,889 12299 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 06:19:55,890 12299 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 06:19:56,395 12299 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 7 connections  
+2025-08-18 06:22:37,593 13458 INFO ? odoo: Odoo version 18.0 
+2025-08-18 06:22:37,593 13458 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 06:22:37,593 13458 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 06:22:37,593 13458 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 06:22:37,691 13458 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 06:22:37,718 13458 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 06:22:37,916 13458 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 06:22:38,986 13458 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-08-18 06:22:38,994 13458 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-08-18 06:22:39,004 13458 INFO ? odoo.modules.loading: loading 12 modules... 
+2025-08-18 06:22:39,235 13458 INFO ? odoo.modules.loading: 12 modules loaded in 0.23s, 0 queries (+0 extra) 
+2025-08-18 06:22:39,270 13458 INFO ? odoo.modules.loading: Modules loaded. 
+2025-08-18 06:22:39,273 13458 INFO ? odoo.modules.registry: Registry loaded in 0.321s 
+2025-08-18 06:22:39,275 13458 INFO odoo_18 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-08-18 06:22:39,294 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:39] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 20 0.021 0.324
+2025-08-18 06:22:39,314 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:39] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.002 0.005
+2025-08-18 06:22:39,617 13458 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-08-18 06:22:50,671 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:50] "GET /odoo/settings?debug=1 HTTP/1.1" 200 - 72 0.052 0.187
+2025-08-18 06:22:52,089 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/webclient/translations/d2c56b07ed5ced215bfc7ac9b473a7e7916c5840?lang=en_US HTTP/1.1" 200 - 1 0.002 1.375
+2025-08-18 06:22:52,094 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/assets/f52ea10/web.assets_web.min.css HTTP/1.1" 200 - 3 0.007 1.404
+2025-08-18 06:22:52,099 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/assets/15ed881/web.assets_web.min.js HTTP/1.1" 200 - 3 0.006 1.407
+2025-08-18 06:22:52,132 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/assets/60319ee/web.assets_web_print.min.css HTTP/1.1" 200 - 3 0.004 0.012
+2025-08-18 06:22:52,180 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/webclient/load_menus/291c97e6e4dd6fb964b660e1ee72c69dcf3e71f84a5db8498fecefd9ea0714d6 HTTP/1.1" 200 - 50 0.051 1.419
+2025-08-18 06:22:52,365 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/webclient/translations/d2c56b07ed5ced215bfc7ac9b473a7e7916c5840?lang=en_US HTTP/1.1" 200 - 1 0.001 0.005
+2025-08-18 06:22:52,420 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.003 0.005
+2025-08-18 06:22:52,472 13458 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - 0 0.000 0.003
+2025-08-18 06:22:52,486 13458 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 200 - 0 0.000 0.006
+2025-08-18 06:22:52,493 13458 INFO ? werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - 0 0.000 0.009
+2025-08-18 06:22:52,512 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "POST /web/action/load HTTP/1.1" 200 - 10 0.017 0.016
+2025-08-18 06:22:52,516 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 17 0.022 0.021
+2025-08-18 06:22:52,555 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.009 0.012
+2025-08-18 06:22:52,589 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.002 0.015
+2025-08-18 06:22:52,600 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 12 0.022 0.031
+2025-08-18 06:22:52,688 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 31 0.024 0.023
+2025-08-18 06:22:52,765 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.004
+2025-08-18 06:22:52,786 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:22:52] "POST /base_setup/data HTTP/1.1" 200 - 6 0.004 0.005
+2025-08-18 06:23:25,745 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:25] "GET /odoo/settings?debug=1 HTTP/1.1" 200 - 7 0.006 0.016
+2025-08-18 06:23:26,133 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 3 0.002 0.006
+2025-08-18 06:23:26,194 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.011 0.022
+2025-08-18 06:23:26,195 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "POST /web/action/load HTTP/1.1" 200 - 10 0.018 0.014
+2025-08-18 06:23:26,209 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.002 0.010
+2025-08-18 06:23:26,209 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 5 0.011 0.019
+2025-08-18 06:23:26,220 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 1 0.001 0.016
+2025-08-18 06:23:26,266 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 9 0.007 0.018
+2025-08-18 06:23:26,340 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.003 0.006
+2025-08-18 06:23:26,351 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:26] "POST /base_setup/data HTTP/1.1" 200 - 5 0.002 0.004
+2025-08-18 06:23:27,355 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:27] "POST /web/action/load HTTP/1.1" 200 - 9 0.012 0.014
+2025-08-18 06:23:27,414 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:27] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 9 0.008 0.018
+2025-08-18 06:23:27,998 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:27] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.005
+2025-08-18 06:23:28,760 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:28] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 9 0.008 0.018
+2025-08-18 06:23:31,020 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:31] "POST /web/action/load HTTP/1.1" 200 - 12 0.012 0.015
+2025-08-18 06:23:31,194 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:31] "POST /web/dataset/call_kw/res.users/get_views HTTP/1.1" 200 - 63 0.054 0.087
+2025-08-18 06:23:31,225 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:31] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 1 0.001 0.006
+2025-08-18 06:23:31,245 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:31] "POST /web/dataset/call_kw/res.users/web_search_read HTTP/1.1" 200 - 15 0.013 0.015
+2025-08-18 06:23:36,816 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:36] "POST /web/dataset/call_kw/ir.rule/has_access HTTP/1.1" 200 - 1 0.002 0.008
+2025-08-18 06:23:36,819 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:36] "POST /web/dataset/call_kw/ir.ui.view/has_access HTTP/1.1" 200 - 1 0.002 0.012
+2025-08-18 06:23:36,823 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:36] "POST /web/dataset/call_kw/ir.model.access/has_access HTTP/1.1" 200 - 1 0.001 0.012
+2025-08-18 06:23:39,210 13458 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:23:39] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 9 0.005 0.012
+2025-08-18 06:24:20,807 13458 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 06:24:20,807 13458 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 06:24:21,351 13458 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 6 connections  
+2025-08-18 06:24:26,974 13586 INFO ? odoo: Odoo version 18.0 
+2025-08-18 06:24:26,974 13586 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 06:24:26,974 13586 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 06:24:26,974 13586 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 06:24:27,070 13586 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 06:24:27,095 13586 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 06:24:27,295 13586 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 06:24:27,939 13586 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-08-18 06:24:27,948 13586 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-08-18 06:24:27,958 13586 INFO ? odoo.modules.loading: loading 12 modules... 
+2025-08-18 06:24:28,197 13586 INFO ? odoo.modules.loading: 12 modules loaded in 0.24s, 0 queries (+0 extra) 
+2025-08-18 06:24:28,230 13586 INFO ? odoo.modules.loading: Modules loaded. 
+2025-08-18 06:24:28,233 13586 INFO ? odoo.modules.registry: Registry loaded in 0.324s 
+2025-08-18 06:24:28,234 13586 INFO odoo_18 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-08-18 06:24:28,251 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:24:28] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 20 0.018 0.326
+2025-08-18 06:24:28,269 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:24:28] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.001 0.003
+2025-08-18 06:24:28,573 13586 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-08-18 06:26:02,972 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:02] "GET /odoo/settings?debug=1 HTTP/1.1" 200 - 72 0.063 0.226
+2025-08-18 06:26:03,142 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.005 0.010
+2025-08-18 06:26:03,254 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 17 0.018 0.050
+2025-08-18 06:26:03,269 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.008 0.041
+2025-08-18 06:26:03,277 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.014 0.062
+2025-08-18 06:26:03,490 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "POST /web/action/load HTTP/1.1" 200 - 11 0.011 0.290
+2025-08-18 06:26:03,537 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 12 0.012 0.024
+2025-08-18 06:26:03,619 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 31 0.034 0.025
+2025-08-18 06:26:03,688 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.004
+2025-08-18 06:26:03,701 13586 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:03] "POST /base_setup/data HTTP/1.1" 200 - 6 0.003 0.004
+2025-08-18 06:26:05,191 13586 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 06:26:05,191 13586 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 06:26:05,298 13586 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 5 connections  
+2025-08-18 06:26:19,739 13722 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO" 
+2025-08-18 06:26:19,740 13722 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO" 
+2025-08-18 06:26:19,740 13722 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-08-18 06:26:19,740 13722 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG" 
+2025-08-18 06:26:19,740 13722 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO" 
+2025-08-18 06:26:19,740 13722 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-08-18 06:26:19,740 13722 INFO ? odoo: Odoo version 18.0 
+2025-08-18 06:26:19,740 13722 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 06:26:19,740 13722 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 06:26:19,740 13722 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 06:26:19,836 13722 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 06:26:19,867 13722 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 06:26:20,072 13722 DEBUG ? odoo.service.server: Setting signal handlers 
+2025-08-18 06:26:20,073 13722 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 06:26:20,076 13722 DEBUG ? odoo.service.server: cron0 started! 
+2025-08-18 06:26:20,076 13722 DEBUG ? odoo.service.server: cron1 started! 
+2025-08-18 06:26:22,685 13722 DEBUG ? odoo.http: HTTP sessions stored in: /home/sayed/.local/share/Odoo/sessions 
+2025-08-18 06:26:22,723 13722 DEBUG ? odoo.modules.registry: Multiprocess load registry signaling: [Registry: 2] [Cache default: 3] [Cache assets: 1] [Cache templates: 1] [Cache routing: 1] [Cache groups: 1] 
+2025-08-18 06:26:22,729 13722 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-08-18 06:26:22,729 13722 DEBUG ? odoo.modules.loading: Loading module base (1/1) 
+2025-08-18 06:26:22,741 13722 DEBUG ? odoo.modules.loading: Module base loaded in 0.01s, 0 queries 
+2025-08-18 06:26:22,741 13722 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-08-18 06:26:22,753 13722 DEBUG ? odoo.modules.loading: Updating graph with 11 more modules 
+2025-08-18 06:26:22,753 13722 INFO ? odoo.modules.loading: loading 12 modules... 
+2025-08-18 06:26:22,753 13722 DEBUG ? odoo.modules.loading: Loading module web (2/12) 
+2025-08-18 06:26:22,755 13722 DEBUG ? odoo.modules.loading: Module web loaded in 0.00s, 0 queries 
+2025-08-18 06:26:22,756 13722 DEBUG ? odoo.modules.loading: Loading module auth_totp (3/12) 
+2025-08-18 06:26:22,774 13722 DEBUG ? odoo.modules.loading: Module auth_totp loaded in 0.02s, 0 queries 
+2025-08-18 06:26:22,774 13722 DEBUG ? odoo.modules.loading: Loading module base_import (4/12) 
+2025-08-18 06:26:22,908 13722 DEBUG ? odoo.modules.loading: Module base_import loaded in 0.13s, 0 queries 
+2025-08-18 06:26:22,908 13722 DEBUG ? odoo.modules.loading: Loading module base_import_module (5/12) 
+2025-08-18 06:26:22,912 13722 DEBUG ? odoo.modules.loading: Module base_import_module loaded in 0.00s, 0 queries 
+2025-08-18 06:26:22,912 13722 DEBUG ? odoo.modules.loading: Loading module base_setup (6/12) 
+2025-08-18 06:26:22,915 13722 DEBUG ? odoo.modules.loading: Module base_setup loaded in 0.00s, 0 queries 
+2025-08-18 06:26:22,915 13722 DEBUG ? odoo.modules.loading: Loading module bus (7/12) 
+2025-08-18 06:26:22,925 13722 DEBUG ? odoo.modules.loading: Module bus loaded in 0.01s, 0 queries 
+2025-08-18 06:26:22,925 13722 DEBUG ? odoo.modules.loading: Loading module web_tour (8/12) 
+2025-08-18 06:26:22,927 13722 DEBUG ? odoo.modules.loading: Module web_tour loaded in 0.00s, 0 queries 
+2025-08-18 06:26:22,927 13722 DEBUG ? odoo.modules.loading: Loading module html_editor (9/12) 
+2025-08-18 06:26:22,999 13722 DEBUG ? odoo.modules.loading: Module html_editor loaded in 0.07s, 0 queries 
+2025-08-18 06:26:22,999 13722 DEBUG ? odoo.modules.loading: Loading module iap (10/12) 
+2025-08-18 06:26:23,000 13722 DEBUG ? odoo.modules.loading: Module iap loaded in 0.00s, 0 queries 
+2025-08-18 06:26:23,000 13722 DEBUG ? odoo.modules.loading: Loading module web_editor (11/12) 
+2025-08-18 06:26:23,012 13722 DEBUG ? odoo.modules.loading: Module web_editor loaded in 0.01s, 0 queries 
+2025-08-18 06:26:23,012 13722 DEBUG ? odoo.modules.loading: Loading module web_unsplash (12/12) 
+2025-08-18 06:26:23,014 13722 DEBUG ? odoo.modules.loading: Module web_unsplash loaded in 0.00s, 0 queries 
+2025-08-18 06:26:23,014 13722 INFO ? odoo.modules.loading: 12 modules loaded in 0.26s, 0 queries (+0 extra) 
+2025-08-18 06:26:23,052 13722 INFO ? odoo.modules.loading: Modules loaded. 
+2025-08-18 06:26:23,055 13722 INFO ? odoo.modules.registry: Registry loaded in 0.369s 
+2025-08-18 06:26:23,056 13722 INFO odoo_18 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-08-18 06:26:23,244 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "GET /odoo/settings?debug=1 HTTP/1.1" 200 - 97 0.052 0.509
+2025-08-18 06:26:23,386 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.005 0.009
+2025-08-18 06:26:23,475 13722 DEBUG ? odoo.modules.module: module __pycache__: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:23,476 13722 DEBUG ? odoo.modules.module: module __init__.py: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:23,500 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 17 0.021 0.051
+2025-08-18 06:26:23,519 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.003 0.051
+2025-08-18 06:26:23,524 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.018 0.063
+2025-08-18 06:26:23,532 13722 DEBUG ? odoo.modules.module: module website_twitter: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:23,681 13722 DEBUG ? odoo.modules.module: module l10n_es_pos_tbai: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:23,764 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "POST /web/action/load HTTP/1.1" 200 - 11 0.008 0.323
+2025-08-18 06:26:23,777 13722 DEBUG odoo_18 odoo.api: call res.config.settings().get_views(options={'action_id': 85, 'embedded_action_id': False, 'embedded_parent_res_id': False, 'load_filters': False, 'toolbar': False}, views=[[False, 'form']]) 
+2025-08-18 06:26:23,815 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 13 0.013 0.029
+2025-08-18 06:26:23,832 13722 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-08-18 06:26:23,864 13722 DEBUG odoo_18 odoo.api: call res.config.settings().onchange({}, [], {'is_root_company': {}, 'active_user_count': {}, 'language_count': {}, 'company_id': {'fields': {'display_name': {}}}, 'company_name': {}, 'company_informations': {}, 'company_count': {}, 'external_report_layout_id': {'fields': {'display_name': {}}}, 'module_sms': {}, 'module_partner_autocomplete': {}, 'user_default_rights': {}, 'module_base_import': {}, 'show_effect': {}, 'web_app_name': {}, 'module_mail_plugin': {}, 'module_auth_oauth': {}, 'module_auth_ldap': {}, 'module_web_unsplash': {}, 'unsplash_access_key': {}, 'unsplash_app_id': {}, 'module_base_geolocalize': {}, 'module_google_recaptcha': {}, 'module_website_cf_turnstile': {}, 'profiling_enabled_until': {}, 'display_name': {}}) 
+2025-08-18 06:26:23,930 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 31 0.031 0.062
+2025-08-18 06:26:23,996 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:23] "POST /base_setup/demo_active HTTP/1.1" 200 - 2 0.002 0.004
+2025-08-18 06:26:24,009 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:24] "POST /base_setup/data HTTP/1.1" 200 - 6 0.004 0.004
+2025-08-18 06:26:25,714 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:25] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.005
+2025-08-18 06:26:29,022 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "GET /odoo HTTP/1.1" 200 - 7 0.006 0.019
+2025-08-18 06:26:29,230 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 3 0.004 0.035
+2025-08-18 06:26:29,293 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.020 0.034
+2025-08-18 06:26:29,294 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 5 0.022 0.026
+2025-08-18 06:26:29,295 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "POST /web/action/load HTTP/1.1" 200 - 10 0.025 0.029
+2025-08-18 06:26:29,299 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.002 0.032
+2025-08-18 06:26:29,332 13722 DEBUG odoo_18 odoo.api: call ir.module.module().get_views(options={'action_id': 39, 'embedded_action_id': False, 'embedded_parent_res_id': False, 'load_filters': True, 'toolbar': True}, views=[[False, 'kanban'], [False, 'list'], [False, 'form'], [95, 'search']]) 
+2025-08-18 06:26:29,519 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 53 0.037 0.155
+2025-08-18 06:26:29,546 13722 DEBUG odoo_18 odoo.api: call ir.module.module().search_panel_select_range('module_type', category_domain=[], enable_counters=False, expand=True, filter_domain=[], hierarchize=True, limit=200, search_domain=[['application', '=', True]]) 
+2025-08-18 06:26:29,548 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.002 0.008
+2025-08-18 06:26:29,553 13722 DEBUG odoo_18 odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=[['application', '=', True]]) 
+2025-08-18 06:26:29,558 13722 DEBUG odoo_18 odoo.api: call ir.module.module().web_search_read(count_limit=10001, domain=[['application', '=', True]], limit=80, offset=0, order='', specification={'to_buy': {}, 'name': {}, 'state': {}, 'summary': {}, 'website': {}, 'application': {}, 'module_type': {}, 'icon': {}, 'icon_flag': {}, 'shortdesc': {}}) 
+2025-08-18 06:26:29,574 13722 DEBUG odoo_18 odoo.modules.module: module mrp_workorder: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,580 13722 DEBUG odoo_18 odoo.modules.module: module accountant: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,582 13722 DEBUG odoo_18 odoo.modules.module: module knowledge: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,591 13722 DEBUG odoo_18 odoo.modules.module: module timesheet_grid: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,594 13722 DEBUG odoo_18 odoo.modules.module: module web_studio: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,596 13722 DEBUG odoo_18 odoo.modules.module: module industry_fsm: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,601 13722 DEBUG odoo_18 odoo.modules.module: module sign: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,602 13722 DEBUG odoo_18 odoo.modules.module: module helpdesk: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,607 13722 DEBUG odoo_18 odoo.modules.module: module sale_subscription: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,609 13722 DEBUG odoo_18 odoo.modules.module: module quality_control: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,618 13722 DEBUG odoo_18 odoo.modules.module: module planning: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,625 13722 DEBUG odoo_18 odoo.modules.module: module mrp_plm: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,632 13722 DEBUG odoo_18 odoo.modules.module: module social: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,633 13722 DEBUG odoo_18 odoo.modules.module: module hr_appraisal: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,634 13722 DEBUG odoo_18 odoo.modules.module: module marketing_automation: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,637 13722 DEBUG odoo_18 odoo.modules.module: module appointment: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,646 13722 DEBUG odoo_18 odoo.modules.module: module web_mobile: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,656 13722 DEBUG odoo_18 odoo.modules.module: module stock_barcode: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,667 13722 DEBUG odoo_18 odoo.modules.module: module voip: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,672 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 52 0.083 0.050
+2025-08-18 06:26:29,673 13722 DEBUG odoo_18 odoo.modules.module: module sale_amazon: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-08-18 06:26:29,697 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:29] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.008 0.141
+2025-08-18 06:26:31,558 13722 INFO odoo_18 werkzeug: 127.0.0.1 - - [18/Aug/2025 06:26:31] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.006
+2025-08-18 06:27:17,489 13722 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 06:27:17,489 13722 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 06:27:17,612 13722 DEBUG ? odoo.service.server: on_close call <bound method Event.set of <threading.Event at 0x7710b3a6b260: unset>> 
+2025-08-18 06:27:17,613 13722 DEBUG ? odoo.service.server: on_close call <function _kick_all at 0x7710b3aae520> 
+2025-08-18 06:27:17,613 13722 DEBUG ? odoo.service.server: current thread: <_MainThread(MainThread, started 130913843900544)> 
+2025-08-18 06:27:17,614 13722 DEBUG ? odoo.service.server: process <_MainThread(MainThread, started 130913843900544)> (False) 
+2025-08-18 06:27:17,614 13722 DEBUG ? odoo.service.server: process <Thread(odoo.service.cron.cron0, started daemon 130913724786368)> (True) 
+2025-08-18 06:27:17,614 13722 DEBUG ? odoo.service.server: process <Thread(odoo.service.cron.cron1, started daemon 130913716393664)> (True) 
+2025-08-18 06:27:17,614 13722 DEBUG ? odoo.service.server: process <ImDispatch(odoo.addons.bus.models.bus.Bus, started daemon 130913708000960)> (True) 
+2025-08-18 06:27:17,615 13722 DEBUG ? odoo.service.server: process <Thread(odoo.service.http.request.130913585321664, started 130913585321664)> (False) 
+2025-08-18 06:27:17,615 13722 DEBUG ? odoo.service.server: join and sleep 
+2025-08-18 06:27:17,713 13722 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 6 connections  
+2025-08-18 06:27:17,713 13722 DEBUG ? odoo.service.server: -- 
+2025-08-18 07:17:11,293 51073 INFO ? odoo: Odoo version 18.0 
+2025-08-18 07:17:11,294 51073 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo.conf 
+2025-08-18 07:17:11,294 51073 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/odoo-18/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/odoo-18/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-08-18 07:17:11,294 51073 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-08-18 07:17:11,385 51073 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-08-18 07:17:11,465 51073 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-08-18 07:17:11,649 51073 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8069 
+2025-08-18 07:17:18,189 51073 INFO ? odoo.service.server: Initiating shutdown 
+2025-08-18 07:17:18,189 51073 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-08-18 07:17:18,657 51073 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 2 connections  

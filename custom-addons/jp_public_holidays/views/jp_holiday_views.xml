@@ -7,12 +7,17 @@
     <field name="arch" type="xml">
       <list string="Japan Holidays" create="false">
         <control>
-          <!-- Import wizard action defined in jp_actions.xml -->
+          <!-- Existing: Import -->
           <button name="%(jp_public_holidays.ir_action_import_wizard)d"
-                  type="action"
-                  class="btn-primary"
+                  type="action" class="btn-secondary"
                   string="Import JP Holidays"/>
+
+          <!-- NEW: Filter by Year (opens popup like action-92) -->
+          <button name="%(jp_public_holidays.ir_action_year_filter_wizard)d"
+                  type="action" class="btn-primary"
+                  string="Filter by Year"/>
         </control>
+
         <field name="date"/>
         <field name="name"/>
         <field name="year"/>
@@ -20,7 +25,7 @@
     </field>
   </record>
 
-  <!-- FORM view -->
+  <!-- FORM view (unchanged) -->
   <record id="view_jp_holiday_form" model="ir.ui.view">
     <field name="name">jp.holiday.form</field>
     <field name="model">jp.holiday</field>
@@ -37,29 +42,12 @@
     </field>
   </record>
 
-  <!-- SEARCH view -->
-  <record id="view_jp_holiday_search" model="ir.ui.view">
-    <field name="name">jp.holiday.search</field>
-    <field name="model">jp.holiday</field>
-    <field name="arch" type="xml">
-      <search string="Search Holidays">
-        <field name="name"/>
-        <field name="date"/>
-        <field name="year"/>
-        <!-- Uses 'default_year' from the action context -->
-        <filter string="Current Year" name="current_year"
-                domain="[('year', '=', context.get('default_year'))]"/>
-      </search>
-    </field>
-  </record>
-
-  <!-- ACTION: opens list view, pre-filtered to 2025 -->
+  <!-- ACTION-93: main list/form action -->
   <record id="action_jp_holiday" model="ir.actions.act_window">
     <field name="name">Japan Holidays</field>
     <field name="res_model">jp.holiday</field>
     <field name="view_mode">list,form</field>
     <field name="view_id" ref="view_jp_holiday_list"/>
-    <field name="search_view_id" ref="view_jp_holiday_search"/>
     <field name="context">
       {
         'search_default_current_year': 1,
@@ -68,7 +56,7 @@
     </field>
   </record>
 
-  <!-- MENUS -->
+  <!-- Menus -->
   <menuitem id="menu_jp_root" name="JP Holidays"/>
   <menuitem id="menu_jp_holidays" name="Holidays"
             parent="menu_jp_root" action="action_jp_holiday"/>

@@ -12,7 +12,6 @@
         </group>
         <footer>
           <button name="action_import" type="object" string="Import from CSV" class="btn-secondary"/>
-          <!-- NEW: fetch online -->
           <button name="action_fetch_api" type="object" string="Fetch from API" class="btn-primary"/>
           <button string="Close" special="cancel" class="btn-secondary"/>
         </footer>

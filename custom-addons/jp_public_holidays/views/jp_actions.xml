@@ -1,15 +1,27 @@
 <odoo>
-  <record id="action_jp_holiday" model="ir.actions.act_window">
-    <field name="name">Japan Holidays</field>
-    <field name="res_model">jp.holiday</field>
-    <field name="view_mode">list,form</field>
-    <field name="view_id" ref="view_jp_holiday_list"/>
-    <field name="search_view_id" ref="view_jp_holiday_search"/>
+  <!-- Window action for the Import Wizard -->
+  <record id="ir_action_import_wizard" model="ir.actions.act_window">
+    <field name="name">Import JP Holidays</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">jp.holiday.import.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
     <field name="context">
       {
-        'search_default_current_year': 1,
         'default_year': 2025
       }
     </field>
+    <!-- IMPORTANT: this ref must match the id in jp_holiday_import_wizard_views.xml -->
+    <field name="view_id" ref="view_jp_holiday_import_wizard"/>
+  </record>
+
+    <!-- Action-92-like popup: Filter by Year -->
+  <record id="ir_action_year_filter_wizard" model="ir.actions.act_window">
+    <field name="name">Filter by Year</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">jp.holiday.filter.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="view_id" ref="view_jp_holiday_filter_wizard"/>
   </record>
 </odoo>

@@ -1,0 +1,290 @@
+Below is a **ready-to-install Odoo 18** custom addon skeleton with all the must-have files. Copy this whole structure into a folder named `custom_addon` in your Odoo addons path.
+
+---
+
+## 📁 Folder Tree
+
+```
+custom_addon/
+│── __init__.py
+│── __manifest__.py
+│
+├── models/
+│   ├── __init__.py
+│   └── custom_model.py
+│
+├── views/
+│   ├── custom_model_views.xml
+│   └── menu.xml
+│
+├── security/
+│   └── ir.model.access.csv
+│
+└── demo/
+    └── demo.xml
+```
+
+---
+
+## 1) `__manifest__.py`
+
+```python
+# -*- coding: utf-8 -*-
+{
+    'name': "Custom Addon Name",
+    'summary': "Short summary about your module",
+    'description': """
+        Detailed description of what this custom addon does.
+        - Adds a simple model with menu, action, and views
+        - Ready for Odoo 18
+    """,
+
+    'author': "Your Name / Company",
+    'website': "https://www.yourcompany.com",
+
+    'category': 'Customizations',
+    'version': '18.0.1.0.0',
+
+    # Dependencies (important!)
+    'depends': [
+        'base',
+    ],
+
+    # Data always loaded
+    'data': [
+        'security/ir.model.access.csv',
+        'views/menu.xml',
+        'views/custom_model_views.xml',
+    ],
+
+    # Demo data (only for demo mode)
+    'demo': [
+        'demo/demo.xml',
+    ],
+
+    # Technical settings
+    'installable': True,
+    'application': True,   # Shows as a main app in Apps menu
+    'auto_install': False,
+
+    'license': 'LGPL-3',
+}
+```
+
+---
+
+## 2) `__init__.py`
+
+```python
+# -*- coding: utf-8 -*-
+from . import models
+```
+
+---
+
+## 3) `models/__init__.py`
+
+```python
+# -*- coding: utf-8 -*-
+from . import custom_model
+```
+
+---
+
+## 4) `models/custom_model.py`
+
+```python
+# -*- coding: utf-8 -*-
+from odoo import api, fields, models, _
+
+class CustomAddonModel(models.Model):
+    _name = 'custom.addon.model'
+    _description = 'Custom Addon Model'
+    _order = 'name asc, id desc'
+
+    name = fields.Char(string='Name', required=True, index=True)
+    active = fields.Boolean(default=True)
+    description = fields.Text()
+    date = fields.Date(string='Date')
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('confirmed', 'Confirmed'),
+        ('done', 'Done'),
+        ('cancelled', 'Cancelled'),
+    ], default='draft', tracking=True)
+
+    company_id = fields.Many2one('res.company', default=lambda self: self.env.company, index=True)
+    user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user)
+
+    _sql_constraints = [
+        ('name_uniq', 'unique(name)', 'Name must be unique!'),
+    ]
+
+    def action_confirm(self):
+        for rec in self:
+            rec.state = 'confirmed'
+
+    def action_done(self):
+        for rec in self:
+            rec.state = 'done'
+
+    def action_reset_to_draft(self):
+        for rec in self:
+            rec.state = 'draft'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state = 'cancelled'
+```
+
+---
+
+## 5) `security/ir.model.access.csv`
+
+> Gives basic access rights. Adjust per your needs.
+
+```csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_custom_model_user,access_custom_model_user,model_custom_addon_model,base.group_user,1,1,1,0
+access_custom_model_admin,access_custom_model_admin,model_custom_addon_model,base.group_system,1,1,1,1
+```
+
+---
+
+## 6) `views/menu.xml`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Top-level App Menu -->
+    <menuitem id="custom_addon_menu_root" name="Custom Addon" sequence="10"/>
+
+    <!-- Submenu placeholder (optional grouping) -->
+    <menuitem id="custom_addon_menu_configuration" name="Records" parent="custom_addon_menu_root" sequence="10"/>
+
+    <!-- Action menuitem defined in custom_model_views.xml (action_custom_addon_model) -->
+    <menuitem id="custom_addon_menu_records" name="All Records" parent="custom_addon_menu_configuration"
+              action="action_custom_addon_model" sequence="10"/>
+</odoo>
+```
+
+---
+
+## 7) `views/custom_model_views.xml`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_custom_addon_model_tree" model="ir.ui.view">
+        <field name="name">custom.addon.model.tree</field>
+        <field name="model">custom.addon.model</field>
+        <field name="arch" type="xml">
+            <tree string="Custom Records" create="true" edit="true">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="date"/>
+                <field name="user_id"/>
+                <field name="company_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_custom_addon_model_form" model="ir.ui.view">
+        <field name="name">custom.addon.model.form</field>
+        <field name="model">custom.addon.model</field>
+        <field name="arch" type="xml">
+            <form string="Custom Record">
+                <sheet>
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" states="draft" class="btn-primary"/>
+                        <button name="action_done" type="object" string="Mark Done" states="confirmed"/>
+                        <button name="action_reset_to_draft" type="object" string="Reset to Draft" states="confirmed,done,cancelled"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,confirmed" class="btn-secondary"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done,cancelled"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_custom_addon_model_search" model="ir.ui.view">
+        <field name="name">custom.addon.model.search</field>
+        <field name="model">custom.addon.model</field>
+        <field name="arch" type="xml">
+            <search string="Search Custom Records">
+                <field name="name"/>
+                <field name="state"/>
+                <filter string="My Records" name="my_records" domain="[('user_id', '=', uid)]"/>
+                <filter string="Active" name="active_only" domain="[('active', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" context="{'group_by': 'state'}"/>
+                    <filter string="Responsible" context="{'group_by': 'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_custom_addon_model" model="ir.actions.act_window">
+        <field name="name">Custom Records</field>
+        <field name="res_model">custom.addon.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first record
+            </p>
+        </field>
+    </record>
+</odoo>
+```
+
+---
+
+## 8) `demo/demo.xml` (optional)
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="custom_demo_record_1" model="custom.addon.model">
+        <field name="name">Demo Record 1</field>
+        <field name="description">This is a demo record.</field>
+        <field name="date">2025-01-01</field>
+        <field name="state">draft</field>
+    </record>
+</odoo>
+```
+
+---
+
+## ✅ Installation Tips (Odoo 18)
+
+1. Put `custom_addon` inside your addons path.
+2. Restart Odoo service and **Update Apps List**.
+3. Search for **Custom Addon Name** and click **Install**.
+
+> After install, open **Custom Addon → Records → All Records** from the top menu.
+
+---
+
+### Notes
+
+* The CSV header for access rights is required exactly as provided.
+* `model_custom_addon_model` is auto-generated from `_name = 'custom.addon.model'`.
+* Adjust permissions as needed (e.g., set `perm_unlink` to `0` for safety in production).
+* If you want separate manager permissions, create a custom security group and reference it in `ir.model.access.csv`.

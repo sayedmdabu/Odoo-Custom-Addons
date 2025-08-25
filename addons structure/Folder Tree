@@ -1,0 +1,57 @@
+my_module/
+│
+├── __init__.py                # Makes this folder a Python package
+├── __manifest__.py            # Module description, dependencies, metadata
+│
+├── controllers/               # HTTP controllers (website, REST APIs, etc.)
+│   └── __init__.py
+│   └── my_controller.py
+│
+├── models/                    # Business logic & ORM models
+│   └── __init__.py
+│   └── my_model.py
+│
+├── views/                     # XML views (forms, trees, kanban, etc.)
+│   └── my_model_views.xml
+│   └── templates.xml
+│
+├── data/                      # Initial data files (XML/CSV)
+│   └── my_data.xml
+│
+├── security/                  # Access control & security rules
+│   └── ir.model.access.csv
+│   └── security.xml
+│
+├── report/                    # QWeb or PDF reports
+│   └── report.xml
+│   └── report_template.xml
+│
+├── wizards/                   # Transient models (popup wizards)
+│   └── wizard_model.py
+│   └── wizard_views.xml
+│
+├── static/                    # Static files (JS, CSS, images)
+│   ├── description/           # Module icon, README images
+│   ├── img/                   # Custom images
+│   ├── src/                   # Web assets (JS/CSS)
+│   │   ├── js/
+│   │   ├── scss/
+│   │   └── xml/               # QWeb templates
+│
+├── demo/                      # Demo data (loaded in demo mode)
+│   └── demo_data.xml
+│
+└── tests/                     # Python test cases
+    └── test_my_module.py
+
+
+
+=========================================================================================
+Key Files
+
+__manifest__.py → Defines module name, version, dependencies, category, installable status, etc.
+__init__.py → Imports Python files so Odoo can load them.
+ir.model.access.csv → Controls model access per user groups.
+views/*.xml → Contains form/tree/kanban views, menus, and actions.
+static/src/ → Frontend assets for Odoo’s web client.
+wizards/ → For transient models that only live in memory during an action.

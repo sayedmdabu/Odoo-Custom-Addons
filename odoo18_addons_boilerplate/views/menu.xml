@@ -1,0 +1,5 @@
+<odoo>
+    <menuitem id="menu_my_module_root" name="My Module" sequence="10"/>
+    <menuitem id="menu_my_module" name="Records" parent="menu_my_module_root" action="action_my_module" sequence="10"/>
+    <menuitem id="menu_my_module_wizard" name="Quick Create" parent="menu_my_module_root" action="action_open_my_wizard" sequence="20"/>
+</odoo>

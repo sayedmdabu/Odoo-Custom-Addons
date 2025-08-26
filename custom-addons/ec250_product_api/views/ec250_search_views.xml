@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Reusable LIST view for ec250.api.search.result -->
+  <record id="view_ec250_api_search_result_list" model="ir.ui.view">
+    <field name="name">ec250.api.search.result.list</field>
+    <field name="model">ec250.api.search.result</field>
+    <field name="arch" type="xml">
+      <list create="0" delete="0">
+        <field name="ext_id"/>
+        <field name="sku"/>
+        <field name="supplier_sku"/>
+        <field name="supplier_comp_code"/>
+        <field name="supplier_maker_code"/>
+        <field name="sales_origin_maker_name"/>
+        <field name="maker_name"/>
+        <field name="name_jp"/>
+        <field name="name"/>
+        <field name="volume_unit_label"/>
+        <field name="list_price"/>
+      </list>
+    </field>
+  </record>
+
+  <!-- Wizard form showing results in the SAME dialog -->
+  <record id="view_ec250_api_search_wizard_form" model="ir.ui.view">
+    <field name="name">ec250.api.search.wizard.form</field>
+    <field name="model">ec250.api.search.wizard</field>
+    <field name="arch" type="xml">
+      <form string="EC250 Product Search" create="false" edit="false">
+        <group>
+          <group>
+            <field name="keywords"/>
+            <field name="supplier_sku"/>
+            <field name="name"/>
+          </group>
+          <group>
+            <field name="maker_name"/>
+            <field name="sales_origin_maker_name"/>
+            <field name="cas_code"/>
+          </group>
+        </group>
+
+        <group>
+          <group>
+            <field name="page"/>
+            <field name="limit"/>
+          </group>
+          <group>
+            <field name="total" readonly="1"/>
+          </group>
+        </group>
+
+        <footer>
+          <button name="action_search" type="object" string="Search" class="btn-primary"/>
+          <button string="Close" special="cancel" class="btn-secondary"/>
+        </footer>
+
+        <separator string="Results"/>
+
+        <!-- Inline list for One2many results (same wizard) -->
+        <field name="result_ids" nolabel="1" readonly="1"
+               options="{'no_create': True, 'no_edit': True, 'no_open': True}">
+          <list create="0" delete="0">
+            <field name="ext_id"/>
+            <field name="sku"/>
+            <field name="supplier_sku"/>
+            <field name="supplier_comp_code"/>
+            <field name="supplier_maker_code"/>
+            <field name="sales_origin_maker_name"/>
+            <field name="maker_name"/>
+            <field name="name_jp"/>
+            <field name="name"/>
+            <field name="volume_unit_label"/>
+            <field name="list_price"/>
+          </list>
+        </field>
+      </form>
+    </field>
+  </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem id="menu_ec250_api_root" name="EC250 API" sequence="20"/>
+  <record id="action_ec250_api_search" model="ir.actions.act_window">
+    <field name="name">EC250 Product Search</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">ec250.api.search.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+  <menuitem id="menu_ec250_api_search" name="Product Search"
+            parent="menu_ec250_api_root"
+            action="action_ec250_api_search"
+            sequence="20"/>
+</odoo>

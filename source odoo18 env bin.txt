@@ -1,0 +1,3 @@
+source odoo18-env/bin/activate
+
+python odoo-bin -c odoo.conf

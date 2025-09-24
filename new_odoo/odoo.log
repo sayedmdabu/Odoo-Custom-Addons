@@ -1,0 +1,383 @@
+2025-09-22 06:58:37,956 310155 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO" 
+2025-09-22 06:58:37,956 310155 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO" 
+2025-09-22 06:58:37,956 310155 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-09-22 06:58:37,956 310155 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG" 
+2025-09-22 06:58:37,956 310155 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO" 
+2025-09-22 06:58:37,956 310155 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2025-09-22 06:58:37,957 310155 INFO ? odoo: Odoo version 18.0 
+2025-09-22 06:58:37,957 310155 INFO ? odoo: Using configuration file at /home/sayed/Documents/sagbrain/Odoo/new_odoo/odoo.conf 
+2025-09-22 06:58:37,957 310155 INFO ? odoo: addons paths: ['/home/sayed/Documents/sagbrain/Odoo/new_odoo/odoo/addons', '/home/sayed/.local/share/Odoo/addons/18.0', '/home/sayed/Documents/sagbrain/Odoo/new_odoo/addons', '/home/sayed/Documents/sagbrain/Odoo/custom-addons'] 
+2025-09-22 06:58:37,957 310155 INFO ? odoo: database: odoo18@127.0.0.1:5432 
+2025-09-22 06:58:38,083 310155 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2025-09-22 06:58:38,120 310155 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/bin/wkhtmltoimage 
+2025-09-22 06:58:38,351 310155 DEBUG ? odoo.service.server: Setting signal handlers 
+2025-09-22 06:58:38,351 310155 INFO ? odoo.service.server: HTTP service (werkzeug) running on sayed-IdeaPad-Slim-3-15IRH8:8068 
+2025-09-22 06:58:38,355 310155 DEBUG ? odoo.service.server: cron0 started! 
+2025-09-22 06:58:38,355 310155 DEBUG ? odoo.service.server: cron1 started! 
+2025-09-22 06:58:38,536 310155 DEBUG ? odoo.http: HTTP sessions stored in: /home/sayed/.local/share/Odoo/sessions 
+2025-09-22 06:58:38,563 310155 DEBUG ? odoo.modules.registry: Multiprocess load registry signaling: [Registry: 12] [Cache default: 3] [Cache assets: 1] [Cache templates: 1] [Cache routing: 1] [Cache groups: 1] 
+2025-09-22 06:58:38,567 310155 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-09-22 06:58:38,567 310155 DEBUG ? odoo.modules.loading: Loading module base (1/1) 
+2025-09-22 06:58:38,574 310155 DEBUG ? odoo.modules.loading: Module base loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,574 310155 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-09-22 06:58:38,587 310155 WARNING ? odoo.modules.module: Missing `license` key in manifest for 'sale_external_product_search', defaulting to LGPL-3 
+2025-09-22 06:58:38,595 310155 DEBUG ? odoo.modules.loading: Updating graph with 54 more modules 
+2025-09-22 06:58:38,595 310155 INFO ? odoo.modules.loading: loading 55 modules... 
+2025-09-22 06:58:38,595 310155 DEBUG ? odoo.modules.loading: Loading module uom (2/55) 
+2025-09-22 06:58:38,598 310155 DEBUG ? odoo.modules.loading: Module uom loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,598 310155 DEBUG ? odoo.modules.loading: Loading module web (3/55) 
+2025-09-22 06:58:38,599 310155 DEBUG ? odoo.modules.loading: Module web loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,599 310155 DEBUG ? odoo.modules.loading: Loading module auth_totp (4/55) 
+2025-09-22 06:58:38,614 310155 DEBUG ? odoo.modules.loading: Module auth_totp loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,614 310155 DEBUG ? odoo.modules.loading: Loading module base_import (5/55) 
+2025-09-22 06:58:38,759 310155 DEBUG ? odoo.modules.loading: Module base_import loaded in 0.15s, 0 queries 
+2025-09-22 06:58:38,759 310155 DEBUG ? odoo.modules.loading: Loading module base_import_module (6/55) 
+2025-09-22 06:58:38,765 310155 DEBUG ? odoo.modules.loading: Module base_import_module loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,765 310155 DEBUG ? odoo.modules.loading: Loading module base_setup (7/55) 
+2025-09-22 06:58:38,773 310155 DEBUG ? odoo.modules.loading: Module base_setup loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,773 310155 DEBUG ? odoo.modules.loading: Loading module bus (8/55) 
+2025-09-22 06:58:38,786 310155 DEBUG ? odoo.modules.loading: Module bus loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,786 310155 DEBUG ? odoo.modules.loading: Loading module http_routing (9/55) 
+2025-09-22 06:58:38,792 310155 DEBUG ? odoo.modules.loading: Module http_routing loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,792 310155 DEBUG ? odoo.modules.loading: Loading module onboarding (10/55) 
+2025-09-22 06:58:38,796 310155 DEBUG ? odoo.modules.loading: Module onboarding loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,796 310155 DEBUG ? odoo.modules.loading: Loading module resource (11/55) 
+2025-09-22 06:58:38,809 310155 DEBUG ? odoo.modules.loading: Module resource loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,809 310155 DEBUG ? odoo.modules.loading: Loading module utm (12/55) 
+2025-09-22 06:58:38,815 310155 DEBUG ? odoo.modules.loading: Module utm loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,815 310155 DEBUG ? odoo.modules.loading: Loading module web_tour (13/55) 
+2025-09-22 06:58:38,817 310155 DEBUG ? odoo.modules.loading: Module web_tour loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,817 310155 DEBUG ? odoo.modules.loading: Loading module html_editor (14/55) 
+2025-09-22 06:58:38,897 310155 DEBUG ? odoo.modules.loading: Module html_editor loaded in 0.08s, 0 queries 
+2025-09-22 06:58:38,898 310155 DEBUG ? odoo.modules.loading: Loading module iap (15/55) 
+2025-09-22 06:58:38,898 310155 DEBUG ? odoo.modules.loading: Module iap loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,898 310155 DEBUG ? odoo.modules.loading: Loading module mail (16/55) 
+2025-09-22 06:58:38,903 310155 DEBUG ? odoo.modules.loading: Module mail loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,903 310155 DEBUG ? odoo.modules.loading: Loading module web_editor (17/55) 
+2025-09-22 06:58:38,915 310155 DEBUG ? odoo.modules.loading: Module web_editor loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,915 310155 DEBUG ? odoo.modules.loading: Loading module analytic (18/55) 
+2025-09-22 06:58:38,921 310155 DEBUG ? odoo.modules.loading: Module analytic loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,921 310155 DEBUG ? odoo.modules.loading: Loading module auth_signup (19/55) 
+2025-09-22 06:58:38,925 310155 DEBUG ? odoo.modules.loading: Module auth_signup loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,925 310155 DEBUG ? odoo.modules.loading: Loading module auth_totp_mail (20/55) 
+2025-09-22 06:58:38,927 310155 DEBUG ? odoo.modules.loading: Module auth_totp_mail loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,927 310155 DEBUG ? odoo.modules.loading: Loading module base_install_request (21/55) 
+2025-09-22 06:58:38,929 310155 DEBUG ? odoo.modules.loading: Module base_install_request loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,929 310155 DEBUG ? odoo.modules.loading: Loading module google_gmail (22/55) 
+2025-09-22 06:58:38,932 310155 DEBUG ? odoo.modules.loading: Module google_gmail loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,932 310155 DEBUG ? odoo.modules.loading: Loading module iap_mail (23/55) 
+2025-09-22 06:58:38,934 310155 DEBUG ? odoo.modules.loading: Module iap_mail loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,934 310155 DEBUG ? odoo.modules.loading: Loading module mail_bot (24/55) 
+2025-09-22 06:58:38,936 310155 DEBUG ? odoo.modules.loading: Module mail_bot loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,936 310155 DEBUG ? odoo.modules.loading: Loading module phone_validation (25/55) 
+2025-09-22 06:58:38,944 310155 DEBUG ? odoo.modules.loading: Module phone_validation loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,944 310155 DEBUG ? odoo.modules.loading: Loading module privacy_lookup (26/55) 
+2025-09-22 06:58:38,948 310155 DEBUG ? odoo.modules.loading: Module privacy_lookup loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,948 310155 DEBUG ? odoo.modules.loading: Loading module product (27/55) 
+2025-09-22 06:58:38,973 310155 DEBUG ? odoo.modules.loading: Module product loaded in 0.02s, 0 queries 
+2025-09-22 06:58:38,973 310155 DEBUG ? odoo.modules.loading: Loading module resource_mail (28/55) 
+2025-09-22 06:58:38,974 310155 DEBUG ? odoo.modules.loading: Module resource_mail loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,974 310155 DEBUG ? odoo.modules.loading: Loading module sales_team (29/55) 
+2025-09-22 06:58:38,979 310155 DEBUG ? odoo.modules.loading: Module sales_team loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,979 310155 DEBUG ? odoo.modules.loading: Loading module web_unsplash (30/55) 
+2025-09-22 06:58:38,983 310155 DEBUG ? odoo.modules.loading: Module web_unsplash loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,983 310155 DEBUG ? odoo.modules.loading: Loading module partner_autocomplete (31/55) 
+2025-09-22 06:58:38,988 310155 DEBUG ? odoo.modules.loading: Module partner_autocomplete loaded in 0.00s, 0 queries 
+2025-09-22 06:58:38,988 310155 DEBUG ? odoo.modules.loading: Loading module portal (32/55) 
+2025-09-22 06:58:38,997 310155 DEBUG ? odoo.modules.loading: Module portal loaded in 0.01s, 0 queries 
+2025-09-22 06:58:38,997 310155 DEBUG ? odoo.modules.loading: Loading module sms (33/55) 
+2025-09-22 06:58:39,012 310155 DEBUG ? odoo.modules.loading: Module sms loaded in 0.02s, 0 queries 
+2025-09-22 06:58:39,012 310155 DEBUG ? odoo.modules.loading: Loading module snailmail (34/55) 
+2025-09-22 06:58:39,018 310155 DEBUG ? odoo.modules.loading: Module snailmail loaded in 0.01s, 0 queries 
+2025-09-22 06:58:39,019 310155 DEBUG ? odoo.modules.loading: Loading module auth_totp_portal (35/55) 
+2025-09-22 06:58:39,020 310155 DEBUG ? odoo.modules.loading: Module auth_totp_portal loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,020 310155 DEBUG ? odoo.modules.loading: Loading module digest (36/55) 
+2025-09-22 06:58:39,024 310155 DEBUG ? odoo.modules.loading: Module digest loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,024 310155 DEBUG ? odoo.modules.loading: Loading module payment (37/55) 
+2025-09-22 06:58:39,038 310155 DEBUG ? odoo.modules.loading: Module payment loaded in 0.01s, 0 queries 
+2025-09-22 06:58:39,038 310155 DEBUG ? odoo.modules.loading: Loading module spreadsheet (38/55) 
+2025-09-22 06:58:39,042 310155 DEBUG ? odoo.modules.loading: Module spreadsheet loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,042 310155 DEBUG ? odoo.modules.loading: Loading module account (39/55) 
+2025-09-22 06:58:39,129 310155 DEBUG ? odoo.modules.loading: Module account loaded in 0.09s, 0 queries 
+2025-09-22 06:58:39,129 310155 DEBUG ? odoo.modules.loading: Loading module spreadsheet_dashboard (40/55) 
+2025-09-22 06:58:39,181 310155 DEBUG ? odoo.modules.loading: Module spreadsheet_dashboard loaded in 0.05s, 0 queries 
+2025-09-22 06:58:39,182 310155 DEBUG ? odoo.modules.loading: Loading module account_edi_ubl_cii (41/55) 
+2025-09-22 06:58:39,198 310155 DEBUG ? odoo.modules.loading: Module account_edi_ubl_cii loaded in 0.02s, 0 queries 
+2025-09-22 06:58:39,198 310155 DEBUG ? odoo.modules.loading: Loading module account_payment (42/55) 
+2025-09-22 06:58:39,205 310155 DEBUG ? odoo.modules.loading: Module account_payment loaded in 0.01s, 0 queries 
+2025-09-22 06:58:39,205 310155 DEBUG ? odoo.modules.loading: Loading module l10n_bd (43/55) 
+2025-09-22 06:58:39,207 310155 DEBUG ? odoo.modules.loading: Module l10n_bd loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,207 310155 DEBUG ? odoo.modules.loading: Loading module snailmail_account (44/55) 
+2025-09-22 06:58:39,209 310155 DEBUG ? odoo.modules.loading: Module snailmail_account loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,209 310155 DEBUG ? odoo.modules.loading: Loading module spreadsheet_account (45/55) 
+2025-09-22 06:58:39,211 310155 DEBUG ? odoo.modules.loading: Module spreadsheet_account loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,211 310155 DEBUG ? odoo.modules.loading: Loading module spreadsheet_dashboard_account (46/55) 
+2025-09-22 06:58:39,212 310155 DEBUG ? odoo.modules.loading: Module spreadsheet_dashboard_account loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,212 310155 DEBUG ? odoo.modules.loading: Loading module sale (47/55) 
+2025-09-22 06:58:39,232 310155 DEBUG ? odoo.modules.loading: Module sale loaded in 0.02s, 0 queries 
+2025-09-22 06:58:39,233 310155 DEBUG ? odoo.modules.loading: Loading module product_search (48/55) 
+2025-09-22 06:58:39,234 310155 DEBUG ? odoo.modules.loading: Module product_search loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,234 310155 DEBUG ? odoo.modules.loading: Loading module sale_async_emails (49/55) 
+2025-09-22 06:58:39,235 310155 DEBUG ? odoo.modules.loading: Module sale_async_emails loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,235 310155 DEBUG ? odoo.modules.loading: Loading module sale_edi_ubl (50/55) 
+2025-09-22 06:58:39,237 310155 DEBUG ? odoo.modules.loading: Module sale_edi_ubl loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,237 310155 DEBUG ? odoo.modules.loading: Loading module sale_management (51/55) 
+2025-09-22 06:58:39,243 310155 DEBUG ? odoo.modules.loading: Module sale_management loaded in 0.01s, 0 queries 
+2025-09-22 06:58:39,243 310155 DEBUG ? odoo.modules.loading: Loading module sale_sms (52/55) 
+2025-09-22 06:58:39,243 310155 DEBUG ? odoo.modules.loading: Module sale_sms loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,243 310155 DEBUG ? odoo.modules.loading: Loading module spreadsheet_dashboard_sale (53/55) 
+2025-09-22 06:58:39,244 310155 DEBUG ? odoo.modules.loading: Module spreadsheet_dashboard_sale loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,244 310155 DEBUG ? odoo.modules.loading: Loading module sale_external_product_search (54/55) 
+2025-09-22 06:58:39,245 310155 DEBUG ? odoo.modules.loading: Module sale_external_product_search loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,245 310155 DEBUG ? odoo.modules.loading: Loading module sale_pdf_quote_builder (55/55) 
+2025-09-22 06:58:39,250 310155 DEBUG ? odoo.modules.loading: Module sale_pdf_quote_builder loaded in 0.00s, 0 queries 
+2025-09-22 06:58:39,250 310155 INFO ? odoo.modules.loading: 55 modules loaded in 0.65s, 0 queries (+0 extra) 
+2025-09-22 06:58:39,365 310155 INFO ? odoo.modules.loading: Modules loaded. 
+2025-09-22 06:58:39,368 310155 INFO ? odoo.modules.registry: Registry loaded in 0.831s 
+2025-09-22 06:58:39,369 310155 INFO odoo18_1 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-09-22 06:58:39,405 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:39] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 20 0.021 0.848
+2025-09-22 06:58:39,418 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:39] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.001 0.003
+2025-09-22 06:58:39,731 310155 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-09-22 06:58:45,274 310155 DEBUG ? odoo.modules.module: module __pycache__: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:45,274 310155 DEBUG ? odoo.modules.module: module __init__.py: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:45,303 310155 DEBUG ? odoo.modules.module: module website_twitter: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:45,408 310155 DEBUG ? odoo.modules.module: module l10n_es_pos_tbai: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:45,466 310155 WARNING ? odoo.modules.module: Missing `license` key in manifest for 'sale_order_line_search', defaulting to LGPL-3 
+2025-09-22 06:58:45,472 310155 DEBUG odoo18_1 odoo.api: call sale.order().web_search_read(count_limit=10001, domain=[['user_id', '=', 2]], limit=80, offset=0, order='', specification={'message_needaction': {}, 'currency_id': {'fields': {}}, 'name': {}, 'create_date': {}, 'commitment_date': {}, 'expected_date': {}, 'partner_id': {'fields': {'display_name': {}}}, 'user_id': {'fields': {'display_name': {}}}, 'activity_ids': {'fields': {}}, 'activity_exception_decoration': {}, 'activity_exception_icon': {}, 'activity_state': {}, 'activity_summary': {}, 'activity_type_icon': {}, 'activity_type_id': {'fields': {'display_name': {}}}, 'team_id': {'fields': {'display_name': {}}}, 'company_id': {'fields': {}}, 'amount_untaxed': {}, 'amount_tax': {}, 'amount_total': {}, 'tag_ids': {'fields': {'display_name': {}, 'color': {}}}, 'state': {}, 'invoice_status': {}, 'client_order_ref': {}, 'validity_date': {}}) 
+2025-09-22 06:58:45,496 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:45] "POST /web/dataset/call_kw/sale.order/web_search_read HTTP/1.1" 200 - 23 0.012 0.216
+2025-09-22 06:58:51,985 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:51] "POST /web/action/load HTTP/1.1" 200 - 10 0.005 0.008
+2025-09-22 06:58:52,004 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().get_views(options={'action_id': 39, 'embedded_action_id': False, 'embedded_parent_res_id': False, 'load_filters': True, 'toolbar': True}, views=[[False, 'kanban'], [False, 'list'], [False, 'form'], [95, 'search']]) 
+2025-09-22 06:58:52,112 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:52] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 58 0.047 0.064
+2025-09-22 06:58:52,149 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().search_panel_select_range('module_type', category_domain=[], enable_counters=False, expand=True, filter_domain=[], hierarchize=True, limit=200, search_domain=[]) 
+2025-09-22 06:58:52,170 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=[]) 
+2025-09-22 06:58:52,171 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:52] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.001 0.045
+2025-09-22 06:58:52,172 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().web_search_read(count_limit=10001, domain=[], limit=80, offset=0, order='', specification={'to_buy': {}, 'name': {}, 'state': {}, 'summary': {}, 'website': {}, 'application': {}, 'module_type': {}, 'icon': {}, 'icon_flag': {}, 'shortdesc': {}}) 
+2025-09-22 06:58:52,182 310155 DEBUG odoo18_1 odoo.modules.module: module mrp_workorder: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,185 310155 DEBUG odoo18_1 odoo.modules.module: module accountant: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,185 310155 DEBUG odoo18_1 odoo.modules.module: module knowledge: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,187 310155 DEBUG odoo18_1 odoo.modules.module: module timesheet_grid: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,188 310155 DEBUG odoo18_1 odoo.modules.module: module web_studio: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,190 310155 DEBUG odoo18_1 odoo.modules.module: module industry_fsm: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,193 310155 DEBUG odoo18_1 odoo.modules.module: module sign: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,194 310155 DEBUG odoo18_1 odoo.modules.module: module helpdesk: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,194 310155 DEBUG odoo18_1 odoo.modules.module: module sale_subscription: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,194 310155 DEBUG odoo18_1 odoo.modules.module: module quality_control: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,195 310155 DEBUG odoo18_1 odoo.modules.module: module planning: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,197 310155 DEBUG odoo18_1 odoo.modules.module: module mrp_plm: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,198 310155 DEBUG odoo18_1 odoo.modules.module: module social: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,198 310155 DEBUG odoo18_1 odoo.modules.module: module hr_appraisal: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,198 310155 DEBUG odoo18_1 odoo.modules.module: module marketing_automation: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,201 310155 DEBUG odoo18_1 odoo.modules.module: module appointment: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,202 310155 DEBUG odoo18_1 odoo.modules.module: module web_mobile: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,202 310155 DEBUG odoo18_1 odoo.modules.module: module stock_barcode: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,203 310155 DEBUG odoo18_1 odoo.modules.module: module voip: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,205 310155 DEBUG odoo18_1 odoo.modules.module: module sale_amazon: no manifest file found ('__manifest__.py', '__openerp__.py') 
+2025-09-22 06:58:52,214 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:52] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 5 0.007 0.076
+2025-09-22 06:58:52,228 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:58:52] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 54 0.037 0.065
+2025-09-22 06:59:07,812 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().web_search_read(count_limit=10001, domain=[], limit=80, offset=0, order='', specification={'to_buy': {}, 'name': {}, 'state': {}, 'summary': {}, 'website': {}, 'application': {}, 'module_type': {}, 'icon': {}, 'icon_flag': {}, 'shortdesc': {}}) 
+2025-09-22 06:59:07,815 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=[]) 
+2025-09-22 06:59:07,881 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:07] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 4 0.022 0.050
+2025-09-22 06:59:07,895 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:07] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 52 0.053 0.038
+2025-09-22 06:59:09,451 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().search_panel_select_range('category_id', category_domain=[], enable_counters=True, expand=False, filter_domain=[], hierarchize=True, limit=200, search_domain=['|', '|', ['summary', 'ilike', 'Sale External Product Search'], ['shortdesc', 'ilike', 'Sale External Product Search'], ['name', 'ilike', 'Sale External Product Search']]) 
+2025-09-22 06:59:09,526 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:09] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 52 0.053 0.034
+2025-09-22 06:59:09,540 310155 DEBUG odoo18_1 odoo.api: call ir.module.module().web_search_read(count_limit=10001, domain=['|', '|', ['summary', 'ilike', 'Sale External Product Search'], ['shortdesc', 'ilike', 'Sale External Product Search'], ['name', 'ilike', 'Sale External Product Search']], limit=80, offset=0, order='', specification={'to_buy': {}, 'name': {}, 'state': {}, 'summary': {}, 'website': {}, 'application': {}, 'module_type': {}, 'icon': {}, 'icon_flag': {}, 'shortdesc': {}}) 
+2025-09-22 06:59:09,548 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:09] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.005 0.007
+2025-09-22 06:59:26,231 310155 DEBUG odoo18_1 odoo.api: call ir.module.module(654,).button_immediate_upgrade() 
+2025-09-22 06:59:26,233 310155 INFO odoo18_1 odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_upgrade on ['Sale External Product Search'] to user sayed@sagbrain.com #2 via 127.0.0.1 
+2025-09-22 06:59:26,234 310155 INFO odoo18_1 odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Sale External Product Search'] to user sayed@sagbrain.com #2 via 127.0.0.1 
+2025-09-22 06:59:26,234 310155 INFO odoo18_1 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Sale External Product Search'] to user sayed@sagbrain.com #2 via 127.0.0.1 
+2025-09-22 06:59:26,994 310155 INFO odoo18_1 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user sayed@sagbrain.com #2 via 127.0.0.1 
+2025-09-22 06:59:27,023 310155 DEBUG odoo18_1 odoo.modules.registry: Multiprocess load registry signaling: [Registry: 12] [Cache default: 3] [Cache assets: 1] [Cache templates: 1] [Cache routing: 1] [Cache groups: 1] 
+2025-09-22 06:59:27,032 310155 INFO odoo18_1 odoo.modules.loading: loading 1 modules... 
+2025-09-22 06:59:27,032 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module base (1/1) 
+2025-09-22 06:59:27,039 310155 DEBUG odoo18_1 odoo.modules.loading: Module base loaded in 0.01s, 0 queries 
+2025-09-22 06:59:27,039 310155 INFO odoo18_1 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-09-22 06:59:27,058 310155 INFO odoo18_1 odoo.modules.loading: updating modules list 
+2025-09-22 06:59:27,060 310155 INFO odoo18_1 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2025-09-22 06:59:27,679 310155 DEBUG odoo18_1 odoo.modules.loading: Updating graph with 54 more modules 
+2025-09-22 06:59:27,680 310155 INFO odoo18_1 odoo.modules.loading: loading 55 modules... 
+2025-09-22 06:59:27,680 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module uom (2/55) 
+2025-09-22 06:59:27,680 310155 DEBUG odoo18_1 odoo.modules.loading: Module uom loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,680 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module web (3/55) 
+2025-09-22 06:59:27,682 310155 DEBUG odoo18_1 odoo.modules.loading: Module web loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,682 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module auth_totp (4/55) 
+2025-09-22 06:59:27,682 310155 DEBUG odoo18_1 odoo.modules.loading: Module auth_totp loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,682 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module base_import (5/55) 
+2025-09-22 06:59:27,683 310155 DEBUG odoo18_1 odoo.modules.loading: Module base_import loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,684 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module base_import_module (6/55) 
+2025-09-22 06:59:27,684 310155 DEBUG odoo18_1 odoo.modules.loading: Module base_import_module loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,684 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module base_setup (7/55) 
+2025-09-22 06:59:27,684 310155 DEBUG odoo18_1 odoo.modules.loading: Module base_setup loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,684 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module bus (8/55) 
+2025-09-22 06:59:27,685 310155 DEBUG odoo18_1 odoo.modules.loading: Module bus loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,685 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module http_routing (9/55) 
+2025-09-22 06:59:27,685 310155 DEBUG odoo18_1 odoo.modules.loading: Module http_routing loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,685 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module onboarding (10/55) 
+2025-09-22 06:59:27,685 310155 DEBUG odoo18_1 odoo.modules.loading: Module onboarding loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,685 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module resource (11/55) 
+2025-09-22 06:59:27,686 310155 DEBUG odoo18_1 odoo.modules.loading: Module resource loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,686 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module utm (12/55) 
+2025-09-22 06:59:27,686 310155 DEBUG odoo18_1 odoo.modules.loading: Module utm loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,686 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module web_tour (13/55) 
+2025-09-22 06:59:27,686 310155 DEBUG odoo18_1 odoo.modules.loading: Module web_tour loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,686 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module html_editor (14/55) 
+2025-09-22 06:59:27,687 310155 DEBUG odoo18_1 odoo.modules.loading: Module html_editor loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,687 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module iap (15/55) 
+2025-09-22 06:59:27,687 310155 DEBUG odoo18_1 odoo.modules.loading: Module iap loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,687 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module mail (16/55) 
+2025-09-22 06:59:27,691 310155 DEBUG odoo18_1 odoo.modules.loading: Module mail loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,691 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module web_editor (17/55) 
+2025-09-22 06:59:27,695 310155 DEBUG odoo18_1 odoo.modules.loading: Module web_editor loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,695 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module analytic (18/55) 
+2025-09-22 06:59:27,696 310155 DEBUG odoo18_1 odoo.modules.loading: Module analytic loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,696 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module auth_signup (19/55) 
+2025-09-22 06:59:27,696 310155 DEBUG odoo18_1 odoo.modules.loading: Module auth_signup loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,696 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module auth_totp_mail (20/55) 
+2025-09-22 06:59:27,696 310155 DEBUG odoo18_1 odoo.modules.loading: Module auth_totp_mail loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,696 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module base_install_request (21/55) 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Module base_install_request loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module google_gmail (22/55) 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Module google_gmail loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module iap_mail (23/55) 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Module iap_mail loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module mail_bot (24/55) 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Module mail_bot loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,697 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module phone_validation (25/55) 
+2025-09-22 06:59:27,700 310155 DEBUG odoo18_1 odoo.modules.loading: Module phone_validation loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,700 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module privacy_lookup (26/55) 
+2025-09-22 06:59:27,700 310155 DEBUG odoo18_1 odoo.modules.loading: Module privacy_lookup loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,700 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module product (27/55) 
+2025-09-22 06:59:27,701 310155 DEBUG odoo18_1 odoo.modules.loading: Module product loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,701 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module resource_mail (28/55) 
+2025-09-22 06:59:27,702 310155 DEBUG odoo18_1 odoo.modules.loading: Module resource_mail loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,702 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sales_team (29/55) 
+2025-09-22 06:59:27,702 310155 DEBUG odoo18_1 odoo.modules.loading: Module sales_team loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,702 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module web_unsplash (30/55) 
+2025-09-22 06:59:27,702 310155 DEBUG odoo18_1 odoo.modules.loading: Module web_unsplash loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,702 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module partner_autocomplete (31/55) 
+2025-09-22 06:59:27,703 310155 DEBUG odoo18_1 odoo.modules.loading: Module partner_autocomplete loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,703 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module portal (32/55) 
+2025-09-22 06:59:27,703 310155 DEBUG odoo18_1 odoo.modules.loading: Module portal loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,703 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sms (33/55) 
+2025-09-22 06:59:27,706 310155 DEBUG odoo18_1 odoo.modules.loading: Module sms loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,707 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module snailmail (34/55) 
+2025-09-22 06:59:27,707 310155 DEBUG odoo18_1 odoo.modules.loading: Module snailmail loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,707 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module auth_totp_portal (35/55) 
+2025-09-22 06:59:27,707 310155 DEBUG odoo18_1 odoo.modules.loading: Module auth_totp_portal loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,707 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module digest (36/55) 
+2025-09-22 06:59:27,708 310155 DEBUG odoo18_1 odoo.modules.loading: Module digest loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,708 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module payment (37/55) 
+2025-09-22 06:59:27,708 310155 DEBUG odoo18_1 odoo.modules.loading: Module payment loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,708 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module spreadsheet (38/55) 
+2025-09-22 06:59:27,709 310155 DEBUG odoo18_1 odoo.modules.loading: Module spreadsheet loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,709 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module account (39/55) 
+2025-09-22 06:59:27,712 310155 DEBUG odoo18_1 odoo.modules.loading: Module account loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,713 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module spreadsheet_dashboard (40/55) 
+2025-09-22 06:59:27,713 310155 DEBUG odoo18_1 odoo.modules.loading: Module spreadsheet_dashboard loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,713 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module account_edi_ubl_cii (41/55) 
+2025-09-22 06:59:27,714 310155 DEBUG odoo18_1 odoo.modules.loading: Module account_edi_ubl_cii loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,714 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module account_payment (42/55) 
+2025-09-22 06:59:27,714 310155 DEBUG odoo18_1 odoo.modules.loading: Module account_payment loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,714 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module l10n_bd (43/55) 
+2025-09-22 06:59:27,714 310155 DEBUG odoo18_1 odoo.modules.loading: Module l10n_bd loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,714 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module snailmail_account (44/55) 
+2025-09-22 06:59:27,715 310155 DEBUG odoo18_1 odoo.modules.loading: Module snailmail_account loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,715 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module spreadsheet_account (45/55) 
+2025-09-22 06:59:27,715 310155 DEBUG odoo18_1 odoo.modules.loading: Module spreadsheet_account loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,715 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module spreadsheet_dashboard_account (46/55) 
+2025-09-22 06:59:27,715 310155 DEBUG odoo18_1 odoo.modules.loading: Module spreadsheet_dashboard_account loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,715 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sale (47/55) 
+2025-09-22 06:59:27,716 310155 DEBUG odoo18_1 odoo.modules.loading: Module sale loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,716 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module product_search (48/55) 
+2025-09-22 06:59:27,716 310155 DEBUG odoo18_1 odoo.modules.loading: Module product_search loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,716 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sale_async_emails (49/55) 
+2025-09-22 06:59:27,716 310155 DEBUG odoo18_1 odoo.modules.loading: Module sale_async_emails loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,716 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sale_edi_ubl (50/55) 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Module sale_edi_ubl loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sale_management (51/55) 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Module sale_management loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sale_sms (52/55) 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Module sale_sms loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module spreadsheet_dashboard_sale (53/55) 
+2025-09-22 06:59:27,717 310155 DEBUG odoo18_1 odoo.modules.loading: Module spreadsheet_dashboard_sale loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,717 310155 INFO odoo18_1 odoo.modules.loading: Loading module sale_external_product_search (54/55) 
+2025-09-22 06:59:27,762 310155 DEBUG odoo18_1 odoo.models: Patching res.partner.bank.partner_country_name with translate=True 
+2025-09-22 06:59:27,762 310155 DEBUG odoo18_1 odoo.models: Patching res.config.settings.report_footer with translate=True 
+2025-09-22 06:59:27,763 310155 DEBUG odoo18_1 odoo.models: Patching res.config.settings.invoice_terms with translate=True 
+2025-09-22 06:59:27,763 310155 DEBUG odoo18_1 odoo.models: Patching res.config.settings.invoice_terms_html with translate=True 
+2025-09-22 06:59:27,768 310155 DEBUG odoo18_1 odoo.models: Patching base.document.layout.report_header with translate=True 
+2025-09-22 06:59:27,768 310155 DEBUG odoo18_1 odoo.models: Patching base.document.layout.report_footer with translate=True 
+2025-09-22 06:59:27,768 310155 DEBUG odoo18_1 odoo.models: Patching base.document.layout.company_details with translate=True 
+2025-09-22 06:59:27,772 310155 DEBUG odoo18_1 odoo.models: Patching iap.account.description with translate=True 
+2025-09-22 06:59:27,780 310155 DEBUG odoo18_1 odoo.models: Patching product.template.uom_name with translate=True 
+2025-09-22 06:59:27,783 310155 DEBUG odoo18_1 odoo.models: Patching product.pricelist.item.product_uom with translate=True 
+2025-09-22 06:59:27,784 310155 DEBUG odoo18_1 odoo.models: Patching product.template.attribute.value.name with translate=True 
+2025-09-22 06:59:27,790 310155 DEBUG odoo18_1 odoo.models: Patching account.move.line.account_name with translate=True 
+2025-09-22 06:59:27,794 310155 DEBUG odoo18_1 odoo.models: Patching account.report.expression.report_line_name with translate=True 
+2025-09-22 06:59:27,797 310155 DEBUG odoo18_1 odoo.models: Patching spreadsheet.dashboard.share.name with translate=True 
+2025-09-22 06:59:27,842 310155 DEBUG odoo18_1 odoo.models: Patching res.partner.bank.partner_country_name with translate=True 
+2025-09-22 06:59:27,842 310155 DEBUG odoo18_1 odoo.models: Patching res.config.settings.report_footer with translate=True 
+2025-09-22 06:59:27,843 310155 DEBUG odoo18_1 odoo.models: Patching res.config.settings.invoice_terms with translate=True 
+2025-09-22 06:59:27,843 310155 DEBUG odoo18_1 odoo.models: Patching res.config.settings.invoice_terms_html with translate=True 
+2025-09-22 06:59:27,849 310155 DEBUG odoo18_1 odoo.models: Patching base.document.layout.report_header with translate=True 
+2025-09-22 06:59:27,849 310155 DEBUG odoo18_1 odoo.models: Patching base.document.layout.report_footer with translate=True 
+2025-09-22 06:59:27,849 310155 DEBUG odoo18_1 odoo.models: Patching base.document.layout.company_details with translate=True 
+2025-09-22 06:59:27,851 310155 DEBUG odoo18_1 odoo.models: Patching iap.account.description with translate=True 
+2025-09-22 06:59:27,861 310155 DEBUG odoo18_1 odoo.models: Patching product.template.uom_name with translate=True 
+2025-09-22 06:59:27,864 310155 DEBUG odoo18_1 odoo.models: Patching product.pricelist.item.product_uom with translate=True 
+2025-09-22 06:59:27,865 310155 DEBUG odoo18_1 odoo.models: Patching product.template.attribute.value.name with translate=True 
+2025-09-22 06:59:27,872 310155 DEBUG odoo18_1 odoo.models: Patching account.move.line.account_name with translate=True 
+2025-09-22 06:59:27,877 310155 DEBUG odoo18_1 odoo.models: Patching account.report.expression.report_line_name with translate=True 
+2025-09-22 06:59:27,880 310155 DEBUG odoo18_1 odoo.models: Patching spreadsheet.dashboard.share.name with translate=True 
+2025-09-22 06:59:27,912 310155 INFO odoo18_1 odoo.modules.registry: module sale_external_product_search: creating or updating database tables 
+2025-09-22 06:59:27,995 310155 INFO odoo18_1 odoo.modules.loading: Module sale_external_product_search loaded in 0.28s, 46 queries (+46 other) 
+2025-09-22 06:59:27,995 310155 DEBUG odoo18_1 odoo.modules.loading: Loading module sale_pdf_quote_builder (55/55) 
+2025-09-22 06:59:27,996 310155 DEBUG odoo18_1 odoo.modules.loading: Module sale_pdf_quote_builder loaded in 0.00s, 0 queries 
+2025-09-22 06:59:27,996 310155 INFO odoo18_1 odoo.modules.loading: 55 modules loaded in 0.32s, 46 queries (+46 extra) 
+2025-09-22 06:59:28,214 310155 DEBUG odoo18_1 odoo.models: column index is in the table auth_totp_device but not in the corresponding object auth_totp.device 
+2025-09-22 06:59:28,214 310155 DEBUG odoo18_1 odoo.models: column key is in the table auth_totp_device but not in the corresponding object auth_totp.device 
+2025-09-22 06:59:28,246 310155 DEBUG odoo18_1 odoo.models: column web is in the table ir_module_module but not in the corresponding object ir.module.module 
+2025-09-22 06:59:28,288 310155 DEBUG odoo18_1 odoo.models: column password is in the table res_users but not in the corresponding object res.users 
+2025-09-22 06:59:28,288 310155 DEBUG odoo18_1 odoo.models: column totp_secret is in the table res_users but not in the corresponding object res.users 
+2025-09-22 06:59:28,288 310155 DEBUG odoo18_1 odoo.models: column index is in the table res_users_apikeys but not in the corresponding object res.users.apikeys 
+2025-09-22 06:59:28,288 310155 DEBUG odoo18_1 odoo.models: column key is in the table res_users_apikeys but not in the corresponding object res.users.apikeys 
+2025-09-22 06:59:28,365 310155 DEBUG odoo18_1 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) will execute at 2025-09-22 07:00:28.327700 
+2025-09-22 06:59:28,414 310155 DEBUG odoo18_1 odoo.modules.registry: Invalidating templates model caches from write /home/sayed/Documents/sagbrain/Odoo/new_odoo/odoo/addons/base/models/ir_ui_view.py:533 
+2025-09-22 06:59:28,425 310155 DEBUG odoo18_1 odoo.modules.registry: Invalidating templates model caches from write /home/sayed/Documents/sagbrain/Odoo/new_odoo/odoo/addons/base/models/ir_ui_view.py:533 
+2025-09-22 06:59:28,979 310155 INFO odoo18_1 odoo.modules.loading: Modules loaded. 
+2025-09-22 06:59:28,988 310155 INFO odoo18_1 odoo.modules.registry: Registry changed, signaling through the database 
+2025-09-22 06:59:28,989 310155 INFO odoo18_1 odoo.modules.registry: Registry loaded in 1.971s 
+2025-09-22 06:59:28,989 310155 INFO odoo18_1 odoo.addons.base.models.ir_module: getting next ir.actions.todo() 
+2025-09-22 06:59:28,995 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:28] "POST /web/dataset/call_button/ir.module.module/button_immediate_upgrade HTTP/1.1" 200 - 4456 1.388 1.378
+2025-09-22 06:59:29,018 310155 INFO odoo18_1 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-09-22 06:59:29,132 310155 WARNING odoo18_1 odoo.modules.module: Missing `license` key in manifest for 'sale_external_product_search', defaulting to LGPL-3 
+2025-09-22 06:59:29,388 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:29] "GET /odoo HTTP/1.1" 200 - 101 0.037 0.336
+2025-09-22 06:59:29,462 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:29] "GET /web/assets/debug/web.assets_web.css HTTP/1.1" 304 - 3 0.003 0.032
+2025-09-22 06:59:29,468 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:29] "GET /web/assets/debug/web.assets_web.js HTTP/1.1" 304 - 3 0.010 0.030
+2025-09-22 06:59:29,484 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:29] "GET /web/assets/debug/web.assets_web_print.css HTTP/1.1" 304 - 3 0.001 0.007
+2025-09-22 06:59:29,597 310155 DEBUG odoo18_1 odoo.addons.http_routing.models.ir_http: '/.well-known/appspecific/com.chrome.devtools.json' (lang: 'en') no lang in url and default website, continue 
+2025-09-22 06:59:29,786 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:29] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 - 63 0.027 0.168
+2025-09-22 06:59:30,189 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 9 0.011 0.013
+2025-09-22 06:59:30,195 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "GET /bus/websocket_worker_bundle?v=18.0-5 HTTP/1.1" 304 - 4 0.002 0.009
+2025-09-22 06:59:30,297 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 8 0.010 0.020
+2025-09-22 06:59:30,311 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "POST /web/action/load HTTP/1.1" 200 - 7 0.027 0.011
+2025-09-22 06:59:30,314 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1 0.002 0.010
+2025-09-22 06:59:30,366 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "POST /mail/data HTTP/1.1" 200 - 27 0.038 0.043
+2025-09-22 06:59:30,477 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "POST /mail/data HTTP/1.1" 200 - 39 0.026 0.032
+2025-09-22 06:59:30,565 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:30] "POST /mail/inbox/messages HTTP/1.1" 200 - 5 0.006 0.007
+2025-09-22 06:59:32,179 310155 INFO odoo18_1 werkzeug: 127.0.0.1 - - [22/Sep/2025 06:59:32] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.006
+2025-09-22 06:59:38,430 310155 DEBUG ? odoo.service.server: cron0 polling for jobs 
+2025-09-22 06:59:39,454 310155 DEBUG ? odoo.service.server: cron1 polling for jobs 
+2025-09-22 07:00:00,713 310155 INFO ? odoo.service.server: Initiating shutdown 
+2025-09-22 07:00:00,714 310155 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-09-22 07:00:01,203 310155 DEBUG ? odoo.service.server: on_close call <bound method Event.set of <threading.Event at 0x760e65fc5220: unset>> 
+2025-09-22 07:00:01,204 310155 DEBUG ? odoo.service.server: on_close call <function _kick_all at 0x760e65fce7a0> 
+2025-09-22 07:00:01,204 310155 DEBUG ? odoo.service.server: current thread: <_MainThread(MainThread, started 129804362895488)> 
+2025-09-22 07:00:01,205 310155 DEBUG ? odoo.service.server: process <_MainThread(MainThread, started 129804362895488)> (False) 
+2025-09-22 07:00:01,205 310155 DEBUG ? odoo.service.server: process <Thread(odoo.service.cron.cron0, started daemon 129804243297984)> (True) 
+2025-09-22 07:00:01,205 310155 DEBUG ? odoo.service.server: process <Thread(odoo.service.cron.cron1, started daemon 129804234905280)> (True) 
+2025-09-22 07:00:01,205 310155 DEBUG ? odoo.service.server: process <ImDispatch(odoo.addons.bus.models.bus.Bus, started daemon 129804112230080)> (True) 
+2025-09-22 07:00:01,205 310155 DEBUG ? odoo.service.server: process <Thread(odoo.service.http.request.129804095444672, started 129804095444672)> (False) 
+2025-09-22 07:00:01,205 310155 DEBUG ? odoo.service.server: join and sleep 
+2025-09-22 07:00:01,283 310155 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 5 connections  
+2025-09-22 07:00:01,283 310155 DEBUG ? odoo.service.server: -- 

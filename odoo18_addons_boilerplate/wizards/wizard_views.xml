@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_my_wizard_form" model="ir.ui.view">
+        <field name="name">my.module.wizard.form</field>
+        <field name="model">my.module.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Quick Create">
+                <group>
+                    <field name="name"/>
+                    <field name="note"/>
+                </group>
+                <footer>
+                    <button name="action_apply" type="object" string="Create" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_open_my_wizard" model="ir.actions.act_window">
+        <field name="name">Quick Create</field>
+        <field name="res_model">my.module.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

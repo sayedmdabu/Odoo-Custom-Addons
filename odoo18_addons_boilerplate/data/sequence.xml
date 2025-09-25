@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_my_module" model="ir.sequence">
+            <field name="name">My Module Sequence</field>
+            <field name="code">my.module</field>
+            <field name="prefix">MM%(y)s/</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <report
+        id="report_my_module"
+        model="my.module"
+        string="My Module Report"
+        report_type="qweb-pdf"
+        name="odoo18_addon_boilerplate.report_my_module_document"
+        file="odoo18_addon_boilerplate.report_my_module_document"
+    />
+</odoo>

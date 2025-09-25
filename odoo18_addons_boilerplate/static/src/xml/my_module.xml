@@ -1,0 +1,5 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="odoo18_addon_boilerplate.MyQWebSample">
+        <div class="o_my_module_highlight">Hello from QWeb!</div>
+    </t>
+</templates>

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 from . import ec250_api_mixin
-from . import sale_order_line
+from . import ec250_product_result

@@ -1,3 +1,2 @@
 # -*- coding: utf-8 -*-
 from . import ec250_search_wizard
-from . import ec250_product_result

@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_sale_order_form_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Example: add button in header -->
+            <xpath expr="//header" position="inside">
+                <button name="action_external_product_search"
+                        string="EC250"
+                        type="object"
+                        class="btn-primary"
+                        icon="fa-search"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

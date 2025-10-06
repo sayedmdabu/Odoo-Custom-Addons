@@ -8,12 +8,12 @@
     'author': 'Md Abu Sayed Sagbrain',
     'website': 'https://sagbrain.com',
     'sequence': 3,
-    'depends': ['sale', 'product', 'uom'],
+    'depends': ['sale', 'product'],
     'data': [
         'views/sale_order_views.xml',
-        'views/product_template_views.xml',
     ],
     'installable': True,
     'application': False,
+    'auto_install': False,
     'license': 'LGPL-3',
 }

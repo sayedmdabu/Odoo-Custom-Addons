@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- FORM: add your API fields to product.template form -->
+  <record id="view_product_template_form_api_info" model="ir.ui.view">
+    <field name="name">product.template.form.api.info</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+      <!-- place under Barcode -->
+      <xpath expr="//field[@name='barcode']" position="after">
+        <separator string="External Product Info"/>
+        <field name="api_sku" readonly="1"/>
+        <field name="api_supplier_sku" readonly="1"/>
+        <field name="api_maker" readonly="1"/>
+        <field name="api_volume" readonly="1"/>
+        <field name="api_list_price" readonly="1"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>

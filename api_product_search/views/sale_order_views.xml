@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_sale_order_form_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            
+            <!-- Insert SKU before product_id -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_id']" position="before">
+                <field name="sku" string="SKU"/>
+            </xpath>
+            
+            <!-- Insert Supplier SKU after tax_id -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_id']" position="after">
+                <field name="supplier_sku" string="Supplier SKU"/>
+            </xpath>
+            
+            <!-- Insert Supplier Maker after tax_id -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='tax_id']" position="before">
+                <field name="maker" string="Maker"/>
+            </xpath>
+            
+            <!-- Insert Supplier Volume/Unit after tax_id -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='tax_id']" position="after">
+                <field name="volume" string="Volume/Unit"/>
+            </xpath>
+            
+            <!-- Insert Supplier List Price after tax_id -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='price_unit']" position="after">
+                <field name="list_price" string="List Price"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

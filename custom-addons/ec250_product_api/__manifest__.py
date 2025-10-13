@@ -3,7 +3,7 @@
     "name": "EC250 Product API Search",
     "summary": "Search & display products from external EC API (token auto-refresh).",
     "version": "18.0.1.0.1",
-    "author": "SAGBRAIN CORPORATION / Md Abu Sayed",
+    "author": "Md Abu Sayed",
     "website": "https://sagbrain.com",
     "category": "Tools",
     "license": "LGPL-3",

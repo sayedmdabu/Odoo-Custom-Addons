@@ -3,7 +3,7 @@
     "version": "18.0.1.0.0",
     "category": "Localization",
     "summary": "Japan public holidays with CSV import and API fetch",
-    "author": "Sagbrain - Md Abu Sayed",
+    "author": "Md Abu Sayed",
     "license": "LGPL-3",
     "depends": ["base", "web"],
     "data": [

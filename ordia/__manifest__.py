@@ -13,11 +13,10 @@
     """,
     'author': 'Md Abu Sayed',
     'website': 'https://www.sagbrain.com',
-    'depends': ['base', 'web', 'mail'],
+    'depends': ['base', 'web'],
     'data': [
         'security/ir.model.access.csv',
         'views/ordia_login_views.xml',
-        'views/ordia_cart_temp_views.xml',
         'views/ordia_cart_views.xml',
         'views/ordia_menus.xml',
     ],

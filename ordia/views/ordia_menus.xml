@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_ordia_root"
+              name="ORDIA"
+              sequence="10"/>
+
+    <!-- Login Menu -->
+    <menuitem id="menu_ordia_login"
+              name="Login"
+              parent="menu_ordia_root"
+              action="action_ordia_login"
+              sequence="1"/>
+
+    <!-- Cart Menu -->
+    <menuitem id="menu_ordia_cart"
+              name="Carts"
+              parent="menu_ordia_root"
+              action="action_ordia_cart"
+              sequence="2"/>
+</odoo>

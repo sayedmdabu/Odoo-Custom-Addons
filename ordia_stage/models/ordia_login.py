@@ -3,7 +3,6 @@
 # ========================================
 import requests
 import logging
-from datetime import datetime, timedelta
 from odoo import models, fields, api
 from odoo.exceptions import UserError
 import urllib3
@@ -13,92 +12,19 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 _logger = logging.getLogger(__name__)
 
-class OrdiaLogin(models.Model):
+class OrdiaLogin(models.TransientModel):
     _name = 'ordia.login'
-    _description = 'ORDIA Login Token Storage'
+    _description = 'ORDIA Login'
 
     username = fields.Char(string='Username', required=True)
-    password = fields.Char(string='Password')
-    token = fields.Char(string='API Token')
-    token_expiry = fields.Datetime(string='Token Expiry Time')
-    dealer_co_cd = fields.Char(string='Dealer Code')
-    user_name = fields.Char(string='User Name')
-    user_email = fields.Char(string='User Email')
-    last_login = fields.Datetime(string='Last Login', default=fields.Datetime.now)
-    
-    @api.model
-    def check_valid_token(self):
-        """Check if current user has a valid token"""
-        current_user = self.env.user
-        
-        # Search for existing login record for this user
-        login_record = self.search([
-            ('create_uid', '=', current_user.id)
-        ], limit=1, order='last_login desc')
-        
-        if login_record and login_record.token and login_record.token_expiry:
-            # Check if token is still valid (within 3 hours)
-            now = fields.Datetime.now()
-            if login_record.token_expiry > now:
-                _logger.info(f"Valid token found for user {current_user.name}")
-                return {
-                    'has_valid_token': True,
-                    'token': login_record.token,
-                    'dealer_co_cd': login_record.dealer_co_cd,
-                    'user_name': login_record.user_name,
-                    'user_email': login_record.user_email,
-                    'login_id': login_record.id,
-                }
-            else:
-                _logger.info(f"Token expired for user {current_user.name}")
-        
-        return {'has_valid_token': False}
-    
-    @api.model
-    def action_open_ordia(self):
-        """Main entry point - check token and redirect accordingly"""
-        token_check = self.check_valid_token()
-        
-        if token_check['has_valid_token']:
-            # Token is valid, go directly to cart search
-            search_wizard = self.env['ordia.cart.search'].create({
-                'token': token_check['token'],
-                'dealer_co_cd': token_check['dealer_co_cd'],
-            })
-            
-            context = {
-                'default_token': token_check['token'],
-                'default_dealer_co_cd': token_check['dealer_co_cd'],
-                'default_user_name': token_check['user_name'],
-                'default_user_email': token_check['user_email'],
-            }
-            
-            return {
-                'name': 'ORDIA Cart Search',
-                'type': 'ir.actions.act_window',
-                'res_model': 'ordia.cart.search',
-                'res_id': search_wizard.id,
-                'view_mode': 'form',
-                'target': 'new',
-                'context': context,
-            }
-        else:
-            # No valid token, show login form
-            return {
-                'name': 'ORDIA Login',
-                'type': 'ir.actions.act_window',
-                'res_model': 'ordia.login',
-                'view_mode': 'form',
-                'target': 'new',
-                'context': {'default_username': ''},
-            }
+    password = fields.Char(string='Password', required=True)
     
     def action_login(self):
         """Authenticate with ORDIA API, fetch nonyu data, and redirect to cart list"""
         self.ensure_one()
         
         # Step 1: Authenticate
-        url = "https://ordia-api.bio-purchase.com/api/ec-users/authenticate"
+        url = "https://api-staging.bio-purchase.com/api/ec-users/authenticate"
         payload = {
             'username': self.username,
             'password': self.password
@@ -123,35 +49,6 @@ class OrdiaLogin(models.Model):
                 
                 # Step 2: Fetch nonyu data
                 self._fetch_and_save_nonyu_data(token, dealer_co_cd)
-                
-                # Step 3: Save/Update token with 3 hours expiry
-                token_expiry = fields.Datetime.now() + timedelta(hours=3)
-                current_user = self.env.user
-                
-                # Check if login record already exists for this user
-                existing_login = self.search([
-                    ('create_uid', '=', current_user.id)
-                ], limit=1, order='last_login desc')
-                
-                login_vals = {
-                    'username': self.username,
-                    'password': self.password,  # In production, consider encrypting this
-                    'token': token,
-                    'token_expiry': token_expiry,
-                    'dealer_co_cd': dealer_co_cd,
-                    'user_name': user_info.get('name', ''),
-                    'user_email': user_info.get('email', ''),
-                    'last_login': fields.Datetime.now(),
-                }
-                
-                if existing_login:
-                    # Update existing record
-                    existing_login.write(login_vals)
-                    _logger.info(f"Updated token for user: {current_user.name}")
-                else:
-                    # Create new record
-                    self.create(login_vals)
-                    _logger.info(f"Created new token record for user: {current_user.name}")
                 
                 # Store token and user info in context
                 context = {
@@ -191,7 +88,7 @@ class OrdiaLogin(models.Model):
         """Fetch nonyu data from API and save to res.partner"""
         
         # Build URL with parameters
-        url = "https://ordia-api.bio-purchase.com/ordia/v1.0/nonyu-lists"
+        url = "https://api-staging.bio-purchase.com/ordia/v1.0/nonyu-lists"
         params = {
             'token': token,
             'dealer_co_cd': dealer_co_cd

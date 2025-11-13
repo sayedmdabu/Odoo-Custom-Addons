@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Temporary Cart List View - Only Save to Database Button -->
+    <record id="view_ordia_cart_temp_list" model="ir.ui.view">
+        <field name="name">ordia.cart.temp.list</field>
+        <field name="model">ordia.cart.temp</field>
+        <field name="arch" type="xml">
+            <list string="ORDIA Carts - Temporary Results" create="false" delete="true">
+                <!-- Only Save to Database Button -->
+                <header>
+                    <button name="action_save_to_database" 
+                            string="💾 Save Selected to Database" 
+                            type="object" 
+                            class="btn-primary"
+                            help="Save selected carts permanently to database"/>
+                </header>
+                
+                <field name="cart_seq"/>
+                <field name="order_date"/>
+                <field name="maker_name"/>
+                <field name="item_sku"/>
+                <field name="item_name"/>
+                <field name="capacity"/>
+                <field name="suryo"/>
+                <field name="tanka" widget="monetary" options="{'currency_field': 'False'}"/>
+                <field name="total_amount" sum="Total" widget="monetary" options="{'currency_field': 'False'}"/>
+                <field name="customer_kikanname"/>
+                <field name="customer_tanto"/>
+                <field name="customer_email"/>
+                <field name="api_status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Temporary Cart Form View -->
+    <record id="view_ordia_cart_temp_form" model="ir.ui.view">
+        <field name="name">ordia.cart.temp.form</field>
+        <field name="model">ordia.cart.temp</field>
+        <field name="arch" type="xml">
+            <form string="Temporary Cart Details" create="false">
+                <header>
+                    <button name="action_save_to_database" 
+                            string="💾 Save to Database" 
+                            type="object" 
+                            class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_save_to_database" icon="fa-save">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Save to</span>
+                                <span class="o_stat_text">Database</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="cart_seq" readonly="1"/>
+                        </h1>
+                        <div class="alert alert-warning" role="alert">
+                            ⚠️ This is a temporary record. Click "Save to Database" to store permanently.
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Order Information">
+                            <field name="order_date"/>
+                            <field name="api_status"/>
+                            <field name="dealer_co_cd"/>
+                            <field name="customer_kikanname"/>
+                            <field name="customer_sosikiname"/>
+                            <field name="customer_tanto"/>
+                            <field name="customer_email"/>
+                        </group>
+                        <group string="Product Information">
+                            <field name="maker_name"/>
+                            <field name="item_sku"/>
+                            <field name="supp_sku"/>
+                            <field name="manufacturer_sku"/>
+                            <field name="supplier_system_sku"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Product Details">
+                            <field name="item_name"/>
+                            <field name="capacity"/>
+                            <field name="volume_unit_label"/>
+                            <field name="kikaku"/>
+                        </group>
+                        <group string="Pricing">
+                            <field name="suryo"/>
+                            <field name="teika_tanka" widget="monetary" options="{'currency_field': 'False'}"/>
+                            <field name="tanka" widget="monetary" options="{'currency_field': 'False'}"/>
+                            <field name="total_amount" widget="monetary" options="{'currency_field': 'False'}"/>
+                        </group>
+                    </group>
+                    <group string="Delivery Address">
+                        <field name="nonyu_address1"/>
+                        <field name="nonyu_address2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Temporary Cart Search View -->
+    <record id="view_ordia_cart_temp_search" model="ir.ui.view">
+        <field name="name">ordia.cart.temp.search</field>
+        <field name="model">ordia.cart.temp</field>
+        <field name="arch" type="xml">
+            <search string="Search Temporary Carts">
+                <field name="cart_seq"/>
+                <field name="item_sku"/>
+                <field name="item_name"/>
+                <field name="maker_name"/>
+                <field name="customer_email"/>
+                <field name="customer_kikanname"/>
+                <field name="dealer_co_cd"/>
+                <field name="api_status"/>
+                
+                <separator/>
+                <filter string="Group by Maker" name="group_by_maker" context="{'group_by': 'maker_name'}"/>
+                <filter string="Group by Customer" name="group_by_customer" context="{'group_by': 'customer_kikanname'}"/>
+                <filter string="Group by API Status" name="group_by_api_status" context="{'group_by': 'api_status'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

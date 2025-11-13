@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ordia_login,access_ordia_login,model_ordia_login,base.group_user,1,1,1,1
+access_ordia_cart_temp,access_ordia_cart_temp,model_ordia_cart_temp,base.group_user,1,1,1,1
 access_ordia_cart,access_ordia_cart,model_ordia_cart,base.group_user,1,1,1,1
 access_ordia_cart_search,access_ordia_cart_search,model_ordia_cart_search,base.group_user,1,1,1,1

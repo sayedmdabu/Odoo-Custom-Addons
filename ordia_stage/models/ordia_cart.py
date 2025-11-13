@@ -36,7 +36,7 @@ class OrdiaCartSearch(models.TransientModel):
         self.ensure_one()
         
         # Build URL with parameters
-        url = "https://ordia-api.bio-purchase.com/ordia/get_carts_ai"
+        url = "https://api-staging.bio-purchase.com/ordia/get_carts_ai"
         params = {
             'token': self.token,
             'dealer_co_cd': self.dealer_co_cd,
@@ -299,7 +299,7 @@ class OrdiaCartTemp(models.TransientModel):
     def _update_erp_flag(self, token, cart_seq_list):
         """Update ERP flag in ORDIA API after successful sale order creation"""
         try:
-            url = f"https://ordia-api.bio-purchase.com/ordia/post_ai_carts_erp_flag_update?token={token}"
+            url = f"https://api-staging.bio-purchase.com/ordia/post_ai_carts_erp_flag_update?token={token}"
             
             # Prepare payload with only selected cart sequences
             post_ai_carts = []

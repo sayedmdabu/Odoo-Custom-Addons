@@ -54,13 +54,13 @@ class ProductTemplate(models.Model):
                 # Create product in Odoo if not already present
                 if product_data.get("http") == 200 and product_data.get("total", 0) > 0:
                     for p in product_data["product_list"]:
-                        product = self.search([('api_sku', '=', p['sku'])], limit=1)
+                        product = self.search([('api_supplier_sku', '=', p['supplier_sku'])], limit=1)
                         if not product:
                             product = self.create({
                                 "name": p['name_jp'],
                                 "list_price": p.get("list_price", 0.0),  # Odoo native list_price
-                                "api_sku": p["sku"],
-                                "api_supplier_sku": p.get("supplier_sku"),
+                                "api_supplier_sku": p["supplier_sku"],
+                                "api_sku": p.get("sku"),
                                 "api_maker": p.get("maker_name") or "Unknown",  # fallback if missing
                                 "api_volume": p.get("volume_unit_label"),
                                 "api_list_price": p.get("list_price", 0.0),
@@ -83,8 +83,8 @@ class ProductTemplate(models.Model):
         result = []
         for product in self:
             parts = []
-            if product.api_sku:
-                parts.append(f"[{product.api_sku}]")
+            if product.api_supplier_sku:
+                parts.append(f"[{product.api_supplier_sku}]")
             if product.name:
                 parts.append(product.name)
             if product.api_volume:

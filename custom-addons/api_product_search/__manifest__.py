@@ -5,7 +5,7 @@
     'category': 'Sales',
     'summary': 'Search products from external API in sales orders',
     'description': 'Integrates with external API to search products in sales order lines',
-    'author': 'Md Abu Sayed',
+    'author': 'Md Abu Sayed Sagbrain',
     'website': 'https://sagbrain.com',
     'sequence': 3,
     'depends': ['sale', 'product', 'uom'],

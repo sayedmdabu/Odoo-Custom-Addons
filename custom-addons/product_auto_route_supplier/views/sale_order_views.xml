@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    ============================================================================
+    Sale Order Automatic Discount Integration - Odoo 18
+    ============================================================================
+    Shows:
+    - Unit Price (original)
+    - Discount % 
+    - Discounted Price (after discount)
+    - Discount Amount (savings)
+    - Amount (final total = Discounted Price × Quantity)
+    ============================================================================
+    -->
+
+    <record id="view_order_form_inherit_discount" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.discount</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            
+            <!-- ============================================================
+                 PART 1: Add "Reapply Auto Discounts" Button
+            -->
+            <xpath expr="//button[@name='action_quotation_send']" position="before">
+                <button name="action_reapply_all_discounts"
+                        string="Reapply Auto Discounts"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="state not in ('draft','sent')"
+                        help="Recalculate automatic discounts based on current rates"/>
+            </xpath>
+
+            <!-- ============================================================
+                 PART 2: Order Line LIST View - Add Discount Columns
+            -->
+            
+            <!-- Add Discounted Price after Unit Price -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='price_unit']" position="after">
+                <field name="effective_unit_price" 
+                       string="Discounted Price" 
+                       readonly="1"
+                       optional="show"
+                       widget="monetary"
+                       decoration-info="discount &gt; 0"
+                       help="Unit price after applying discount"/>
+            </xpath>
+
+            <!-- Add Discount Amount before price_subtotal -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='price_subtotal']" position="before">
+                <field name="discount_amount" 
+                       string="Discount Amt" 
+                       readonly="1"
+                       optional="show"
+                       widget="monetary"
+                       decoration-success="discount_amount &gt; 0"
+                       help="Total amount saved due to discount"/>
+            </xpath>
+
+            <!-- Add Discount Source and Rate after Discount % -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='discount']" position="after">
+                <field name="applied_rate_source" 
+                       string="Source" 
+                       readonly="1"
+                       optional="hide"
+                       help="Origin of the discount"/>
+                
+                <field name="applied_rate_value" 
+                       string="Rate" 
+                       readonly="1"
+                       optional="hide"
+                       help="The multiplier rate (e.g., 0.60 = 40% discount)"/>
+            </xpath>
+
+            <!-- ============================================================
+                 PART 3: Order Line FORM View (Popup Editor)
+            -->
+            <xpath expr="//field[@name='order_line']/form//group" position="inside">
+                <group string="Price Breakdown" colspan="2" name="price_breakdown">
+                    <field name="price_unit" string="List Price" readonly="1"/>
+                    <field name="discount" string="Discount %"/>
+                    <field name="effective_unit_price" 
+                           string="Discounted Unit Price"
+                           readonly="1"
+                           widget="monetary"
+                           decoration-info="discount &gt; 0"
+                           help="Price per unit after discount"/>
+                    <field name="discount_amount" 
+                           string="Total Discount Amount"
+                           readonly="1"
+                           widget="monetary"
+                           help="Total savings on this line"/>
+                </group>
+                
+                <group string="Automatic Discount Information" 
+                       colspan="2" 
+                       name="auto_discount_info"
+                       invisible="applied_rate_source == False">
+                    
+                    <field name="applied_rate_source" 
+                           string="Discount Source"
+                           readonly="1"/>
+                    
+                    <field name="applied_rate_value" 
+                           string="Applied Rate"
+                           readonly="1"
+                           help="The multiplier rate applied (e.g., 0.60 = 40% discount)"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

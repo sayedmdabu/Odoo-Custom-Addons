@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_supplier_external_mapping_admin,supplier.external.mapping admin,model_supplier_external_mapping,base.group_system,1,1,1,1
+access_supplier_external_mapping_purchase_manager,supplier.external.mapping purchase manager,model_supplier_external_mapping,purchase.group_purchase_manager,1,1,1,1
+access_supplier_external_mapping_purchase_user,supplier.external.mapping purchase user,model_supplier_external_mapping,purchase.group_purchase_user,1,0,0,0
+access_price_group_rate_admin,price.group.rate admin,model_price_group_rate,base.group_system,1,1,1,1
+access_price_group_rate_purchase_manager,price.group.rate purchase manager,model_price_group_rate,purchase.group_purchase_manager,1,1,1,1
+access_price_group_rate_purchase_user,price.group.rate purchase user,model_price_group_rate,purchase.group_purchase_user,1,0,0,0
+access_maker_rate_admin,maker.rate admin,model_maker_rate,base.group_system,1,1,1,1
+access_maker_rate_purchase_manager,maker.rate purchase manager,model_maker_rate,purchase.group_purchase_manager,1,1,1,1
+access_maker_rate_purchase_user,maker.rate purchase user,model_maker_rate,purchase.group_purchase_user,1,0,0,0

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- List View (Changed from Tree in Odoo 18) -->
+    <record id="view_maker_rate_tree" model="ir.ui.view">
+        <field name="name">maker.rate.tree</field>
+        <field name="model">maker.rate</field>
+        <field name="arch" type="xml">
+            <list string="Manufacturer Discount Rate" editable="bottom">
+                <field name="supplier_comp_code"/>
+                <field name="maker_name"/>
+                <field name="rate" widget="float" digits="[5, 4]"/>
+                <field name="valid_from"/>
+                <field name="valid_to"/>
+                <field name="active" widget="boolean_toggle"/>
+                <field name="note" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_maker_rate_form" model="ir.ui.view">
+        <field name="name">maker.rate.form</field>
+        <field name="model">maker.rate</field>
+        <field name="arch" type="xml">
+            <form string="Manufacturer Discount Rate">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" 
+                                invisible="active"/>
+                    </div>
+                    
+                    <group>
+                        <group name="helper_fields" string="Quick Entry (Optional)">
+                            <field name="supplier_comp_code_selection" 
+                                   placeholder="Select supplier code..."/>
+                            <field name="maker_name_selection" 
+                                   placeholder="Select manufacturer..."/>
+                            <field name="discount_percent_selection" 
+                                   placeholder="Select discount %..."/>
+                        </group>
+                        <group name="validity">
+                            <label for="valid_from" string="Validity Period"/>
+                            <div class="o_row">
+                                <field name="valid_from" placeholder="From"/>
+                                <span class="px-2">~</span>
+                                <field name="valid_to" placeholder="To"/>
+                            </div>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    
+                    <separator string="Rate Details (Required)"/>
+                    <group>
+                        <group name="identification">
+                            <field name="supplier_comp_code" 
+                                   placeholder="Enter supplier code or use dropdown above"
+                                   required="1"/>
+                            <field name="maker_name" 
+                                   placeholder="Enter manufacturer name or use dropdown above"
+                                   required="1"/>
+                        </group>
+                        <group name="rate_info">
+                            <field name="rate" widget="float" digits="[5, 4]" required="1"/>
+                            <field name="discount_percent" readonly="1"/>
+                        </group>
+                    </group>
+                    
+                    <group name="notes">
+                        <field name="note" placeholder="Notes..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_maker_rate_search" model="ir.ui.view">
+        <field name="name">maker.rate.search</field>
+        <field name="model">maker.rate</field>
+        <field name="arch" type="xml">
+            <search string="Search Manufacturer Rate">
+                <field name="supplier_comp_code"/>
+                <field name="maker_name"/>
+                
+                <filter string="Active" name="filter_active" 
+                        domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="filter_inactive" 
+                        domain="[('active', '=', False)]"/>
+                <filter string="Currently Valid" name="filter_valid_now" 
+                        domain="['|', ('valid_from', '=', False), ('valid_from', '&lt;=', context_today().strftime('%Y-%m-%d')),
+                                 '|', ('valid_to', '=', False), ('valid_to', '&gt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="Expired" name="filter_expired" 
+                        domain="[('valid_to', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+                
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Supplier" name="group_supplier" 
+                            context="{'group_by': 'supplier_comp_code'}"/>
+                    <filter string="Manufacturer" name="group_maker" 
+                            context="{'group_by': 'maker_name'}"/>
+                    <filter string="Active Status" name="group_active" 
+                            context="{'group_by': 'active'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_maker_rate" model="ir.actions.act_window">
+        <field name="name">Manufacturer Discount Rate</field>
+        <field name="res_model">maker.rate</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new manufacturer rate
+            </p>
+            <p>
+                Define discount rates by manufacturer. 
+                These rates are used when price group rates are not available.
+                Example: rate = 0.80 means 20% discount from list price.
+            </p>
+        </field>
+    </record>
+
+</odoo>

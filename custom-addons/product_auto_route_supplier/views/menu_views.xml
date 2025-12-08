@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Main Menu under Configuration -->
+    <menuitem id="menu_rate_master_root"
+              name="Rate Master Management"
+              parent="stock.menu_stock_config_settings"
+              sequence="50"/>
+    
+    <!-- External Integration Master submenu -->
+    <!-- <menuitem id="menu_external_integration"
+              name="External Integration Master"
+              parent="menu_rate_master_root"
+              sequence="10"/> -->
+    
+    <!-- <menuitem id="menu_supplier_external_mapping"
+              name="External Code → Vendor Conversion"
+              parent="menu_external_integration"
+              action="action_supplier_external_mapping"
+              sequence="10"/> -->
+    
+    <!-- Rate Master submenu -->
+    <menuitem id="menu_rate_masters"
+              name="Discount Rates"
+              parent="menu_rate_master_root"
+              sequence="20"/>
+    
+    <menuitem id="menu_price_group_rate"
+              name="Price Group Discount Rate"
+              parent="menu_rate_masters"
+              action="action_price_group_rate"
+              sequence="10"/>
+    
+    <menuitem id="menu_maker_rate"
+              name="Manufacturer Discount Rate"
+              parent="menu_rate_masters"
+              action="action_maker_rate"
+              sequence="20"/>
+
+</odoo>

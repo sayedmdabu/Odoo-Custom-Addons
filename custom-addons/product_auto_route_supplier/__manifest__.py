@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Product Auto Route & Supplier Management',
-    'version': '18.0..0.1',
+    'version': '18.0.1.0.0',
     'category': 'Inventory/Purchase',
     'summary': 'Automatic routing, vendor mapping, purchase price rules, and sales discount automation',
     'description': """

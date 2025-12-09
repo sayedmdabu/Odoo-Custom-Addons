@@ -1,16 +1,21 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Product Auto Route & Supplier Management',
-    'version': '18.0.1.0.0',
+    'version': '18.0.3.0.1',
     'category': 'Inventory/Purchase',
     'summary': 'Automatic routing, vendor mapping, purchase price rules, and sales discount automation',
     'description': """
 Product Auto Route & Supplier Management
 =========================================
 Features:
-• Price Group Rate management  
-• Manufacturer Rate management  
-• Auto sales discount based on rate masters  
+- Auto Buy Route assignment  
+- Auto MTO Route assignment (OCA stock_route_mto)  
+- Supplier code ↔ Vendor mapping  
+- Price Group Rate management  
+- Manufacturer Rate management  
+- Auto purchase price calculation  
+- Auto supplierinfo creation/update  
+- Auto sales discount based on rate masters  
 """,
     'author': 'SAGBRAIN CORPORATION / Md Abu Sayed',
     'website': 'https://sagbrain.com',
@@ -18,12 +23,12 @@ Features:
 
     'depends': [
         'base',
+        'contacts',  # Added this
         'product',
         'purchase',
         'sale',
         'stock',
         'purchase_stock',
-        'stock_route_mto',
         'mail',
     ],
 

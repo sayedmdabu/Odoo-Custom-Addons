@@ -18,4 +18,11 @@
               parent="menu_ordia_root"
               action="action_ordia_cart"
               sequence="2"/>
+
+    <!-- Clear Token Menu -->
+    <menuitem id="menu_ordia_clear_token"
+              name="Clear Token (Logout)"
+              parent="menu_ordia_root"
+              action="action_ordia_clear_token"
+              sequence="99"/>
 </odoo>

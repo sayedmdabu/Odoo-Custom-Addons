@@ -242,6 +242,47 @@ class OrdiaLogin(models.Model):
             _logger.error(f"Nonyu Data Processing Error: {str(e)}")
             # Don't raise error here, just log it - we still want login to succeed
     
+    @api.model
+    def action_clear_token(self):
+        """Manually clear/logout current user's token"""
+        current_user = self.env.user
+        
+        # Search for existing login records for this user
+        login_records = self.search([
+            ('create_uid', '=', current_user.id)
+        ])
+        
+        if login_records:
+            # Clear token and expiry
+            login_records.write({
+                'token': False,
+                'token_expiry': False,
+                'last_login': False,
+            })
+            _logger.info(f"Cleared tokens for user: {current_user.name}")
+            
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': 'Token Cleared',
+                    'message': 'Your ORDIA authentication token has been cleared successfully. You will need to login again.',
+                    'type': 'success',
+                    'sticky': False,
+                }
+            }
+        else:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': 'No Token Found',
+                    'message': 'No authentication token found for your account.',
+                    'type': 'info',
+                    'sticky': False,
+                }
+            }
+    
     def _create_or_update_partner(self, nonyu_data):
         """Create or update res.partner record from nonyu data"""
         

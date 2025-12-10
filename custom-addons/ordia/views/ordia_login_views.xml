@@ -40,4 +40,12 @@
         <field name="state">code</field>
         <field name="code">action = model.action_open_ordia()</field>
     </record>
+
+    <!-- Clear Token Action -->
+    <record id="action_ordia_clear_token" model="ir.actions.server">
+        <field name="name">Clear Token (Logout)</field>
+        <field name="model_id" ref="model_ordia_login"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_clear_token()</field>
+    </record>
 </odoo>

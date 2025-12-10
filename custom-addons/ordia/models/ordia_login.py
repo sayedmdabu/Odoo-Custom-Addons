@@ -125,7 +125,8 @@ class OrdiaLogin(models.Model):
                 self._fetch_and_save_nonyu_data(token, dealer_co_cd)
                 
                 # Step 3: Save/Update token with 3 hours expiry
-                token_expiry = fields.Datetime.now() + timedelta(hours=3)
+                # token_expiry = fields.Datetime.now() + timedelta(hours=3)
+                token_expiry = fields.Datetime.now() + timedelta(minutes=3)
                 current_user = self.env.user
                 
                 # Check if login record already exists for this user

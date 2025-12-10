@@ -232,19 +232,8 @@ class OrdiaCartTemp(models.TransientModel):
             # Step 1: Create or update product
             product = self._create_or_update_product(temp_record)
             
-            # Store for sale order creation
-            order_lines.append({
-                'product': product,
-                'temp_record': temp_record,
-            })
-            
-            if not first_record:
-                first_record = temp_record
-            
-            # Step 2: Save to permanent ordia.cart model
-            OrdiaCart = self.env['ordia.cart']
-            
-            existing_cart = OrdiaCart.search([('cart_seq', '=', temp_record.cart_seq)], limit=1)
+            # Step 2: Save cart to permanent storage
+            existing_cart = self.env['ordia.cart'].search([('cart_seq', '=', temp_record.cart_seq)], limit=1)
             
             cart_values = {
                 'cart_seq': temp_record.cart_seq,
@@ -269,105 +258,241 @@ class OrdiaCartTemp(models.TransientModel):
                 'volume_unit_label': temp_record.volume_unit_label,
                 'dealer_co_cd': temp_record.dealer_co_cd,
                 'api_status': temp_record.api_status,
-                'state': 'draft',
             }
             
             if existing_cart:
-                # Update existing cart
                 existing_cart.write(cart_values)
-                saved_cart_ids.append(existing_cart.id)
                 updated_count += 1
-                _logger.info(f"Updated cart_seq: {temp_record.cart_seq}")
+                saved_cart_ids.append(existing_cart.id)
             else:
-                # Create new cart
-                new_cart = OrdiaCart.create(cart_values)
-                saved_cart_ids.append(new_cart.id)
+                new_cart = self.env['ordia.cart'].create(cart_values)
                 saved_count += 1
-                _logger.info(f"Created new cart_seq: {temp_record.cart_seq}")
-        
-        # Step 3: Create sale order with all lines
-        if order_lines and first_record:
-            sale_order = self._create_sale_order_from_lines(order_lines)
+                saved_cart_ids.append(new_cart.id)
             
-            # Step 4: Update cart status via API (call once with all cart_seq)
-            if cart_seq_list:
-                self._update_cart_status_api(cart_seq_list, first_record.dealer_co_cd)
+            # Step 3: Collect order line data
+            order_lines.append({
+                'product': product,
+                'temp_record': temp_record
+            })
+            
+            # Keep the first record for order header information
+            if not first_record:
+                first_record = temp_record
         
-        # Show success notification
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': 'Save Successful!',
-                'message': f'Saved {saved_count} new cart(s) and updated {updated_count} existing cart(s) to database. Total: {len(saved_cart_ids)} cart(s).',
-                'type': 'success',
-                'sticky': False,
-                'next': {
+        # Step 4: Create a single sale order with all lines
+        if first_record and order_lines:
+            # Get token from context
+            token = self.env.context.get('token', '')
+            
+            _logger.info(f"Creating sale order for {len(order_lines)} lines")
+            _logger.info(f"Token from context: {'Present' if token else 'Missing'}")
+            _logger.info(f"Cart sequences to update: {cart_seq_list}")
+            
+            sale_order = self._create_sale_order(first_record, order_lines)
+            
+            if sale_order:
+                _logger.info(f"Sale order created successfully: {sale_order.name}")
+                
+                # Step 5: Update ERP flag in ORDIA API for selected carts only
+                if token and cart_seq_list:
+                    _logger.info(f"Calling ERP flag update for {len(cart_seq_list)} selected carts")
+                    update_result = self._update_erp_flag(token, cart_seq_list)
+                    if update_result:
+                        _logger.info("ERP flag update completed successfully")
+                    else:
+                        _logger.warning("ERP flag update failed or returned error")
+                else:
+                    if not token:
+                        _logger.error("Cannot update ERP flag: Token is missing from context")
+                    if not cart_seq_list:
+                        _logger.error("Cannot update ERP flag: No cart sequences to update")
+                
+                return {
                     'type': 'ir.actions.act_window',
-                    'res_model': 'ordia.cart',
-                    'view_mode': 'list,form',
-                    'domain': [('id', 'in', saved_cart_ids)],
+                    'res_model': 'sale.order',
+                    'view_mode': 'form',
+                    'res_id': sale_order.id,
+                    'name': f'✓ Created Sale Order with {len(order_lines)} lines',
                     'target': 'current',
                 }
-            }
+            else:
+                _logger.error("Failed to create sale order")
+        
+        # Fallback to showing saved carts if no sale order created
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'ordia.cart',
+            'view_mode': 'list,form',
+            'name': f'✓ Saved: {saved_count} new, {updated_count} updated',
+            'domain': [('id', 'in', saved_cart_ids)],
+            'target': 'current',
         }
+    
+    def _update_erp_flag(self, token, cart_seq_list):
+        """Update ERP flag in ORDIA API after successful sale order creation"""
+        try:
+            url = f"https://ordia-api.bio-purchase.com/ordia/post_ai_carts_erp_flag_update?token={token}"
+            
+            # Prepare payload with only selected cart sequences
+            post_ai_carts = []
+            for cart_seq in cart_seq_list:
+                post_ai_carts.append({
+                    "cart_seq": cart_seq,
+                    "erp_flag": 1
+                })
+            
+            payload = {
+                "post_ai_carts": post_ai_carts
+            }
+            
+            headers = {
+                'Content-Type': 'application/json'
+            }
+            
+            _logger.info(f"=== ERP Flag Update START ===")
+            _logger.info(f"URL: {url}")
+            _logger.info(f"Updating ERP flag for {len(cart_seq_list)} cart sequences: {cart_seq_list}")
+            _logger.info(f"Payload: {payload}")
+            
+            # Make POST request with verify=False to handle self-signed certificates
+            response = requests.post(
+                url, 
+                json=payload, 
+                headers=headers, 
+                timeout=30, 
+                verify=False  # Ignore SSL certificate verification
+            )
+            response.raise_for_status()
+            
+            result = response.json()
+            _logger.info(f"ERP flag update response: {result}")
+            
+            # Check if update was successful
+            if result.get('http') == 200:
+                _logger.info(f"✓ Successfully updated ERP flag for {len(cart_seq_list)} carts")
+                return True
+            else:
+                _logger.warning(f"ERP flag update returned status: {result.get('http')}, message: {result.get('message')}")
+                return False
+            
+        except requests.exceptions.RequestException as e:
+            _logger.error(f"❌ Error updating ERP flag (RequestException): {str(e)}")
+            _logger.error(f"Response content: {e.response.text if hasattr(e, 'response') and e.response else 'No response'}")
+            # Don't raise error - we don't want to block the sale order creation
+            return False
+        except Exception as e:
+            _logger.error(f"❌ Unexpected error updating ERP flag: {str(e)}")
+            import traceback
+            _logger.error(f"Traceback: {traceback.format_exc()}")
+            # Don't raise error - we don't want to block the sale order creation
+            return False
+        finally:
+            _logger.info(f"=== ERP Flag Update END ===")
+
     
     def _create_or_update_product(self, temp_record):
-        """Create or update product.product record"""
-        Product = self.env['product.product']
+        """Create or update product properly using product.template and product.product structure"""
+        ProductTemplate = self.env['product.template']
+        ProductProduct = self.env['product.product']
         
-        # Search for existing product by item_sku
-        product = Product.search([('default_code', '=', temp_record.item_sku)], limit=1)
+        # Search for existing product variant by default_code (item_sku)
+        existing_product = ProductProduct.search([('default_code', '=', temp_record.item_sku)], limit=1)
         
-        # Prepare product values
-        product_vals = {
-            'name': temp_record.item_name or f"Product {temp_record.item_sku}",
-            'default_code': temp_record.item_sku,
-            'type': 'product',
-            'list_price': temp_record.teika_tanka or 0.0,
-            'standard_price': temp_record.tanka or 0.0,
-            'description': f"""
-Maker: {temp_record.maker_name or ''}
-Capacity: {temp_record.capacity or ''}
-Kikaku: {temp_record.kikaku or ''}
-Supplier SKU: {temp_record.supp_sku or ''}
-Manufacturer SKU: {temp_record.manufacturer_sku or ''}
-            """.strip(),
-        }
-        
-        if product:
-            # Update existing product
-            product.write(product_vals)
-            _logger.info(f"Updated product: {product.name} (SKU: {temp_record.item_sku})")
+        if existing_product:
+            # Update existing product's template
+            template_vals = {
+                'name': temp_record.item_name or existing_product.name,
+                'list_price': temp_record.teika_tanka or 0.0,
+                'standard_price': temp_record.tanka or 0.0,  # Cost price
+                'type': 'consu',  # Consumable product
+                'sale_ok': True,
+                'purchase_ok': True,
+                'api_sku' : temp_record.item_sku,
+                'api_supplier_sku' : temp_record.supp_sku,
+                'api_maker' : temp_record.maker_name,
+                'api_volume' : temp_record.capacity,
+                'api_list_price' : temp_record.tanka,
+            }
+            existing_product.product_tmpl_id.write(template_vals)
+            
+            # Update product variant specific fields
+            product_vals = {
+                'default_code': temp_record.item_sku,
+            }
+            existing_product.write(product_vals)
+            
+            _logger.info(f"Updated product: {existing_product.name} (SKU: {temp_record.item_sku})")
+            return existing_product
         else:
-            # Create new product
-            product = Product.create(product_vals)
-            _logger.info(f"Created new product: {product.name} (SKU: {temp_record.item_sku})")
-        
-        return product
+            # Create new product template with variant
+            template_vals = {
+                'name': temp_record.item_name or 'Unknown Product',
+                'list_price': temp_record.teika_tanka or 0.0,
+                'standard_price': temp_record.tanka or 0.0,  # Cost price
+                'type': 'consu',  # Consumable product
+                'sale_ok': True,
+                'purchase_ok': True,
+                'default_code': temp_record.item_sku,  # This will be inherited by the variant
+                'api_sku' : temp_record.item_sku,
+                'api_supplier_sku' : temp_record.supp_sku,
+                'api_maker' : temp_record.maker_name,
+                'api_volume' : temp_record.capacity,
+                'api_list_price' : temp_record.tanka,
+            }
+            
+            # Create template (this automatically creates a product.product variant)
+            new_template = ProductTemplate.create(template_vals)
+            
+            # Get the automatically created product variant
+            new_product = new_template.product_variant_id
+            
+            # Ensure the default_code is set on the variant
+            if new_product and temp_record.item_sku:
+                new_product.default_code = temp_record.item_sku
+            
+            _logger.info(f"Created new product: {new_template.name} (SKU: {temp_record.item_sku})")
+            return new_product
     
-    def _create_sale_order_from_lines(self, line_data):
-        """Create a single sale order with all lines from selected carts"""
-        if not line_data:
-            return None
-        
+    def _create_sale_order(self, first_record, line_data):
+        """Create sale.order with order lines"""
         SaleOrder = self.env['sale.order']
+        ResPartner = self.env['res.partner']
+        ResCompany = self.env['res.company']
         
         try:
-            # Get first record for order header info
-            first_temp = line_data[0]['temp_record']
+            # Find partner by dealer_customer_cd
+            partner = None
+            if first_record.dealer_customer_cd:
+                partner = ResPartner.search([('ref', '=', first_record.dealer_customer_cd)], limit=1)
             
-            # Find or create partner based on customer email
-            partner = self._find_or_create_partner(first_temp)
+            # If partner not found, try to find by email or create a new one
+            if not partner and first_record.customer_email:
+                partner = ResPartner.search([('email', '=', first_record.customer_email)], limit=1)
             
-            # Get company
-            company = self.env.company
+            if not partner:
+                # Create a new partner if not found
+                partner_vals = {
+                    'name': first_record.customer_kikanname or first_record.customer_tanto or 'Unknown Customer',
+                    'email': first_record.customer_email,
+                    'ref': first_record.dealer_customer_cd,
+                    'customer_rank': 1,
+                }
+                partner = ResPartner.create(partner_vals)
+                _logger.info(f"Created new partner: {partner.name}")
             
-            # Get earliest order date from all lines
+            # Find company by x_external_company_cod
+            company = None
+            if first_record.dealer_co_cd:
+                company = ResCompany.search([('x_external_company_cod', '=', first_record.dealer_co_cd)], limit=1)
+            
+            if not company:
+                company = self.env.company  # Use default company if not found
+            
+            # Get the earliest order date from all selected items
             order_dates = [ld['temp_record'].order_date for ld in line_data if ld['temp_record'].order_date]
             earliest_date = min(order_dates) if order_dates else fields.Datetime.now()
             
-            # Combine all comments
+            # Collect all delivery dates and comments for the notes
             all_comments = []
             delivery_dates = []
             for ld in line_data:
@@ -407,6 +532,11 @@ Manufacturer SKU: {temp_record.manufacturer_sku or ''}
                     'price_unit': temp_rec.tanka or 0.0,
                     'company_id': company.id,
                     'state': 'sale',
+                    'sku' : temp_rec.item_sku,
+                    'supplier_sku' : temp_rec.supp_sku,
+                    'maker' : temp_rec.maker_name,
+                    'volume' : temp_rec.capacity,
+                    'list_price' : temp_rec.tanka,
                 }
                 
                 # Create the order line
@@ -421,87 +551,6 @@ Manufacturer SKU: {temp_record.manufacturer_sku or ''}
         except Exception as e:
             _logger.error(f"Error creating sale order: {str(e)}")
             raise UserError(f'Failed to create sale order: {str(e)}')
-    
-    def _find_or_create_partner(self, temp_record):
-        """Find or create res.partner based on customer info"""
-        Partner = self.env['res.partner']
-        
-        # Search for existing partner by email
-        partner = None
-        if temp_record.customer_email:
-            partner = Partner.search([('email', '=', temp_record.customer_email)], limit=1)
-        
-        if not partner and temp_record.customer_kikanname:
-            # Search by organization name
-            partner = Partner.search([('name', '=', temp_record.customer_kikanname)], limit=1)
-        
-        if not partner:
-            # Create new partner
-            partner_vals = {
-                'name': temp_record.customer_kikanname or temp_record.customer_email or 'Unknown Customer',
-                'email': temp_record.customer_email,
-                'comment': f"""
-Customer Contact: {temp_record.customer_tanto or ''}
-Organization: {temp_record.customer_sosikiname or ''}
-                """.strip(),
-                'company_type': 'company',
-            }
-            
-            partner = Partner.create(partner_vals)
-            _logger.info(f"Created new partner: {partner.name}")
-        
-        return partner
-    
-    def _update_cart_status_api(self, cart_seq_list, dealer_co_cd):
-        """Update cart status via ORDIA API after saving"""
-        
-        # Get token from context or login record
-        token = self.env.context.get('token')
-        if not token:
-            # Try to get from login record
-            current_user = self.env.user
-            login_record = self.env['ordia.login'].search([
-                ('create_uid', '=', current_user.id)
-            ], limit=1, order='last_login desc')
-            
-            if login_record and login_record.token:
-                token = login_record.token
-        
-        if not token:
-            _logger.warning("No token available for cart status update")
-            return
-        
-        # Build URL with parameters
-        url = "https://ordia-api.bio-purchase.com/ordia/update_carts_status"
-        
-        payload = {
-            'token': token,
-            'dealer_co_cd': dealer_co_cd,
-            'cart_seq': cart_seq_list,  # Send as array
-            'status': '3',  # Set to status 3 (or whatever status you want)
-        }
-        
-        headers = {
-            'Content-Type': 'application/json'
-        }
-        
-        try:
-            response = requests.post(url, json=payload, headers=headers, timeout=30, verify=False)
-            response.raise_for_status()
-            
-            result = response.json()
-            
-            if result.get('http') == 200:
-                _logger.info(f"Successfully updated cart status for {len(cart_seq_list)} carts")
-            else:
-                _logger.warning(f"Cart status update returned: {result.get('message')}")
-                
-        except requests.exceptions.RequestException as e:
-            _logger.error(f"Cart status update API Error: {str(e)}")
-            # Don't raise error, just log it - order is already created
-        except Exception as e:
-            _logger.error(f"Cart status update Error: {str(e)}")
-            # Don't raise error, just log it - order is already created
 
 
 class OrdiaCart(models.Model):

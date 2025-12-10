@@ -21,10 +21,20 @@ class OrdiaLogin(models.Model):
     password = fields.Char(string='Password')
     token = fields.Char(string='API Token')
     token_expiry = fields.Datetime(string='Token Expiry Time')
-    dealer_co_cd = fields.Char(string='Dealer Code')
     user_name = fields.Char(string='User Name')
     user_email = fields.Char(string='User Email')
     last_login = fields.Datetime(string='Last Login', default=fields.Datetime.now)
+    
+    @api.model
+    def _get_dealer_co_cd(self):
+        """Get dealer_co_cd from company settings"""
+        company = self.env.company
+        dealer_co_cd = company.x_external_company_cod if hasattr(company, 'x_external_company_cod') else ''
+        
+        if not dealer_co_cd:
+            raise UserError('Company external code (dealer_co_cd) is not configured. Please set x_external_company_cod in Company settings.')
+        
+        return dealer_co_cd
     
     @api.model
     def check_valid_token(self):
@@ -37,14 +47,17 @@ class OrdiaLogin(models.Model):
         ], limit=1, order='last_login desc')
         
         if login_record and login_record.token and login_record.token_expiry:
-            # Check if token is still valid (within 3 hours)
+            # Check if token is still valid (within 5 minutes)
             now = fields.Datetime.now()
             if login_record.token_expiry > now:
-                _logger.info(f"Valid token found for user {current_user.name}")
+                # Always get dealer_co_cd from company settings (fresh)
+                dealer_co_cd = self._get_dealer_co_cd()
+                
+                _logger.info(f"Valid token found for user {current_user.name}, dealer_co_cd: {dealer_co_cd}")
                 return {
                     'has_valid_token': True,
                     'token': login_record.token,
-                    'dealer_co_cd': login_record.dealer_co_cd,
+                    'dealer_co_cd': dealer_co_cd,
                     'user_name': login_record.user_name,
                     'user_email': login_record.user_email,
                     'login_id': login_record.id,
@@ -114,19 +127,14 @@ class OrdiaLogin(models.Model):
                 token = result['token']
                 user_info = result.get('userInfo', {})
                 
-                # Get dealer_co_cd from company settings instead of API response
-                company = self.env.company
-                dealer_co_cd = company.x_external_company_cod if hasattr(company, 'x_external_company_cod') else ''
-                
-                if not dealer_co_cd:
-                    raise UserError('Company external code (dealer_co_cd) is not configured. Please set x_external_company_code in Company settings.')
+                # Get dealer_co_cd from company settings (always fresh from company)
+                dealer_co_cd = self._get_dealer_co_cd()
                 
                 # Step 2: Fetch nonyu data
                 self._fetch_and_save_nonyu_data(token, dealer_co_cd)
                 
-                # Step 3: Save/Update token with 3 hours expiry
-                # token_expiry = fields.Datetime.now() + timedelta(hours=3)
-                token_expiry = fields.Datetime.now() + timedelta(minutes=3)
+                # Step 3: Save/Update token with 5 minutes expiry
+                token_expiry = fields.Datetime.now() + timedelta(minutes=5)
                 current_user = self.env.user
                 
                 # Check if login record already exists for this user
@@ -139,7 +147,6 @@ class OrdiaLogin(models.Model):
                     'password': self.password,  # In production, consider encrypting this
                     'token': token,
                     'token_expiry': token_expiry,
-                    'dealer_co_cd': dealer_co_cd,
                     'user_name': user_info.get('name', ''),
                     'user_email': user_info.get('email', ''),
                     'last_login': fields.Datetime.now(),

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Cart Search Form View -->
+    <!-- Cart Search Form View with Logout Button -->
     <record id="view_ordia_cart_search_form" model="ir.ui.view">
         <field name="name">ordia.cart.search.form</field>
         <field name="model">ordia.cart.search</field>
@@ -23,7 +23,12 @@
                         </group>
                     </group>
                     <footer>
-                        <button string="Search" name="action_search_carts" type="object" class="btn-primary"/>
+                        <button string="🔍 Search" name="action_search_carts" type="object" class="btn-primary"/>
+                        <button name="action_logout" 
+                                type="object" 
+                                string="🚪 Logout" 
+                                class="btn-danger"
+                                help="Logout and clear authentication token"/>
                         <button string="Cancel" class="btn-secondary" special="cancel"/>
                     </footer>
                 </sheet>

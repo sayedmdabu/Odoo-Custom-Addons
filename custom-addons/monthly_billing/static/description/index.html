@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Monthly Billing</title>
+</head>
+<body>
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <h2 class="oe_slogan">Monthly Billing for Odoo 18</h2>
+                <h3 class="oe_slogan">Japanese-style Closing Date-based Monthly Billing</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <h2>Features</h2>
+                <div class="oe_span6">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check-square-o text-primary"></i> Aggregate invoices by closing period</li>
+                        <li><i class="fa fa-check-square-o text-primary"></i> Flexible closing dates (end-of-month, 20th, custom)</li>
+                        <li><i class="fa fa-check-square-o text-primary"></i> Professional PDF billing statements</li>
+                        <li><i class="fa fa-check-square-o text-primary"></i> Multi-company support</li>
+                    </ul>
+                </div>
+                <div class="oe_span6">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check-square-o text-primary"></i> Bilingual support (Japanese/English)</li>
+                        <li><i class="fa fa-check-square-o text-primary"></i> State management workflow</li>
+                        <li><i class="fa fa-check-square-o text-primary"></i> Preview before generation</li>
+                        <li><i class="fa fa-check-square-o text-primary"></i> Batch processing for performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <h2>How It Works</h2>
+                <p class="oe_mt32">
+                    This module implements Japanese-style monthly billing (まとめ請求) where invoices 
+                    are aggregated by closing period and customer. It supports various closing day 
+                    configurations and generates professional billing statements with automatic 
+                    period calculation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <h2>Closing Period Logic</h2>
+                <div class="oe_span6">
+                    <h3>End-of-Month Closing (Day 31)</h3>
+                    <p>Period: From 1st to last day of the specified month</p>
+                    <p><strong>Example:</strong> 2025-10 with day 31 = 2025-10-01 to 2025-10-31</p>
+                </div>
+                <div class="oe_span6">
+                    <h3>Specific Day Closing (Day &lt; 31)</h3>
+                    <p>Period: From (previous month's closing day + 1) to current month's closing day</p>
+                    <p><strong>Example:</strong> 2025-10 with day 20 = 2025-09-21 to 2025-10-20</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12">
+                <h2>Compatible with Odoo 18</h2>
+                <p class="oe_mt32">
+                    This module is built for Odoo 18 Community Edition and is also compatible with 
+                    Odoo 18 Enterprise Edition. It uses only CE features to ensure maximum compatibility.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <div class="oe_span12 text-center">
+                <h2>Get Started Today</h2>
+                <p class="oe_mt32">
+                    Install the module and start generating professional monthly billing statements 
+                    for your Japanese business operations.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

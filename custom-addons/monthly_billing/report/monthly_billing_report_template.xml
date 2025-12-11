@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Monthly Billing Statement Report Template - DYNAMIC VERSION -->
+        <template id="report_monthly_billing_statement_document">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <!-- Fetch PDF Configuration -->
+                    <t t-set="cfg" t-value="o.pdf_config_id or env['monthly.billing.pdf.config'].get_default_config(o.company_id.id)"/>
+                    
+                    <div class="page">
+                        <main>
+                            <!-- Dynamic CSS Styles -->
+                            <style>
+                                /* Professional styling - DYNAMIC from configuration */
+                                .mb-statement-header {
+                                    border-bottom: 3px solid <t t-esc="cfg.header_border_color"/>;
+                                    padding-bottom: 15px;
+                                    margin-bottom: 25px;
+                                }
+                                .mb-title {
+                                    color: <t t-esc="cfg.primary_color"/>;
+                                    font-size: <t t-esc="cfg.header_title_size"/>px;
+                                    font-weight: bold;
+                                    margin-bottom: 5px;
+                                }
+                                .mb-title-jp {
+                                    color: #5a5a5a;
+                                    font-size: <t t-esc="cfg.header_subtitle_size"/>px;
+                                    font-weight: normal;
+                                }
+                                .mb-logo {
+                                    max-height: <t t-esc="cfg.logo_max_height"/>px;
+                                    max-width: <t t-esc="cfg.logo_max_width"/>px;
+                                }
+                                .mb-logo-left { text-align: left; }
+                                .mb-logo-center { text-align: center; }
+                                .mb-logo-right { text-align: right; }
+                                .mb-info-box {
+                                    background-color: <t t-esc="cfg.info_box_bg_color"/>;
+                                    border: 1px solid <t t-esc="cfg.table_border_color"/>;
+                                    border-radius: 5px;
+                                    padding: 15px;
+                                    margin-bottom: <t t-esc="cfg.section_spacing"/>px;
+                                }
+                                .mb-amount-summary {
+                                    background: linear-gradient(to bottom, <t t-esc="cfg.info_box_bg_color"/> 0%, #e9ecef 100%);
+                                    border: 2px solid <t t-esc="cfg.amount_box_border_color"/>;
+                                    border-radius: 8px;
+                                    padding: 20px;
+                                    margin: <t t-esc="cfg.section_spacing"/>px 0;
+                                }
+                                .mb-amount-row {
+                                    padding: 10px 0;
+                                    border-bottom: 1px solid <t t-esc="cfg.table_border_color"/>;
+                                }
+                                .mb-amount-total {
+                                    background-color: <t t-esc="cfg.total_amount_bg_color"/>;
+                                    color: white;
+                                    padding: 15px;
+                                    margin-top: 10px;
+                                    border-radius: 5px;
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                }
+                                .mb-table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                    margin: <t t-esc="cfg.section_spacing"/>px 0;
+                                }
+                                .mb-table thead {
+                                    background-color: <t t-esc="cfg.table_header_bg_color"/>;
+                                    color: <t t-esc="cfg.table_header_text_color"/>;
+                                }
+                                .mb-table th {
+                                    padding: 12px 8px;
+                                    text-align: center;
+                                    font-weight: bold;
+                                    border: 1px solid <t t-esc="cfg.table_border_color"/>;
+                                }
+                                .mb-table td {
+                                    padding: 10px 8px;
+                                    border: 1px solid <t t-esc="cfg.table_border_color"/>;
+                                }
+                                <t t-if="cfg.table_stripe_rows">
+                                .mb-table tbody tr:nth-child(even) {
+                                    background-color: <t t-esc="cfg.table_stripe_color"/>;
+                                }
+                                </t>
+                                .mb-table tfoot {
+                                    background-color: #e9ecef;
+                                    font-weight: bold;
+                                }
+                                .mb-section-title {
+                                    color: <t t-esc="cfg.primary_color"/>;
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                    margin: <t t-esc="cfg.section_spacing"/>px 0 15px 0;
+                                    padding-bottom: 8px;
+                                    border-bottom: 2px solid <t t-esc="cfg.primary_color"/>;
+                                }
+                                .mb-footer {
+                                    margin-top: 40px;
+                                    padding-top: 20px;
+                                    border-top: 2px solid <t t-esc="cfg.table_border_color"/>;
+                                    text-align: center;
+                                    color: #6c757d;
+                                    font-size: <t t-esc="cfg.base_font_size - 1"/>px;
+                                }
+                                .mb-label {
+                                    font-weight: bold;
+                                    color: #495057;
+                                }
+                                .mb-value {
+                                    color: #212529;
+                                }
+                                .mb-status-badge {
+                                    display: inline-block;
+                                    padding: 5px 15px;
+                                    border-radius: 20px;
+                                    font-weight: bold;
+                                    font-size: 12px;
+                                }
+                                .mb-status-done {
+                                    background-color: #28a745;
+                                    color: white;
+                                }
+                                .mb-status-confirmed {
+                                    background-color: #ffc107;
+                                    color: #000;
+                                }
+                                .text-right {
+                                    text-align: right;
+                                }
+                                .text-center {
+                                    text-align: center;
+                                }
+                                body {
+                                    font-size: <t t-esc="cfg.base_font_size"/>px;
+                                    <t t-if="cfg.font_family != 'default'">
+                                    font-family: <t t-esc="cfg.font_family"/>, sans-serif;
+                                    </t>
+                                }
+                                <t t-if="cfg.show_watermark">
+                                .watermark {
+                                    position: fixed;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%) rotate(-45deg);
+                                    font-size: 120px;
+                                    color: rgba(0, 0, 0, <t t-esc="cfg.watermark_opacity"/>);
+                                    font-weight: bold;
+                                    z-index: -1;
+                                    user-select: none;
+                                    pointer-events: none;
+                                }
+                                </t>
+                            </style>
+
+                            <!-- Watermark -->
+                            <t t-if="cfg.show_watermark">
+                                <div class="watermark">
+                                    <t t-esc="cfg.watermark_text"/>
+                                </div>
+                            </t>
+
+                            <!-- Header Section with Logo -->
+                            <div class="mb-statement-header">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <!-- Company Logo -->
+                                        <t t-if="cfg.show_logo and o.company_id.logo">
+                                            <div t-attf-class="mb-logo-{{cfg.logo_position}}" style="margin-bottom: 15px;">
+                                                <img t-att-src="image_data_uri(o.company_id.logo)" class="mb-logo" alt="Company Logo"/>
+                                            </div>
+                                        </t>
+                                        <h2 class="mb-title"><t t-esc="cfg.header_title_en"/></h2>
+                                        <h3 class="mb-title-jp"><t t-esc="cfg.header_title_ja"/></h3>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <div style="margin-top: 20px;">
+                                            <p style="margin: 5px 0;">
+                                                <span class="mb-label">Invoice No.:</span>
+                                                <span class="mb-value" style="font-size: 16px; font-weight: bold;" t-field="o.name"/>
+                                            </p>
+                                            <p style="margin: 5px 0;">
+                                                <span class="mb-label">Issue Date:</span>
+                                                <span class="mb-value" t-field="o.date_created" t-options='{"widget": "date"}'/>
+                                            </p>
+                                            <t t-if="cfg.show_status_badge">
+                                                <p style="margin: 5px 0;" t-if="o.state == 'done'">
+                                                    <span class="mb-status-badge mb-status-done">✓ Finalized</span>
+                                                </p>
+                                                <p style="margin: 5px 0;" t-elif="o.state == 'confirmed'">
+                                                    <span class="mb-status-badge mb-status-confirmed">● Confirmed</span>
+                                                </p>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Billing Information Section -->
+                            <t t-if="cfg.show_customer_section or cfg.show_period_section">
+                                <div class="row mb-info-box">
+                                    <t t-if="cfg.show_customer_section">
+                                        <div t-attf-class="col-{{7 if cfg.show_period_section else 12}}">
+                                            <p style="margin: 0 0 10px 0; font-weight: bold;" t-att-style="'color: ' + cfg.primary_color + ';'">
+                                                <t t-esc="cfg.customer_section_title_en"/> (<t t-esc="cfg.customer_section_title_ja"/>)
+                                            </p>
+                                            <div style="padding: 10px; background-color: white; border-radius: 3px;">
+                                                <p style="margin: 5px 0; font-size: 16px; font-weight: bold;" t-field="o.partner_id.name"/>
+                                                <p style="margin: 5px 0;" t-if="o.partner_id.street">
+                                                    <span t-field="o.partner_id.street"/>
+                                                </p>
+                                                <p style="margin: 5px 0;">
+                                                    <span t-if="o.partner_id.city" t-field="o.partner_id.city"/>
+                                                    <span t-if="o.partner_id.state_id"> <span t-field="o.partner_id.state_id.name"/></span>
+                                                    <span t-if="o.partner_id.zip"> <span t-field="o.partner_id.zip"/></span>
+                                                </p>
+                                                <p style="margin: 5px 0;" t-if="o.partner_id.country_id">
+                                                    <span t-field="o.partner_id.country_id.name"/>
+                                                </p>
+                                                <p style="margin: 5px 0;" t-if="o.partner_id.vat">
+                                                    <span class="mb-label">Tax ID:</span> <span t-field="o.partner_id.vat"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="cfg.show_period_section">
+                                        <div t-attf-class="col-{{5 if cfg.show_customer_section else 12}}">
+                                            <p style="margin: 0 0 10px 0; font-weight: bold;" t-att-style="'color: ' + cfg.primary_color + ';'">
+                                                <t t-esc="cfg.period_section_title_en"/> (<t t-esc="cfg.period_section_title_ja"/>)
+                                            </p>
+                                            <table style="width: 100%; background-color: white; border-radius: 3px;">
+                                                <tr>
+                                                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+                                                        <span class="mb-label">Closing Period:</span><br/>
+                                                        <span style="font-size: 11px; color: #6c757d;">締年月</span>
+                                                    </td>
+                                                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6; text-align: right;">
+                                                        <strong t-field="o.closing_year_month"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+                                                        <span class="mb-label">Closing Day:</span><br/>
+                                                        <span style="font-size: 11px; color: #6c757d;">締日</span>
+                                                    </td>
+                                                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6; text-align: right;">
+                                                        <strong t-field="o.closing_day"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 8px;">
+                                                        <span class="mb-label">Period:</span><br/>
+                                                        <span style="font-size: 11px; color: #6c757d;">対象期間</span>
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: right; font-size: 12px;">
+                                                        <strong>
+                                                            <span t-field="o.period_start_date" t-options='{"widget": "date"}'/><br/>
+                                                            <span style="font-size: 10px;">to</span><br/>
+                                                            <span t-field="o.period_end_date" t-options='{"widget": "date"}'/>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+
+                            <!-- Amount Summary Box -->
+                            <t t-if="cfg.show_amount_summary">
+                                <div class="mb-amount-summary">
+                                    <div class="mb-amount-row" t-att-style="'border-bottom: 2px solid ' + cfg.table_border_color + ';'">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="padding: 8px; width: 70%;">
+                                                    <span style="font-size: 16px; font-weight: bold;"><t t-esc="cfg.subtotal_label_en"/></span>
+                                                    <span style="font-size: 14px; color: #6c757d; margin-left: 10px;"><t t-esc="cfg.subtotal_label_ja"/></span>
+                                                </td>
+                                                <td style="padding: 8px; text-align: right; width: 30%;">
+                                                    <span style="font-size: 18px; font-weight: bold;" 
+                                                          t-field="o.total_amount_untaxed" 
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="mb-amount-row">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="padding: 8px; width: 70%;">
+                                                    <span style="font-size: 16px; font-weight: bold;"><t t-esc="cfg.tax_label_en"/></span>
+                                                    <span style="font-size: 14px; color: #6c757d; margin-left: 10px;"><t t-esc="cfg.tax_label_ja"/></span>
+                                                </td>
+                                                <td style="padding: 8px; text-align: right; width: 30%;">
+                                                    <span style="font-size: 18px; font-weight: bold;" 
+                                                          t-field="o.total_amount_tax" 
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="mb-amount-total">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 70%;">
+                                                    <span style="font-size: 20px;"><t t-esc="cfg.total_label_en"/></span>
+                                                    <span style="font-size: 16px; margin-left: 10px;"><t t-esc="cfg.total_label_ja"/></span>
+                                                </td>
+                                                <td style="text-align: right; width: 30%;">
+                                                    <span style="font-size: 24px;" 
+                                                          t-field="o.total_amount_total" 
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </t>
+
+                            <!-- Invoice Lines Detail Table -->
+                            <t t-if="cfg.show_invoice_details">
+                                <h4 class="mb-section-title">
+                                    <t t-esc="cfg.invoice_details_title_en"/> (<t t-esc="cfg.invoice_details_title_ja"/>)
+                                </h4>
+                                <table class="mb-table">
+                                    <thead>
+                                        <tr>
+                                            <th t-if="cfg.table_show_row_numbers" style="width: 4%;">No.</th>
+                                            <th style="width: 12%;">Invoice No.<br/><span style="font-size: 11px;">伝票番号</span></th>
+                                            <th style="width: 10%;">Date<br/><span style="font-size: 11px;">請求日</span></th>
+                                            <th style="width: 30%;">Description<br/><span style="font-size: 11px;">品名・摘要</span></th>
+                                            <th style="width: 8%;">Qty<br/><span style="font-size: 11px;">数量</span></th>
+                                            <th style="width: 12%;">Unit Price<br/><span style="font-size: 11px;">単価</span></th>
+                                            <th style="width: 10%;">Tax<br/><span style="font-size: 11px;">税</span></th>
+                                            <th style="width: 14%;">Amount<br/><span style="font-size: 11px;">金額</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="line_number" t-value="0"/>
+                                        <tr t-foreach="o.invoice_line_ids" t-as="line">
+                                            <t t-set="line_number" t-value="line_number + 1"/>
+                                            <td t-if="cfg.table_show_row_numbers" class="text-center">
+                                                <strong t-esc="line_number"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-field="line.invoice_id.name" style="font-size: 11px;"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-field="line.date_invoice" t-options='{"widget": "date"}' style="font-size: 11px;"/>
+                                            </td>
+                                            <td>
+                                                <strong t-field="line.name"/>
+                                                <t t-if="line.note">
+                                                    <br/>
+                                                    <span style="font-size: 10px; color: #6c757d; font-style: italic;">
+                                                        Note: <span t-field="line.note"/>
+                                                    </span>
+                                                </t>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="line.quantity"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="line.price_unit" 
+                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-esc="', '.join([tax.name for tax in line.tax_id])" style="font-size: 11px;"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <strong t-field="line.price_subtotal" 
+                                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td t-attf-colspan="{{7 if cfg.table_show_row_numbers else 6}}" class="text-right" style="padding: 12px;">
+                                                <strong style="font-size: 14px;"><t t-esc="cfg.subtotal_label_en"/> (小計):</strong>
+                                            </td>
+                                            <td class="text-right" style="padding: 12px;">
+                                                <strong style="font-size: 14px;" 
+                                                        t-field="o.total_amount_untaxed" 
+                                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </t>
+
+                            <!-- Notes Section -->
+                            <t t-if="cfg.show_notes_section and o.memo">
+                                <div style="margin-top: 25px; padding: 15px; background-color: #fff8e1; border-left: 4px solid #ffc107; border-radius: 3px;">
+                                    <h5 style="margin: 0 0 10px 0; color: #f57c00; font-size: 16px;">
+                                        <strong>Notes (備考)</strong>
+                                    </h5>
+                                    <p style="margin: 0; color: #5d4037;" t-field="o.memo"/>
+                                </div>
+                            </t>
+
+                            <!-- Payment and Contact Information Section -->
+                            <t t-if="cfg.show_payment_info or cfg.show_contact_info">
+                                <div class="row" t-att-style="'margin-top: ' + str(cfg.section_spacing) + 'px;'">
+                                    <t t-if="cfg.show_payment_info">
+                                        <div t-attf-class="col-{{6 if cfg.show_contact_info else 12}}">
+                                            <div style="background-color: #f8f9fa; border-radius: 5px; padding: 15px; height: 100%;">
+                                                <h5 style="margin: 0 0 15px 0; font-size: 16px; padding-bottom: 8px;" 
+                                                    t-att-style="'color: ' + cfg.primary_color + '; border-bottom: 2px solid ' + cfg.primary_color + ';'">
+                                                    <strong><t t-esc="cfg.payment_info_title_en"/></strong><br/>
+                                                    <span style="font-size: 13px; color: #6c757d;"><t t-esc="cfg.payment_info_title_ja"/></span>
+                                                </h5>
+                                                <t t-if="o.company_id.partner_id.bank_ids">
+                                                    <t t-set="bank" t-value="o.company_id.partner_id.bank_ids[0]"/>
+                                                    <p style="margin: 8px 0;">
+                                                        <span class="mb-label">Bank:</span>
+                                                        <span t-field="bank.bank_id.name"/>
+                                                    </p>
+                                                    <p style="margin: 8px 0;" t-if="bank.acc_number">
+                                                        <span class="mb-label">Account Number:</span>
+                                                        <span t-field="bank.acc_number"/>
+                                                    </p>
+                                                    <p style="margin: 8px 0;" t-if="bank.acc_holder_name">
+                                                        <span class="mb-label">Account Holder:</span>
+                                                        <span t-field="bank.acc_holder_name"/>
+                                                    </p>
+                                                </t>
+                                                <t t-else="">
+                                                    <p style="color: #6c757d; font-style: italic;">
+                                                        Please contact us for payment details.
+                                                    </p>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="cfg.show_contact_info">
+                                        <div t-attf-class="col-{{6 if cfg.show_payment_info else 12}}">
+                                            <div style="background-color: #f8f9fa; border-radius: 5px; padding: 15px; height: 100%;">
+                                                <h5 style="margin: 0 0 15px 0; font-size: 16px; padding-bottom: 8px;" 
+                                                    t-att-style="'color: ' + cfg.primary_color + '; border-bottom: 2px solid ' + cfg.primary_color + ';'">
+                                                    <strong><t t-esc="cfg.contact_info_title_en"/></strong><br/>
+                                                    <span style="font-size: 13px; color: #6c757d;"><t t-esc="cfg.contact_info_title_ja"/></span>
+                                                </h5>
+                                                <p style="margin: 8px 0; font-weight: bold;">
+                                                    <span t-field="o.company_id.name"/>
+                                                </p>
+                                                <p style="margin: 8px 0;" t-if="o.company_id.phone">
+                                                    <span class="mb-label">Tel:</span>
+                                                    <span t-field="o.company_id.phone"/>
+                                                </p>
+                                                <p style="margin: 8px 0;" t-if="o.company_id.email">
+                                                    <span class="mb-label">Email:</span>
+                                                    <span t-field="o.company_id.email"/>
+                                                </p>
+                                                <p style="margin: 8px 0;" t-if="o.company_id.website">
+                                                    <span class="mb-label">Website:</span>
+                                                    <span t-field="o.company_id.website"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+
+                            <!-- Footer -->
+                            <t t-if="cfg.show_footer">
+                                <div class="mb-footer">
+                                    <p style="margin: 5px 0;" t-att-style="'font-size: ' + str(cfg.base_font_size - 1) + 'px;'">
+                                        <t t-esc="cfg.footer_text_en"/>
+                                    </p>
+                                    <p style="margin: 5px 0;" t-att-style="'font-size: ' + str(cfg.base_font_size - 1) + 'px;'">
+                                        <t t-esc="cfg.footer_text_ja"/>
+                                    </p>
+                                    <p style="margin: 15px 0 0 0; font-size: 10px; color: #adb5bd;">
+                                        Generated on: <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+                                    </p>
+                                </div>
+                            </t>
+                        </main>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <!-- Main Report Definition -->
+        <record id="action_report_monthly_billing_statement" model="ir.actions.report">
+            <field name="name">Monthly Billing Statement</field>
+            <field name="model">monthly.billing.header</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">monthly_billing.report_monthly_billing_statement_document</field>
+            <field name="report_file">monthly_billing.report_monthly_billing_statement_document</field>
+            <field name="binding_model_id" ref="model_monthly_billing_header"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

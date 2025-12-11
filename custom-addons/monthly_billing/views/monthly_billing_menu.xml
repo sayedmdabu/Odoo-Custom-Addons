@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Main Menu: Monthly Billing (under Invoicing/Accounting) -->
+        <menuitem id="menu_monthly_billing_root"
+                  name="Monthly Billing"
+                  parent="account.menu_finance"
+                  sequence="50"
+                  groups="group_monthly_billing_user"/>
+
+        <!-- Submenu: Monthly Billing List -->
+        <menuitem id="menu_monthly_billing_header"
+                  name="Monthly Billings"
+                  parent="menu_monthly_billing_root"
+                  action="action_monthly_billing_header"
+                  sequence="10"/>
+
+        <!-- Submenu: Generate Monthly Billing -->
+        <menuitem id="menu_monthly_billing_generate"
+                  name="Generate Monthly Billing"
+                  parent="menu_monthly_billing_root"
+                  action="action_monthly_billing_generate_wizard"
+                  sequence="20"/>
+
+        <!-- Submenu: PDF Configuration -->
+        <menuitem id="menu_monthly_billing_pdf_config"
+                  name="PDF Settings"
+                  parent="menu_monthly_billing_root"
+                  action="action_monthly_billing_pdf_config"
+                  sequence="30"
+                  groups="group_monthly_billing_manager"/>
+
+    </data>
+</odoo>

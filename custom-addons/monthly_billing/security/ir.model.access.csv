@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_monthly_billing_header_user,monthly.billing.header user,model_monthly_billing_header,group_monthly_billing_user,1,1,0,0
+access_monthly_billing_header_manager,monthly.billing.header manager,model_monthly_billing_header,group_monthly_billing_manager,1,1,1,1
+access_monthly_billing_line_user,monthly.billing.line user,model_monthly_billing_line,group_monthly_billing_user,1,1,0,0
+access_monthly_billing_line_manager,monthly.billing.line manager,model_monthly_billing_line,group_monthly_billing_manager,1,1,1,1
+access_monthly_billing_generate_wizard_user,monthly.billing.generate.wizard user,model_monthly_billing_generate_wizard,group_monthly_billing_user,1,1,1,1
+access_monthly_billing_generate_wizard_manager,monthly.billing.generate.wizard manager,model_monthly_billing_generate_wizard,group_monthly_billing_manager,1,1,1,1
+access_monthly_billing_pdf_config_user,monthly.billing.pdf.config user,model_monthly_billing_pdf_config,group_monthly_billing_user,1,0,0,0
+access_monthly_billing_pdf_config_manager,monthly.billing.pdf.config manager,model_monthly_billing_pdf_config,group_monthly_billing_manager,1,1,1,1

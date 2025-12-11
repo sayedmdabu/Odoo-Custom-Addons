@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Monthly Billing Header List View -->
+        <record id="view_monthly_billing_header_tree" model="ir.ui.view">
+            <field name="name">monthly.billing.header.tree</field>
+            <field name="model">monthly.billing.header</field>
+            <field name="arch" type="xml">
+                <list string="Monthly Billings" decoration-info="state=='draft'" 
+                      decoration-success="state=='done'" decoration-muted="state=='cancel'">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="closing_year_month"/>
+                    <field name="period_start_date"/>
+                    <field name="period_end_date"/>
+                    <field name="total_amount_untaxed" sum="Total Untaxed"/>
+                    <field name="total_amount_tax" sum="Total Tax"/>
+                    <field name="total_amount_total" sum="Total Amount"/>
+                    <field name="currency_id" column_invisible="True"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="state" widget="badge" 
+                           decoration-info="state=='draft'" 
+                           decoration-success="state=='done'"
+                           decoration-warning="state=='confirmed'"
+                           decoration-danger="state=='cancel'"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Monthly Billing Header Form View -->
+        <record id="view_monthly_billing_header_form" model="ir.ui.view">
+            <field name="name">monthly.billing.header.form</field>
+            <field name="model">monthly.billing.header</field>
+            <field name="arch" type="xml">
+                <form string="Monthly Billing">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object" 
+                                class="oe_highlight" invisible="state != 'draft'"/>
+                        <button name="action_done" string="Done" type="object" 
+                                class="oe_highlight" invisible="state != 'confirmed'"/>
+                        <button name="action_cancel" string="Cancel" type="object" 
+                                invisible="state in ('done', 'cancel')"/>
+                        <button name="action_draft" string="Reset to Draft" type="object" 
+                                invisible="state != 'cancel'"/>
+                        <button name="action_print_report" string="Print PDF" type="object" 
+                                class="btn-primary" icon="fa-print"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoices" type="object" 
+                                    class="oe_stat_button" icon="fa-file-text-o">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="header_left">
+                                <field name="partner_id" options="{'no_create': True}"/>
+                                <field name="billing_address_id" options="{'no_create': True}"/>
+                                <field name="billing_group_code"/>
+                            </group>
+                            <group name="header_right">
+                                <field name="closing_year_month"/>
+                                <field name="closing_day"/>
+                                <field name="closing_type"/>
+                                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                                <field name="currency_id" options="{'no_create': True}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group name="period_dates">
+                                <label for="period_start_date" string="Period"/>
+                                <div class="o_row">
+                                    <field name="period_start_date" class="oe_inline"/>
+                                    <span class="mx-2"> to </span>
+                                    <field name="period_end_date" class="oe_inline"/>
+                                </div>
+                            </group>
+                            <group name="amounts">
+                                <field name="total_amount_untaxed" widget="monetary"/>
+                                <field name="total_amount_tax" widget="monetary"/>
+                                <field name="total_amount_total" widget="monetary" class="oe_subtotal_footer_separator"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group name="other_info">
+                                <field name="report_printed" readonly="1"/>
+                                <field name="pdf_config_id" options="{'no_create': True}"/>
+                                <field name="date_created" readonly="1"/>
+                                <field name="date_confirmed" readonly="1" invisible="not date_confirmed"/>
+                                <field name="date_done" readonly="1" invisible="not date_done"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Invoice Lines" name="invoice_lines">
+                                <field name="invoice_line_ids" mode="list">
+                                    <list editable="bottom" decoration-muted="header_id.state == 'cancel'">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="invoice_id"/>
+                                        <field name="date_invoice"/>
+                                        <field name="product_id" optional="hide"/>
+                                        <field name="name"/>
+                                        <field name="quantity"/>
+                                        <field name="price_unit" widget="monetary"/>
+                                        <field name="price_subtotal" widget="monetary" sum="Subtotal"/>
+                                        <field name="tax_id" widget="many2many_tags" optional="show"/>
+                                        <field name="note" optional="hide"/>
+                                        <field name="currency_id" column_invisible="True"/>
+                                        <field name="company_id" column_invisible="True"/>
+                                        <field name="partner_id" column_invisible="True"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Other Information" name="other_info">
+                                <group>
+                                    <field name="memo" nolabel="1" placeholder="Internal notes..."/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Monthly Billing Header Search View -->
+        <record id="view_monthly_billing_header_search" model="ir.ui.view">
+            <field name="name">monthly.billing.header.search</field>
+            <field name="model">monthly.billing.header</field>
+            <field name="arch" type="xml">
+                <search string="Search Monthly Billings">
+                    <field name="name" string="Invoice Number"/>
+                    <field name="partner_id" string="Customer"/>
+                    <field name="closing_year_month"/>
+                    <field name="billing_group_code"/>
+                    <separator/>
+                    <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
+                    <filter string="Confirmed" name="confirmed" domain="[('state', '=', 'confirmed')]"/>
+                    <filter string="Done" name="done" domain="[('state', '=', 'done')]"/>
+                    <filter string="Cancelled" name="cancel" domain="[('state', '=', 'cancel')]"/>
+                    <separator/>
+                    <filter string="Current Month" name="current_month" 
+                            domain="[('closing_year_month', '=', context_today().strftime('%Y-%m'))]"/>
+                    <filter string="Last Month" name="last_month" 
+                            domain="[('closing_year_month', '=', (context_today() - relativedelta(months=1)).strftime('%Y-%m'))]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Customer" name="group_by_partner" 
+                                context="{'group_by': 'partner_id'}"/>
+                        <filter string="Closing Year/Month" name="group_by_closing_ym" 
+                                context="{'group_by': 'closing_year_month'}"/>
+                        <filter string="Closing Day" name="group_by_closing_day" 
+                                context="{'group_by': 'closing_day'}"/>
+                        <filter string="State" name="group_by_state" 
+                                context="{'group_by': 'state'}"/>
+                        <filter string="Company" name="group_by_company" 
+                                context="{'group_by': 'company_id'}" 
+                                groups="base.group_multi_company"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Monthly Billing Header Action -->
+        <record id="action_monthly_billing_header" model="ir.actions.act_window">
+            <field name="name">Monthly Billings</field>
+            <field name="res_model">monthly.billing.header</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_monthly_billing_header_search"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first monthly billing
+                </p>
+                <p>
+                    Use the wizard to generate monthly billing statements from invoices.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

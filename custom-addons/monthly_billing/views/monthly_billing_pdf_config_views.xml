@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- PDF Configuration Tree View -->
+        <record id="view_monthly_billing_pdf_config_tree" model="ir.ui.view">
+            <field name="name">monthly.billing.pdf.config.tree</field>
+            <field name="model">monthly.billing.pdf.config</field>
+            <field name="arch" type="xml">
+                <list string="PDF Configurations">
+                    <field name="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="is_default"/>
+                    <field name="active"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- PDF Configuration Form View -->
+        <record id="view_monthly_billing_pdf_config_form" model="ir.ui.view">
+            <field name="name">monthly.billing.pdf.config.form</field>
+            <field name="model">monthly.billing.pdf.config</field>
+            <field name="arch" type="xml">
+                <form string="PDF Configuration">
+                    <header>
+                        <button name="action_set_as_default" string="Set as Default" type="object" 
+                                class="btn-primary" invisible="is_default"/>
+                        <button name="action_preview_pdf" string="Preview PDF" type="object" 
+                                class="btn-secondary" icon="fa-eye"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <widget name="web_ribbon" title="Default" invisible="not is_default"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                                <field name="is_default"/>
+                            </group>
+                        </group>
+                        
+                        <notebook>
+                            <!-- Colors Tab -->
+                            <page string="Colors" name="colors">
+                                <group>
+                                    <group string="Main Colors">
+                                        <field name="primary_color" widget="color"/>
+                                        <field name="secondary_color" widget="color"/>
+                                        <field name="header_border_color" widget="color"/>
+                                    </group>
+                                    <group string="Table Colors">
+                                        <field name="table_header_bg_color" widget="color"/>
+                                        <field name="table_header_text_color" widget="color"/>
+                                        <field name="table_border_color" widget="color"/>
+                                        <field name="table_stripe_color" widget="color"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Amount Box Colors">
+                                        <field name="amount_box_border_color" widget="color"/>
+                                        <field name="total_amount_bg_color" widget="color"/>
+                                    </group>
+                                    <group string="Other Colors">
+                                        <field name="info_box_bg_color" widget="color"/>
+                                    </group>
+                                </group>
+                            </page>
+                            
+                            <!-- Logo Tab -->
+                            <page string="Logo &amp; Header" name="logo_header">
+                                <group>
+                                    <group string="Logo Settings">
+                                        <field name="show_logo"/>
+                                        <field name="logo_position" invisible="not show_logo"/>
+                                        <field name="logo_max_width" invisible="not show_logo"/>
+                                        <field name="logo_max_height" invisible="not show_logo"/>
+                                    </group>
+                                    <group string="Header Settings">
+                                        <field name="header_title_en"/>
+                                        <field name="header_title_ja"/>
+                                        <field name="header_title_size"/>
+                                        <field name="header_subtitle_size"/>
+                                        <field name="show_status_badge"/>
+                                    </group>
+                                </group>
+                            </page>
+                            
+                            <!-- Sections Tab -->
+                            <page string="Sections Visibility" name="sections">
+                                <group>
+                                    <group string="Main Sections">
+                                        <field name="show_customer_section"/>
+                                        <field name="show_period_section"/>
+                                        <field name="show_amount_summary"/>
+                                        <field name="show_invoice_details"/>
+                                    </group>
+                                    <group string="Additional Sections">
+                                        <field name="show_notes_section"/>
+                                        <field name="show_payment_info"/>
+                                        <field name="show_contact_info"/>
+                                        <field name="show_footer"/>
+                                    </group>
+                                </group>
+                            </page>
+                            
+                            <!-- Text Labels Tab -->
+                            <page string="Text Labels" name="text_labels">
+                                <group>
+                                    <group string="Section Titles (English)">
+                                        <field name="customer_section_title_en"/>
+                                        <field name="period_section_title_en"/>
+                                        <field name="invoice_details_title_en"/>
+                                        <field name="payment_info_title_en"/>
+                                        <field name="contact_info_title_en"/>
+                                    </group>
+                                    <group string="Section Titles (Japanese)">
+                                        <field name="customer_section_title_ja"/>
+                                        <field name="period_section_title_ja"/>
+                                        <field name="invoice_details_title_ja"/>
+                                        <field name="payment_info_title_ja"/>
+                                        <field name="contact_info_title_ja"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Amount Labels (English)">
+                                        <field name="subtotal_label_en"/>
+                                        <field name="tax_label_en"/>
+                                        <field name="total_label_en"/>
+                                    </group>
+                                    <group string="Amount Labels (Japanese)">
+                                        <field name="subtotal_label_ja"/>
+                                        <field name="tax_label_ja"/>
+                                        <field name="total_label_ja"/>
+                                    </group>
+                                </group>
+                            </page>
+                            
+                            <!-- Table Tab -->
+                            <page string="Table Settings" name="table">
+                                <group>
+                                    <group string="Table Display">
+                                        <field name="table_show_row_numbers"/>
+                                        <field name="table_stripe_rows"/>
+                                    </group>
+                                </group>
+                            </page>
+                            
+                            <!-- Layout Tab -->
+                            <page string="Layout &amp; Fonts" name="layout">
+                                <group>
+                                    <group string="Page Layout">
+                                        <field name="page_margin_top"/>
+                                        <field name="page_margin_bottom"/>
+                                        <field name="section_spacing"/>
+                                    </group>
+                                    <group string="Font Settings">
+                                        <field name="base_font_size"/>
+                                        <field name="font_family"/>
+                                    </group>
+                                </group>
+                            </page>
+                            
+                            <!-- Footer Tab -->
+                            <page string="Footer Text" name="footer">
+                                <group>
+                                    <field name="footer_text_en" nolabel="1" placeholder="English footer text..."/>
+                                    <field name="footer_text_ja" nolabel="1" placeholder="Japanese footer text..."/>
+                                </group>
+                            </page>
+                            
+                            <!-- Watermark Tab -->
+                            <page string="Watermark" name="watermark">
+                                <group>
+                                    <group string="Watermark Settings">
+                                        <field name="show_watermark"/>
+                                        <field name="watermark_text" invisible="not show_watermark"/>
+                                        <field name="watermark_opacity" invisible="not show_watermark"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- PDF Configuration Action -->
+        <record id="action_monthly_billing_pdf_config" model="ir.actions.act_window">
+            <field name="name">PDF Configurations</field>
+            <field name="res_model">monthly.billing.pdf.config</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a PDF configuration
+                </p>
+                <p>
+                    Configure how your monthly billing PDFs should look.
+                    Customize colors, fonts, sections, and more!
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

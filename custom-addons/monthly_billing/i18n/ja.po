@@ -1,18 +1,30 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* monthly_billing
+# * monthly_billing
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-01 12:00:00\n"
-"PO-Revision-Date: 2025-01-01 12:00:00\n"
-"Language: ja\n"
+"POT-Creation-Date: 2025-12-11 08:00:00\n"
+"PO-Revision-Date: 2025-12-11 08:00:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: monthly_billing
+#: model:ir.model,name:monthly_billing.model_monthly_billing_header
+msgid "Monthly Billing Header"
+msgstr "月次請求ヘッダー"
+
+#. module: monthly_billing
+#: model:ir.model,name:monthly_billing.model_monthly_billing_line
+msgid "Monthly Billing Line"
+msgstr "月次請求明細"
 
 #. module: monthly_billing
 #: model:ir.model.fields,field_description:monthly_billing.field_monthly_billing_header__name
@@ -100,47 +112,47 @@ msgid "Status"
 msgstr "ステータス"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__state:0
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__state__draft
 msgid "Draft"
 msgstr "下書き"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__state:1
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__state__confirmed
 msgid "Confirmed"
 msgstr "確認済"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__state:2
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__state__done
 msgid "Done"
 msgstr "完了"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__state:3
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__state__cancel
 msgid "Cancelled"
 msgstr "キャンセル"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__closing_type:0
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__closing_type__eom
 msgid "End of Month"
 msgstr "月末締"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__closing_type:1
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__closing_type__20th
 msgid "20th of Month"
 msgstr "20日締"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__closing_type:2
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__closing_type__15th
 msgid "15th of Month"
 msgstr "15日締"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__closing_type:3
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__closing_type__10th
 msgid "10th of Month"
 msgstr "10日締"
 
 #. module: monthly_billing
-#: model:ir.model.fields,selection:monthly_billing.field_monthly_billing_header__closing_type:4
+#: model:ir.model.fields.selection,name:monthly_billing.selection__monthly_billing_header__closing_type__custom
 msgid "Custom"
 msgstr "カスタム"
 
@@ -160,66 +172,6 @@ msgstr "月次請求書作成"
 #: model:ir.ui.menu,name:monthly_billing.menu_monthly_billing_root
 msgid "Monthly Billing"
 msgstr "月次請求"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/wizards/monthly_billing_generate_wizard.py
-msgid "Invalid closing year/month format. Use YYYY-MM (e.g., 2025-10)"
-msgstr "締年月の形式が不正です。YYYY-MM形式で入力してください（例：2025-10）"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/wizards/monthly_billing_generate_wizard.py
-msgid "Closing day must be between 1 and 31."
-msgstr "締日は1から31の間で指定してください。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/wizards/monthly_billing_generate_wizard.py
-msgid "Please specify valid closing year/month and closing day."
-msgstr "有効な締年月と締日を指定してください。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/wizards/monthly_billing_generate_wizard.py
-msgid "No invoices found for the specified period and criteria."
-msgstr "指定された期間と条件で請求書が見つかりませんでした。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/wizards/monthly_billing_generate_wizard.py
-msgid "Generated Monthly Billings"
-msgstr "生成された月次請求"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Only draft billings can be confirmed."
-msgstr "下書き状態の請求のみ確認できます。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Cannot confirm billing without invoice lines."
-msgstr "請求明細なしでは確認できません。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Only confirmed billings can be marked as done."
-msgstr "確認済の請求のみ完了にできます。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Cannot cancel a done billing."
-msgstr "完了した請求はキャンセルできません。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Only cancelled billings can be reset to draft."
-msgstr "キャンセルされた請求のみ下書きに戻せます。"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Closing Year/Month must be in format YYYY-MM (e.g., 2025-10)"
-msgstr "締年月はYYYY-MM形式で入力してください（例：2025-10）"
-
-#. module: monthly_billing
-#: code:addons/monthly_billing/models/monthly_billing_header.py
-msgid "Period start date must be before or equal to period end date."
-msgstr "対象開始日は対象終了日以前である必要があります。"
 
 #. module: monthly_billing
 #: model:ir.model.fields,field_description:monthly_billing.field_monthly_billing_line__name

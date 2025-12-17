@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     
-    <!-- Main Menu under Configuration -->
+    <!-- Main Menu under Purchase Configuration -->
     <menuitem id="menu_rate_master_root"
               name="Rate Master Management"
-              parent="stock.menu_stock_config_settings"
+              parent="purchase.menu_purchase_config"
               sequence="50"/>
     
     <!-- External Integration Master submenu -->

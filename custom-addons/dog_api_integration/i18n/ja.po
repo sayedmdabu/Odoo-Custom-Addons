@@ -1,0 +1,195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* dog_api_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 12:00:00\n"
+"PO-Revision-Date: 2024-12-17 12:00:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order__export_to_dog
+msgid "Exported to DOG"
+msgstr "DOGにエクスポート済み"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,help:dog_api_integration.field_purchase_order__export_to_dog
+msgid "Indicates if this purchase order has been exported to DOG system"
+msgstr "この発注書がDOGシステムにエクスポートされたかどうかを示します"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order__dog_export_date
+msgid "DOG Export Date"
+msgstr "DOGエクスポート日時"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,help:dog_api_integration.field_purchase_order__dog_export_date
+msgid "Date and time when this order was exported to DOG"
+msgstr "この発注書がDOGにエクスポートされた日時"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order__dog_export_status
+msgid "DOG Export Status"
+msgstr "DOGエクスポート状態"
+
+#. module: dog_api_integration
+#: model:ir.model.fields.selection,name:dog_api_integration.selection__purchase_order__dog_export_status__pending
+msgid "Pending"
+msgstr "保留中"
+
+#. module: dog_api_integration
+#: model:ir.model.fields.selection,name:dog_api_integration.selection__purchase_order__dog_export_status__success
+msgid "Success"
+msgstr "成功"
+
+#. module: dog_api_integration
+#: model:ir.model.fields.selection,name:dog_api_integration.selection__purchase_order__dog_export_status__failed
+msgid "Failed"
+msgstr "失敗"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order__dog_export_message
+msgid "DOG Export Message"
+msgstr "DOGエクスポートメッセージ"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,help:dog_api_integration.field_purchase_order__dog_export_message
+msgid "Response or error message from DOG API"
+msgstr "DOG APIからのレスポンスまたはエラーメッセージ"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order__x_delivery_mode
+msgid "Delivery Mode"
+msgstr "納品区分"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,help:dog_api_integration.field_purchase_order__x_delivery_mode
+msgid "1=自社、2=直送 (Company or Direct Ship)"
+msgstr "1=自社、2=直送"
+
+#. module: dog_api_integration
+#: model:ir.model.fields.selection,name:dog_api_integration.selection__purchase_order__x_delivery_mode__company
+msgid "Company Delivery"
+msgstr "自社配送"
+
+#. module: dog_api_integration
+#: model:ir.model.fields.selection,name:dog_api_integration.selection__purchase_order__x_delivery_mode__customer_drop_ship
+msgid "Direct Shipment to Customer"
+msgstr "直送"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order__x_ship_to_partner_id
+msgid "Ship to Partner"
+msgstr "配送先"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,help:dog_api_integration.field_purchase_order__x_ship_to_partner_id
+msgid "Delivery destination partner (for direct shipment)"
+msgstr "配送先取引先（直送の場合）"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,field_description:dog_api_integration.field_purchase_order_line__x_line_remark
+msgid "Line Remark"
+msgstr "明細備考"
+
+#. module: dog_api_integration
+#: model:ir.model.fields,help:dog_api_integration.field_purchase_order_line__x_line_remark
+msgid "Specific remark for this order line"
+msgstr "この注文明細の備考"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_form_dog_integration
+msgid "Send to DOG API"
+msgstr "DOG APIに送信"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_form_dog_integration
+msgid "Line remarks..."
+msgstr "明細備考..."
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_form_dog_integration
+msgid "DOG Integration"
+msgstr "DOG連携"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_form_dog_integration
+msgid "Export Status"
+msgstr "エクスポート状態"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_form_dog_integration
+msgid "API Response"
+msgstr "APIレスポンス"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_filter_dog
+msgid "Exported to DOG"
+msgstr "DOGにエクスポート済み"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_filter_dog
+msgid "Not Exported to DOG"
+msgstr "DOGに未エクスポート"
+
+#. module: dog_api_integration
+#: model_terms:ir.ui.view,arch_db:dog_api_integration.view_purchase_order_filter_dog
+msgid "Export Failed"
+msgstr "エクスポート失敗"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Only confirmed purchase orders can be sent to DOG API."
+msgstr "確定済みの発注書のみDOG APIに送信できます。"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "No data to send to DOG API. Please add order lines."
+msgstr "DOG APIに送信するデータがありません。注文明細を追加してください。"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Success"
+msgstr "成功"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Purchase Order successfully sent to DOG API."
+msgstr "発注書をDOG APIに正常に送信しました。"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Language configuration error. Please check system languages in Settings > Translations > Languages."
+msgstr "言語設定エラー。設定 > 翻訳 > 言語でシステム言語を確認してください。"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Cannot connect to DOG API. Please check your internet connection."
+msgstr "DOG APIに接続できません。インターネット接続を確認してください。"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Authentication failed. Please check API credentials."
+msgstr "認証に失敗しました。API資格情報を確認してください。"
+
+#. module: dog_api_integration
+#: code:addons/dog_api_integration/models/purchase_order.py:0
+#, python-format
+msgid "Failed to send to DOG API: %s"
+msgstr "DOG APIへの送信に失敗しました: %s"

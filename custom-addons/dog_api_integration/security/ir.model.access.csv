@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_order_dog_user,purchase.order.dog.user,purchase.model_purchase_order,purchase.group_purchase_user,1,1,1,0
+access_purchase_order_dog_manager,purchase.order.dog.manager,purchase.model_purchase_order,purchase.group_purchase_manager,1,1,1,1
+access_purchase_order_line_dog_user,purchase.order.line.dog.user,purchase.model_purchase_order_line,purchase.group_purchase_user,1,1,1,0
+access_purchase_order_line_dog_manager,purchase.order.line.dog.manager,purchase.model_purchase_order_line,purchase.group_purchase_manager,1,1,1,1

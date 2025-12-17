@@ -1,0 +1,182 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">DOG API Integration for Purchase Orders</h2>
+        <h3 class="oe_slogan">Seamlessly integrate Odoo Purchase Orders with DOG System</h3>
+        <div class="oe_demo oe_picture oe_screenshot">
+            <img src="banner.png" alt="DOG API Integration">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Key Features</h2>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <span class="fa fa-check-circle fa-3x" style="color:#875A7B;"></span>
+            </div>
+            <h3 class="oe_mb16 text-center">Automatic Export</h3>
+            <p class="oe_mb32 text-center">
+                Automatically sends purchase order data to DOG API when orders are confirmed.
+                No manual intervention required!
+            </p>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <span class="fa fa-refresh fa-3x" style="color:#875A7B;"></span>
+            </div>
+            <h3 class="oe_mb16 text-center">Manual Resend</h3>
+            <p class="oe_mb32 text-center">
+                Easily resend failed or existing orders with a single click.
+                Perfect for retry scenarios!
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Complete Field Mapping</h2>
+        <div class="oe_span12">
+            <p class="oe_mt32 text-center">
+                Maps all 26 fields according to DOG specification including:
+            </p>
+            <ul class="oe_mt16" style="max-width: 600px; margin: 0 auto;">
+                <li>Purchase Order Header Information (発注ヘッダ)</li>
+                <li>Order Line Details (発注明細)</li>
+                <li>Supplier Information (仕入先情報)</li>
+                <li>Delivery Destination (納品先)</li>
+                <li>Product Details (商品情報)</li>
+                <li>Pricing and Amounts (単価・金額)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Delivery Mode Support</h2>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <span class="fa fa-building fa-3x" style="color:#875A7B;"></span>
+            </div>
+            <h3 class="oe_mb16 text-center">Company Delivery (自社)</h3>
+            <p class="oe_mb32 text-center">
+                Standard delivery to your company warehouse or location.
+            </p>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <span class="fa fa-truck fa-3x" style="color:#875A7B;"></span>
+            </div>
+            <h3 class="oe_mb16 text-center">Direct Shipment (直送)</h3>
+            <p class="oe_mb32 text-center">
+                Direct shipment to customer location with complete address details.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Status Tracking & Error Handling</h2>
+        <div class="oe_span12">
+            <p class="oe_mt32 text-center">
+                Track export status with detailed logging:
+            </p>
+            <ul class="oe_mt16" style="max-width: 600px; margin: 0 auto;">
+                <li><strong>Export Status:</strong> Pending, Success, Failed</li>
+                <li><strong>Export Date:</strong> Timestamp of last export attempt</li>
+                <li><strong>API Response:</strong> Detailed response or error messages</li>
+                <li><strong>Filters:</strong> Filter orders by export status</li>
+                <li><strong>Logs:</strong> Comprehensive server-side logging</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Easy Configuration</h2>
+        <div class="oe_span12">
+            <p class="oe_mt32 text-center">
+                Pre-configured and ready to use:
+            </p>
+            <ul class="oe_mt16" style="max-width: 600px; margin: 0 auto;">
+                <li>✓ API endpoint configured</li>
+                <li>✓ Basic authentication ready</li>
+                <li>✓ Custom fields automatically added</li>
+                <li>✓ No complex setup required</li>
+                <li>✓ Works out of the box</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Multi-language Support</h2>
+        <div class="oe_span12">
+            <p class="oe_mt32 text-center">
+                Supports Japanese product names (日本語商品名) and translations.
+                Automatically retrieves product names in the appropriate language.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Technical Specifications</h2>
+        <div class="oe_span12">
+            <table class="table table-bordered" style="max-width: 800px; margin: 20px auto;">
+                <tr>
+                    <td><strong>Odoo Version</strong></td>
+                    <td>18.0</td>
+                </tr>
+                <tr>
+                    <td><strong>Dependencies</strong></td>
+                    <td>purchase, stock</td>
+                </tr>
+                <tr>
+                    <td><strong>API Type</strong></td>
+                    <td>REST API (JSON)</td>
+                </tr>
+                <tr>
+                    <td><strong>Authentication</strong></td>
+                    <td>Basic Auth</td>
+                </tr>
+                <tr>
+                    <td><strong>License</strong></td>
+                    <td>LGPL-3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Developer Information</h2>
+        <div class="oe_span12 text-center">
+            <p class="oe_mt32">
+                <strong>Developed by:</strong> Md Abu Sayed<br/>
+                <strong>Company:</strong> SAGBRAIN CORPORATION<br/>
+                <strong>Website:</strong> <a href="https://www.sagbrain.com">www.sagbrain.com</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Need Support?</h2>
+        <div class="oe_span12 text-center">
+            <p class="oe_mt32">
+                For installation help, customization, or support:<br/>
+                <strong>Email:</strong> support@sagbrain.com<br/>
+                <strong>Documentation:</strong> See README.md file in module directory
+            </p>
+        </div>
+    </div>
+</section>

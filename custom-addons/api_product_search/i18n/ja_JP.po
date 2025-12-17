@@ -1,0 +1,847 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * rate_master
+# * ordia_integration
+# * product_api_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 12:00:00+0000\n"
+"PO-Revision-Date: 2024-12-17 12:00:00+0000\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. ============================================================================
+#. RATE MASTER MODULE TRANSLATIONS
+#. ============================================================================
+
+#. module: rate_master
+#: model:ir.ui.menu,name:rate_master.menu_rate_master_root
+msgid "Rate Master Management"
+msgstr "レートマスター管理"
+
+#. module: rate_master
+#: model:ir.ui.menu,name:rate_master.menu_external_integration
+msgid "External Integration Master"
+msgstr "外部連携マスター"
+
+#. module: rate_master
+#: model:ir.ui.menu,name:rate_master.menu_supplier_external_mapping
+#: model:ir.actions.act_window,name:rate_master.action_supplier_external_mapping
+msgid "External Code → Vendor Conversion"
+msgstr "外部コード → 仕入先変換"
+
+#. module: rate_master
+#: model:ir.ui.menu,name:rate_master.menu_rate_masters
+msgid "Discount Rates"
+msgstr "割引率"
+
+#. module: rate_master
+#: model:ir.ui.menu,name:rate_master.menu_price_group_rate
+#: model:ir.actions.act_window,name:rate_master.action_price_group_rate
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_tree
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+msgid "Price Group Discount Rate"
+msgstr "価格グループ割引率"
+
+#. module: rate_master
+#: model:ir.ui.menu,name:rate_master.menu_maker_rate
+#: model:ir.actions.act_window,name:rate_master.action_maker_rate
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_tree
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Manufacturer Discount Rate"
+msgstr "メーカー割引率"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Archived"
+msgstr "アーカイブ済み"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Quick Entry (Optional)"
+msgstr "クイック入力（オプション）"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Select supplier code..."
+msgstr "仕入先コードを選択..."
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+msgid "Select price group..."
+msgstr "価格グループを選択..."
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Select manufacturer..."
+msgstr "メーカーを選択..."
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Select discount %..."
+msgstr "割引率を選択..."
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Validity Period"
+msgstr "有効期間"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "From"
+msgstr "開始日"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "To"
+msgstr "終了日"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Rate Details (Required)"
+msgstr "レート詳細（必須）"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Enter supplier code or use dropdown above"
+msgstr "仕入先コードを入力するか、上のドロップダウンを使用"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+msgid "Enter price group name or use dropdown above"
+msgstr "価格グループ名を入力するか、上のドロップダウンを使用"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Enter manufacturer name or use dropdown above"
+msgstr "メーカー名を入力するか、上のドロップダウンを使用"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_form
+msgid "Remarks..."
+msgstr "備考..."
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_form
+msgid "Notes..."
+msgstr "メモ..."
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+msgid "Search Price Group Rate"
+msgstr "価格グループ率を検索"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Search Manufacturer Rate"
+msgstr "メーカー率を検索"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_supplier_external_mapping_search
+msgid "Active"
+msgstr "有効"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Inactive"
+msgstr "無効"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Currently Valid"
+msgstr "現在有効"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Expired"
+msgstr "期限切れ"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Group By"
+msgstr "グループ化"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Supplier"
+msgstr "仕入先"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+msgid "Price Group"
+msgstr "価格グループ"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Manufacturer"
+msgstr "メーカー"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_price_group_rate_search
+#: model:ir.ui.view,arch_db:rate_master.view_maker_rate_search
+msgid "Active Status"
+msgstr "有効状態"
+
+#. module: rate_master
+#: model:ir.actions.act_window,help:rate_master.action_price_group_rate
+msgid "Create a new price group rate"
+msgstr "新しい価格グループ率を作成"
+
+#. module: rate_master
+#: model:ir.actions.act_window,help:rate_master.action_price_group_rate
+msgid ""
+"Define discount rates for price groups. \n"
+"These rates are used to automatically calculate purchase prices.\n"
+"Example: rate = 0.75 means 25% discount from list price."
+msgstr ""
+"価格グループの割引率を定義します。\n"
+"これらのレートは購入価格を自動計算するために使用されます。\n"
+"例：rate = 0.75 は定価から25%割引を意味します。"
+
+#. module: rate_master
+#: model:ir.actions.act_window,help:rate_master.action_maker_rate
+msgid "Create a new manufacturer rate"
+msgstr "新しいメーカー率を作成"
+
+#. module: rate_master
+#: model:ir.actions.act_window,help:rate_master.action_maker_rate
+msgid ""
+"Define discount rates by manufacturer. \n"
+"These rates are used when price group rates are not available.\n"
+"Example: rate = 0.80 means 20% discount from list price."
+msgstr ""
+"メーカー別の割引率を定義します。\n"
+"これらのレートは価格グループ率が利用できない場合に使用されます。\n"
+"例：rate = 0.80 は定価から20%割引を意味します。"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Extract Supplier Code"
+msgstr "仕入先コードを抽出"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Auto-extract supplier code from SKU"
+msgstr "SKUから仕入先コードを自動抽出"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Reprocess"
+msgstr "再処理"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "External API Data"
+msgstr "外部APIデータ"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Product Identification"
+msgstr "商品識別"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Pricing Configuration"
+msgstr "価格設定"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Price group for automatic discount calculation"
+msgstr "自動割引計算用の価格グループ"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Manufacturer for automatic discount calculation"
+msgstr "自動割引計算用のメーカー"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Fixed Purchase Price (Highest Priority)"
+msgstr "固定購入価格（最優先）"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Auto-Processing Status"
+msgstr "自動処理ステータス"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Configuration Help"
+msgstr "設定ヘルプ"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "For Automatic Discounts in Sales:"
+msgstr "販売時の自動割引について："
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Supplier Company Code"
+msgstr "仕入先会社コード"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Must match your Price Group Rate or Maker Rate configuration (e.g., \"20000109\")"
+msgstr "価格グループ率またはメーカー率の設定と一致する必要があります（例：\"20000109\"）"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Used for Priority 1 discount calculation"
+msgstr "優先度1の割引計算に使用"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Manufacturer (Maker)"
+msgstr "メーカー"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Used for Priority 2 discount calculation if Price Group not found"
+msgstr "価格グループが見つからない場合、優先度2の割引計算に使用"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Quick Setup:"
+msgstr "クイック設定："
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "If SKU starts with supplier code, click \"Extract Supplier Code\" button above."
+msgstr "SKUが仕入先コードで始まる場合は、上の「仕入先コードを抽出」ボタンをクリックしてください。"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Auto-Processing"
+msgstr "自動処理"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid ""
+"Auto-Processing: When this product is created or updated, \n"
+"the system will automatically:"
+msgstr ""
+"自動処理：この商品が作成または更新されると、\n"
+"システムは自動的に："
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Assign Buy and MTO routes"
+msgstr "購入とMTOルートを割り当て"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Map external supplier code to Odoo vendor"
+msgstr "外部仕入先コードをOdoo仕入先にマッピング"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Calculate purchase price using rate masters"
+msgstr "レートマスターを使用して購入価格を計算"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "Create/update supplier info"
+msgstr "仕入先情報を作成/更新"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_form_inherit
+msgid "button to manually trigger this process."
+msgstr "ボタンを使用してこのプロセスを手動でトリガーします。"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_search_inherit
+msgid "Has API SKU"
+msgstr "API SKUあり"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_search_inherit
+msgid "Has Supplier Code"
+msgstr "仕入先コードあり"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_search_inherit
+msgid "Missing Supplier Code"
+msgstr "仕入先コード不足"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_product_template_search_inherit
+msgid "Has Fixed Price"
+msgstr "固定価格あり"
+
+#. module: rate_master
+#: model:ir.actions.server,name:rate_master.action_extract_supplier_codes_bulk
+msgid "Extract Supplier Codes"
+msgstr "仕入先コードを抽出"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Reapply Auto Discounts"
+msgstr "自動割引を再適用"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Recalculate automatic discounts based on current rates"
+msgstr "現在のレートに基づいて自動割引を再計算"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Discounted Price"
+msgstr "割引価格"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Unit price after applying discount"
+msgstr "割引適用後の単価"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Discount Amt"
+msgstr "割引額"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Total amount saved due to discount"
+msgstr "割引による合計節約額"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Source"
+msgstr "ソース"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Origin of the discount"
+msgstr "割引の起源"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Rate"
+msgstr "レート"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "The multiplier rate (e.g., 0.60 = 40% discount)"
+msgstr "乗数率（例：0.60 = 40%割引）"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Price Breakdown"
+msgstr "価格内訳"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "List Price"
+msgstr "定価"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Discount %"
+msgstr "割引率"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Discounted Unit Price"
+msgstr "割引後単価"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Price per unit after discount"
+msgstr "割引後の単価"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Total Discount Amount"
+msgstr "合計割引額"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Total savings on this line"
+msgstr "この行の合計節約額"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Automatic Discount Information"
+msgstr "自動割引情報"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Discount Source"
+msgstr "割引ソース"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "Applied Rate"
+msgstr "適用レート"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_order_form_inherit_discount
+msgid "The multiplier rate applied (e.g., 0.60 = 40% discount)"
+msgstr "適用された乗数率（例：0.60 = 40%割引）"
+
+#. module: rate_master
+#: model:ir.ui.view,arch_db:rate_master.view_supplier_external_mapping_form
+msgid "Notes"
+msgstr "メモ"
+
+#. ============================================================================
+#. ORDIA INTEGRATION MODULE TRANSLATIONS
+#. ============================================================================
+
+#. module: ordia_integration
+#: model:ir.ui.menu,name:ordia_integration.menu_ordia_root
+msgid "ORDIA"
+msgstr "ORDIA"
+
+#. module: ordia_integration
+#: model:ir.ui.menu,name:ordia_integration.menu_ordia_main
+msgid "Open ORDIA"
+msgstr "ORDIAを開く"
+
+#. module: ordia_integration
+#: model:ir.ui.menu,name:ordia_integration.menu_ordia_cart
+msgid "Carts"
+msgstr "カート"
+
+#. module: ordia_integration
+#: model:ir.ui.menu,name:ordia_integration.menu_ordia_clear_token
+#: model:ir.actions.server,name:ordia_integration.action_ordia_clear_token
+msgid "Clear Token (Logout)"
+msgstr "トークンをクリア（ログアウト）"
+
+#. module: ordia_integration
+#: model:ir.actions.act_window,name:ordia_integration.action_ordia_login
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_login_form
+msgid "ORDIA Login"
+msgstr "ORDIAログイン"
+
+#. module: ordia_integration
+#: model:ir.actions.server,name:ordia_integration.action_ordia_main
+msgid "Open ORDIA"
+msgstr "ORDIAを開く"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_login_form
+msgid "Enter username"
+msgstr "ユーザー名を入力"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_login_form
+msgid "Enter password"
+msgstr "パスワードを入力"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_login_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Login"
+msgstr "ログイン"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_login_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search_form
+msgid "Cancel"
+msgstr "キャンセル"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search_form
+msgid "Search Carts"
+msgstr "カートを検索"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search_form
+msgid "Search ORDIA Carts"
+msgstr "ORDIAカートを検索"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search_form
+msgid "🔍 Search"
+msgstr "🔍 検索"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search_form
+msgid "🚪 Logout"
+msgstr "🚪 ログアウト"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search_form
+msgid "Logout and clear authentication token"
+msgstr "ログアウトして認証トークンをクリア"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_list
+msgid "ORDIA Carts - Temporary Results"
+msgstr "ORDIAカート - 一時結果"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_list
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+msgid "💾 Save Selected to Database"
+msgstr "💾 選択項目をデータベースに保存"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_list
+msgid "Save selected carts permanently to database"
+msgstr "選択したカートをデータベースに永久保存"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+msgid "Temporary Cart Details"
+msgstr "一時カート詳細"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+msgid "💾 Save to Database"
+msgstr "💾 データベースに保存"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+msgid "Save to"
+msgstr "保存先"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+msgid "Database"
+msgstr "データベース"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+msgid "⚠️ This is a temporary record. Click \"Save to Database\" to store permanently."
+msgstr "⚠️ これは一時レコードです。永久保存するには「データベースに保存」をクリックしてください。"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Order Information"
+msgstr "注文情報"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Product Information"
+msgstr "商品情報"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Product Details"
+msgstr "商品詳細"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Pricing"
+msgstr "価格設定"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_form
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Delivery Address"
+msgstr "配送先住所"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_search
+msgid "Search Temporary Carts"
+msgstr "一時カートを検索"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_search
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Group by Maker"
+msgstr "メーカー別にグループ化"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_search
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Group by Customer"
+msgstr "顧客別にグループ化"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_temp_search
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Group by API Status"
+msgstr "APIステータス別にグループ化"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_list
+msgid "ORDIA Carts - Saved in Database"
+msgstr "ORDIAカート - データベースに保存済み"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_list
+msgid "✓ Confirm Selected"
+msgstr "✓ 選択項目を確認"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_list
+msgid "⚙ Process Selected"
+msgstr "⚙ 選択項目を処理"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_list
+msgid "✓ Mark Done"
+msgstr "✓ 完了としてマーク"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_list
+msgid "✗ Cancel Selected"
+msgstr "✗ 選択項目をキャンセル"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Cart Details"
+msgstr "カート詳細"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Confirm"
+msgstr "確認"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Process"
+msgstr "処理"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Mark Done"
+msgstr "完了としてマーク"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Add notes here..."
+msgstr "ここにメモを追加..."
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_form
+msgid "Audit Information"
+msgstr "監査情報"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Draft"
+msgstr "下書き"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Confirmed"
+msgstr "確認済み"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Processing"
+msgstr "処理中"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Done"
+msgstr "完了"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Cancelled"
+msgstr "キャンセル済み"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Today"
+msgstr "今日"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "This Week"
+msgstr "今週"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "This Month"
+msgstr "今月"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Group by Status"
+msgstr "ステータス別にグループ化"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_search
+msgid "Group by Order Date"
+msgstr "注文日別にグループ化"
+
+#. module: ordia_integration
+#: model:ir.actions.act_window,name:ordia_integration.action_ordia_cart
+msgid "ORDIA Carts (Saved)"
+msgstr "ORDIAカート（保存済み）"
+
+#. module: ordia_integration
+#: model:ir.actions.act_window,help:ordia_integration.action_ordia_cart
+msgid "No saved carts found!"
+msgstr "保存されたカートが見つかりません！"
+
+#. module: ordia_integration
+#: model:ir.actions.act_window,help:ordia_integration.action_ordia_cart
+msgid ""
+"Click on \"Login\" menu to authenticate and search for carts from ORDIA API.\n"
+"Then select carts and click \"Save to Database\" button."
+msgstr ""
+"「ログイン」メニューをクリックして認証し、ORDIA APIからカートを検索してください。\n"
+"その後、カートを選択して「データベースに保存」ボタンをクリックしてください。"
+
+#. module: ordia_integration
+#: model:ir.ui.view,arch_db:ordia_integration.view_ordia_cart_list
+msgid "Total"
+msgstr "合計"
+
+#. ============================================================================
+#. PRODUCT TEMPLATE & SALE ORDER MODULE TRANSLATIONS
+#. ============================================================================
+
+#. module: product_api_integration
+#: model:ir.ui.view,arch_db:product_api_integration.view_product_template_form_api_info
+msgid "External Product Info"
+msgstr "外部商品情報"
+
+#. module: product_api_integration
+#: model:ir.ui.view,arch_db:product_api_integration.view_sale_order_form_custom
+msgid "SKU"
+msgstr "SKU"
+
+#. module: product_api_integration
+#: model:ir.ui.view,arch_db:product_api_integration.view_sale_order_form_custom
+msgid "Supplier SKU"
+msgstr "仕入先SKU"
+
+#. module: product_api_integration
+#: model:ir.ui.view,arch_db:product_api_integration.view_sale_order_form_custom
+msgid "Maker"
+msgstr "メーカー"
+
+#. module: product_api_integration
+#: model:ir.ui.view,arch_db:product_api_integration.view_sale_order_form_custom
+msgid "Volume/Unit"
+msgstr "容量/単位"
+
+#. module: product_api_integration
+#: model:ir.ui.view,arch_db:product_api_integration.view_sale_order_form_custom
+msgid "List Price"
+msgstr "定価"
